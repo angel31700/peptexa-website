@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Peptexa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .contact-section {
+            margin-top: 100px;
+            padding: 80px 20px;
+            background: var(--gray-50);
+        }
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .contact-header h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--gray-900);
+        }
+        .contact-header p {
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .contact-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-info h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            align-items: flex-start;
+        }
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-icon i {
+            color: var(--white);
+            font-size: 20px;
+        }
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+        .contact-details p {
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        .contact-details a {
+            color: var(--primary-teal);
+            font-weight: 600;
+        }
+        .contact-details a:hover {
+            color: var(--primary-teal-dark);
+        }
+        .contact-form-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+        .contact-form-card h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+            color: var(--gray-900);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: var(--font-primary);
+            transition: var(--transition-fast);
+        }
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+        }
+        .success-message {
+            background: #D1FAE5;
+            border-left: 4px solid #10B981;
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .success-message.show {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .contact-header h1 {
+                font-size: 32px;
+            }
+            .contact-info,
+            .contact-form-card {
+                padding: 28px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/peptexa-logo.png" alt="Peptexa Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#guides">Guides</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="index.html#free-guide" class="btn btn-header">Free Guide</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html#guides">Guides</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="index.html#free-guide" class="mobile-menu-cta">Free Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p>Have questions about peptides or our guides? We're here to help. Reach out and we'll get back to you as soon as possible.</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>General inquiries: <a href="mailto:hello@peptexa.com">hello@peptexa.com</a></p>
+                            <p>Support: <a href="mailto:support@peptexa.com">support@peptexa.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Response Time</h3>
+                            <p>We typically respond within 24-48 hours during business days (Monday-Friday).</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Privacy</h3>
+                            <p>Your information is secure. We never share your personal details. See our <a href="privacy.html">Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Before You Contact</h3>
+                            <p><strong>Please note:</strong> We cannot provide medical advice or personalized peptide recommendations. Always consult a qualified healthcare professional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <h2>Send Us a Message</h2>
+                    
+                    <div class="success-message" id="success-message">
+                        <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you soon.
+                    </div>
+
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Product Support</option>
+                                <option value="refund">Refund Request</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-disclaimer">
+                    <p><strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare professional before starting any peptide protocol or making changes to your health regimen.</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Peptexa. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact Form Handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // TODO: Integrate with your email service (e.g., EmailJS, Formspree, or custom backend)
+            console.log('Contact form submitted:', formData);
+            
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.classList.add('show');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
