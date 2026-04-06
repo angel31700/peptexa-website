@@ -327,9 +327,9 @@
             max-width: 440px;
         }
 
-        /* ── WHAT'S INSIDE — WHITE ── */
+        /* ── WHAT'S INSIDE — NAVY ── */
         .inside-section {
-            background: var(--white);
+            background: var(--navy);
             padding: 6rem 2.5rem;
         }
         .section-label {
@@ -364,8 +364,8 @@
             margin-top: 3.5rem;
         }
         .inside-card {
-            background: var(--off-white);
-            border: 1px solid rgba(0,0,0,0.06);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 14px;
             padding: 2rem;
             transition: all 0.3s;
@@ -382,22 +382,22 @@
             transition: opacity 0.3s;
         }
         .inside-card:hover {
-            border-color: rgba(26,122,122,0.2);
-            background: white;
+            border-color: rgba(200,150,58,0.3);
+            background: rgba(255,255,255,0.07);
             transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
         }
         .inside-card:hover::after { opacity: 1; }
         .inside-card-num {
             font-family: 'Playfair Display', serif;
             font-size: 2.75rem;
             font-weight: 900;
-            color: rgba(26,122,122,0.12);
+            color: rgba(200,150,58,0.15);
             line-height: 1;
             margin-bottom: 1rem;
         }
-        .inside-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--navy); }
-        .inside-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; }
+        .inside-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: white; }
+        .inside-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
         /* ── CATEGORIES — SOFT TEAL TINT ── */
         .categories-section {
@@ -904,12 +904,12 @@
         </div>
     </div>
 
-    <!-- WHAT'S INSIDE — white -->
+    <!-- WHAT'S INSIDE — navy -->
     <section class="inside-section" id="about">
         <div class="container">
             <div class="section-label">What You Get</div>
-            <h2 class="section-title">Every guide is <em>built to execute</em></h2>
-            <p class="section-sub">Not just theory. Every profile gives you exactly what you need to make a confident, informed decision.</p>
+            <h2 class="section-title" style="color:white;">Every guide is <em>built to execute</em></h2>
+            <p class="section-sub" style="color:rgba(255,255,255,0.55);">Not just theory. Every profile gives you exactly what you need to make a confident, informed decision.</p>
             <div class="inside-grid">
                 <div class="inside-card reveal">
                     <div class="inside-card-num">01</div>
