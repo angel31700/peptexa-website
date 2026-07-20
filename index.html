@@ -16,20 +16,25 @@
             --navy-mid: #0F1E3A;
             --teal: #1A7A7A;
             --teal-light: #2C9A9A;
-            --gold: #D4A843;
-            --gold-light: #F0C060;
+            --teal-pale: #E6F4F4;
+            --gold: #C8963A;
+            --gold-light: #E8B84B;
+            --gold-pale: #FBF4E8;
             --white: #FFFFFF;
-            --off-white: #F5F2EE;
-            --gray: #8A9AB5;
-            --light-gray: #E8EDF5;
+            --cream: #FAFAF8;
+            --off-white: #F4F2EE;
+            --light-gray: #EEECЕ8;
+            --text-dark: #1A1A2E;
+            --text-mid: #4A5568;
+            --text-light: #8A9AB5;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--navy);
-            color: var(--white);
+            background: var(--white);
+            color: var(--text-dark);
             overflow-x: hidden;
             line-height: 1.7;
         }
@@ -39,10 +44,10 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            padding: 1.25rem 2.5rem;
-            background: rgba(10, 22, 40, 0.92);
+            padding: 1.1rem 2.5rem;
+            background: rgba(255,255,255,0.96);
             backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.07);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -50,47 +55,45 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.875rem;
+            gap: 0.75rem;
             text-decoration: none;
         }
         .logo-mark {
-            width: 42px; height: 42px;
-            background: linear-gradient(135deg, var(--teal) 0%, var(--gold) 100%);
+            width: 40px; height: 40px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
             border-radius: 10px;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 20px rgba(212,168,67,0.3);
+            box-shadow: 0 4px 12px rgba(26,122,122,0.25);
         }
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
-            color: var(--white);
+            letter-spacing: 0.06em;
+            color: var(--navy);
         }
-        .logo-text span { color: var(--gold); }
+        .logo-text span { color: var(--teal); }
         nav { display: flex; gap: 2rem; align-items: center; }
         nav a {
-            color: rgba(255,255,255,0.75);
+            color: var(--text-mid);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 0.03em;
             transition: color 0.3s;
         }
-        nav a:hover { color: var(--gold); }
+        nav a:hover { color: var(--teal); }
         .nav-cta {
-            background: var(--gold);
-            color: var(--navy) !important;
+            background: var(--navy);
+            color: white !important;
             padding: 0.6rem 1.4rem;
             border-radius: 6px;
             font-weight: 700 !important;
-            letter-spacing: 0.04em;
             transition: all 0.3s !important;
-            box-shadow: 0 4px 16px rgba(212,168,67,0.3);
+            box-shadow: 0 4px 12px rgba(10,22,40,0.2);
         }
-        .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+        .nav-cta:hover { background: var(--teal) !important; transform: translateY(-1px); }
 
-        /* ── HERO ── */
+        /* ── HERO — DARK ── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -98,28 +101,25 @@
             position: relative;
             overflow: hidden;
             padding: 8rem 2.5rem 5rem;
-        }
-        .hero-bg {
-            position: absolute; inset: 0;
-            background: linear-gradient(135deg, #0A1628 0%, #0F2040 50%, #0A1628 100%);
+            background: var(--navy);
         }
         .hero-bg-img {
             position: absolute; inset: 0;
             background-image: url('https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_statement.png');
             background-size: cover;
             background-position: center right;
-            opacity: 0.18;
+            opacity: 0.12;
         }
-        .hero-bg-overlay {
+        .hero-overlay {
             position: absolute; inset: 0;
-            background: linear-gradient(90deg, rgba(10,22,40,0.97) 40%, rgba(10,22,40,0.5) 100%);
+            background: linear-gradient(105deg, rgba(10,22,40,1) 45%, rgba(10,22,40,0.6) 100%);
         }
-        .hero-grid-pattern {
+        .hero-grid {
             position: absolute; inset: 0;
             background-image:
-                linear-gradient(rgba(212,168,67,0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212,168,67,0.04) 1px, transparent 1px);
-            background-size: 60px 60px;
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+            background-size: 64px 64px;
         }
         .hero-content {
             max-width: 1200px;
@@ -127,228 +127,236 @@
             position: relative;
             z-index: 2;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
             align-items: center;
             width: 100%;
         }
-        .hero-left {}
         .hero-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(212,168,67,0.12);
-            border: 1px solid rgba(212,168,67,0.3);
-            color: var(--gold);
-            padding: 0.5rem 1.1rem;
+            background: rgba(200,150,58,0.15);
+            border: 1px solid rgba(200,150,58,0.35);
+            color: var(--gold-light);
+            padding: 0.45rem 1rem;
             border-radius: 30px;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4.25rem;
             font-weight: 900;
-            line-height: 1.08;
+            line-height: 1.1;
             letter-spacing: -0.02em;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: white;
         }
-        .hero h1 em {
-            font-style: italic;
-            color: var(--gold);
-        }
+        .hero h1 em { font-style: italic; color: var(--gold-light); }
         .hero-sub {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.65);
             line-height: 1.8;
             margin-bottom: 2.5rem;
-            max-width: 500px;
+            max-width: 480px;
         }
         .hero-stats {
             display: flex;
             gap: 2.5rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.75rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .hero-stat {}
         .hero-stat-num {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.25rem;
             font-weight: 800;
-            color: var(--gold);
+            color: var(--gold-light);
             line-height: 1;
         }
         .hero-stat-label {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.45);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-top: 0.3rem;
         }
-        .hero-ctas {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
         .btn-gold {
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
             color: var(--navy);
-            padding: 1rem 2.25rem;
+            padding: 0.95rem 2.25rem;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             transition: all 0.3s;
-            box-shadow: 0 8px 24px rgba(212,168,67,0.35);
-            letter-spacing: 0.02em;
+            box-shadow: 0 6px 20px rgba(200,150,58,0.35);
         }
-        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,168,67,0.5); }
-        .btn-outline {
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(200,150,58,0.5); }
+        .btn-outline-white {
             background: transparent;
-            color: var(--white);
-            padding: 1rem 2.25rem;
+            color: white;
+            padding: 0.95rem 2.25rem;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             border: 1px solid rgba(255,255,255,0.25);
             transition: all 0.3s;
         }
-        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-outline-white:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
-        /* Hero right — image grid */
-        .hero-right {
+        /* Hero image grid */
+        .hero-imgs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            grid-template-rows: auto auto;
+            gap: 0.875rem;
         }
-        .hero-img-card {
-            border-radius: 12px;
+        .hero-img-main {
+            grid-column: 1 / 3;
+            border-radius: 14px;
             overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.5);
             position: relative;
-            aspect-ratio: 16/10;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            aspect-ratio: 16/8;
         }
-        .hero-img-card img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+        .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-img-small {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            aspect-ratio: 16/9;
         }
-        .hero-img-card:hover img { transform: scale(1.04); }
-        .hero-img-card.tall {
-            grid-row: span 2;
-            aspect-ratio: auto;
+        .hero-img-small img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .hero-img-small:hover img { transform: scale(1.05); }
+        .hero-img-label {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, transparent 100%);
+            padding: 1.25rem 1rem 0.875rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
         }
 
-        /* ── MARQUEE STRIP ── */
+        /* ── MARQUEE — GOLD ── */
         .marquee-strip {
             background: var(--gold);
-            padding: 0.875rem 0;
+            padding: 0.8rem 0;
             overflow: hidden;
             white-space: nowrap;
         }
         .marquee-inner {
             display: inline-block;
-            animation: marquee 30s linear infinite;
+            animation: marquee 35s linear infinite;
         }
         .marquee-inner span {
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 0 2.5rem;
+            padding: 0 2rem;
         }
-        .marquee-inner span::before {
-            content: '✦';
-            margin-right: 2.5rem;
-            opacity: 0.5;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        .marquee-inner span::before { content: '✦'; margin-right: 2rem; opacity: 0.4; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* ── SECTION BASE ── */
-        section { padding: 6rem 2.5rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 1.25rem;
-        }
-        .section-title em { font-style: italic; color: var(--gold); }
-        .section-sub {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.6);
-            max-width: 600px;
-            line-height: 1.8;
-        }
-
-        /* ── STATEMENT SECTION ── */
+        /* ── STATEMENT — LIGHT CREAM ── */
         .statement-section {
-            background: var(--navy-mid);
-            position: relative;
-            overflow: hidden;
+            background: var(--cream);
             padding: 0;
         }
         .statement-inner {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 500px;
+            min-height: 520px;
         }
         .statement-img {
-            position: relative;
             overflow: hidden;
+            position: relative;
         }
-        .statement-img img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.85;
+        .statement-img img { width: 100%; height: 100%; object-fit: cover; }
+        .statement-img::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(to right, transparent 60%, var(--cream) 100%);
         }
         .statement-text {
-            padding: 5rem 4rem;
+            padding: 5rem 4.5rem 5rem 3rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: linear-gradient(135deg, #0F1E3A 0%, #0A1628 100%);
+            background: var(--cream);
+        }
+        .statement-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1.25rem;
         }
         .statement-quote {
             font-family: 'Playfair Display', serif;
-            font-size: 2.25rem;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--navy);
+            margin-bottom: 1.75rem;
         }
-        .statement-quote em { font-style: italic; color: var(--gold); }
+        .statement-quote em { font-style: italic; color: var(--teal); }
         .statement-divider {
-            width: 60px; height: 3px;
-            background: linear-gradient(90deg, var(--gold), transparent);
+            width: 48px; height: 3px;
+            background: var(--gold);
             margin-bottom: 1.5rem;
+            border-radius: 2px;
         }
         .statement-body {
-            color: rgba(255,255,255,0.65);
+            color: var(--text-mid);
             font-size: 1rem;
-            line-height: 1.8;
+            line-height: 1.85;
+            max-width: 440px;
         }
 
-        /* ── WHAT'S INSIDE ── */
+        /* ── WHAT'S INSIDE — NAVY ── */
         .inside-section {
             background: var(--navy);
+            padding: 6rem 2.5rem;
         }
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.875rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+        .section-title em { font-style: italic; color: var(--teal); }
+        .section-sub {
+            font-size: 1.05rem;
+            color: var(--text-mid);
+            max-width: 560px;
+            line-height: 1.8;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
         .inside-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -364,46 +372,70 @@
             position: relative;
             overflow: hidden;
         }
-        .inside-card::before {
+        .inside-card::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--teal), var(--gold));
             opacity: 0;
             transition: opacity 0.3s;
         }
         .inside-card:hover {
-            border-color: rgba(212,168,67,0.25);
+            border-color: rgba(200,150,58,0.3);
             background: rgba(255,255,255,0.07);
             transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.3);
         }
-        .inside-card:hover::before { opacity: 1; }
+        .inside-card:hover::after { opacity: 1; }
         .inside-card-num {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.75rem;
             font-weight: 900;
-            color: rgba(212,168,67,0.15);
+            color: rgba(200,150,58,0.15);
             line-height: 1;
             margin-bottom: 1rem;
         }
-        .inside-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--white);
-        }
-        .inside-card p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.55);
-            line-height: 1.7;
-        }
+        .inside-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: white; }
+        .inside-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
-        /* ── FREE GUIDE ── */
+        /* ── CATEGORIES — SOFT TEAL TINT ── */
+        .categories-section {
+            background: var(--teal-pale);
+            padding: 6rem 2.5rem;
+            border-top: 1px solid rgba(26,122,122,0.1);
+            border-bottom: 1px solid rgba(26,122,122,0.1);
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        .cat-pill {
+            background: white;
+            border: 1px solid rgba(26,122,122,0.15);
+            border-radius: 12px;
+            padding: 1.25rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .cat-pill:hover {
+            border-color: var(--teal);
+            box-shadow: 0 6px 20px rgba(26,122,122,0.12);
+            transform: translateY(-2px);
+        }
+        .cat-pill-icon { font-size: 1.4rem; flex-shrink: 0; }
+        .cat-pill-name { font-weight: 700; font-size: 0.875rem; color: var(--navy); margin-bottom: 0.2rem; }
+        .cat-pill-count { font-size: 0.72rem; color: var(--teal); font-weight: 600; }
+
+        /* ── FREE GUIDE — DARK NAVY ── */
         .free-section {
-            background: linear-gradient(135deg, #0A1628 0%, #0D1F38 100%);
-            border-top: 1px solid rgba(212,168,67,0.1);
-            border-bottom: 1px solid rgba(212,168,67,0.1);
+            background: var(--navy);
+            padding: 6rem 2.5rem;
         }
         .free-inner {
             display: grid;
@@ -420,50 +452,58 @@
         .free-img img { width: 100%; display: block; }
         .free-img-badge {
             position: absolute;
-            top: 1.5rem; left: 1.5rem;
+            top: 1.25rem; left: 1.25rem;
             background: var(--gold);
             color: var(--navy);
             font-weight: 800;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 0.4rem 1rem;
+            padding: 0.35rem 0.875rem;
             border-radius: 20px;
         }
-        .free-form-wrap { }
-        .kit-form-note {
-            margin-top: 1.25rem;
-            text-align: center;
+        .free-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 1rem;
         }
-        .kit-form-note a {
-            color: var(--gold);
-            font-size: 0.875rem;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-        .kit-form-note a:hover { opacity: 1; }
+        .free-title em { font-style: italic; color: var(--gold-light); }
+        .free-sub { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
+        .kit-note { margin-top: 1.25rem; text-align: center; }
+        .kit-note a { color: rgba(255,255,255,0.45); font-size: 0.8rem; text-decoration: none; transition: color 0.3s; }
+        .kit-note a:hover { color: var(--gold-light); }
 
-        /* ── GUIDES SECTION ── */
+        /* ── GUIDES SECTION — WHITE/LIGHT ── */
         .guides-section {
-            background: var(--navy-mid);
+            background: var(--off-white);
+            padding: 6rem 2.5rem;
         }
         .guides-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            margin-bottom: 1rem;
+            margin-bottom: 0;
             flex-wrap: wrap;
             gap: 1rem;
+        }
+        .guides-header-note {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            max-width: 280px;
+            text-align: right;
+            line-height: 1.6;
         }
 
         /* Bundle banner */
         .bundle-banner {
-            background: linear-gradient(135deg, #0D1A2E 0%, #1A3A3A 100%);
-            border: 1px solid rgba(212,168,67,0.3);
+            background: var(--navy);
             border-radius: 16px;
             padding: 3rem;
             text-align: center;
-            margin: 3rem 0;
+            margin: 2.5rem 0 3rem;
             position: relative;
             overflow: hidden;
         }
@@ -473,34 +513,36 @@
             background-image: url('https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_stacking.png');
             background-size: cover;
             background-position: center;
-            opacity: 0.07;
+            opacity: 0.06;
         }
         .bundle-label {
             display: inline-block;
             background: var(--gold);
             color: var(--navy);
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 800;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            padding: 0.35rem 1rem;
+            padding: 0.3rem 0.875rem;
             border-radius: 20px;
             margin-bottom: 1.25rem;
+            position: relative;
         }
         .bundle-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.25rem;
+            font-size: 2.1rem;
             font-weight: 800;
             margin-bottom: 0.75rem;
+            color: white;
             position: relative;
         }
         .bundle-sub {
-            color: rgba(255,255,255,0.65);
-            font-size: 1rem;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.95rem;
             margin-bottom: 2rem;
             position: relative;
         }
-        .bundle-sub s { opacity: 0.5; }
+        .bundle-sub s { opacity: 0.45; }
         .bundle-cta-row {
             display: flex;
             align-items: center;
@@ -511,9 +553,9 @@
         }
         .bundle-price {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3.25rem;
             font-weight: 900;
-            color: var(--gold);
+            color: var(--gold-light);
             line-height: 1;
         }
 
@@ -522,26 +564,25 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            margin-top: 2rem;
         }
         .guide-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: white;
+            border: 1px solid rgba(0,0,0,0.07);
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.35s;
             display: flex;
             flex-direction: column;
-            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         .guide-card:hover {
-            border-color: rgba(212,168,67,0.35);
+            border-color: rgba(26,122,122,0.3);
             transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
         }
         .guide-card.featured {
-            border-color: rgba(212,168,67,0.4);
-            background: rgba(212,168,67,0.04);
+            border-color: var(--gold);
+            box-shadow: 0 4px 16px rgba(200,150,58,0.15);
         }
         .guide-card-img {
             width: 100%;
@@ -557,57 +598,58 @@
         .guide-card:hover .guide-card-img img { transform: scale(1.05); }
         .guide-card-img-overlay {
             position: absolute; inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(10,22,40,0.9) 100%);
+            background: linear-gradient(to bottom, transparent 50%, rgba(10,22,40,0.5) 100%);
         }
         .featured-badge {
             position: absolute;
-            top: 1rem; right: 1rem;
+            top: 0.875rem; right: 0.875rem;
             background: var(--gold);
             color: var(--navy);
-            font-size: 0.65rem;
+            font-size: 0.62rem;
             font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 0.3rem 0.75rem;
+            padding: 0.28rem 0.7rem;
             border-radius: 20px;
             z-index: 2;
         }
         .guide-card-body {
-            padding: 1.75rem;
+            padding: 1.5rem 1.75rem 1.75rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
         .guide-card-category {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 700;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: var(--teal-light);
-            margin-bottom: 0.6rem;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
         }
         .guide-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             font-weight: 800;
             line-height: 1.25;
-            margin-bottom: 0.875rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
         }
         .guide-card-desc {
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.55);
+            font-size: 0.85rem;
+            color: var(--text-mid);
             line-height: 1.7;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.1rem;
             flex: 1;
         }
         .guide-card-features {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.4rem;
         }
         .guide-card-features li {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
-            padding: 0.3rem 0;
+            font-size: 0.78rem;
+            color: var(--text-mid);
+            padding: 0.28rem 0;
             display: flex;
             align-items: center;
             gap: 0.6rem;
@@ -615,7 +657,7 @@
         .guide-card-features li::before {
             content: '';
             width: 5px; height: 5px;
-            background: var(--gold);
+            background: var(--teal);
             border-radius: 50%;
             flex-shrink: 0;
         }
@@ -623,87 +665,43 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-top: 1.25rem;
-            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 1.1rem;
+            border-top: 1px solid rgba(0,0,0,0.07);
         }
         .guide-price {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.875rem;
             font-weight: 800;
-            color: var(--white);
+            color: var(--navy);
             line-height: 1;
         }
         .guide-price-note {
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.4);
+            font-size: 0.68rem;
+            color: var(--text-light);
             margin-top: 0.2rem;
         }
         .btn-buy {
-            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
-            color: var(--white);
-            padding: 0.7rem 1.4rem;
+            background: var(--navy);
+            color: white;
+            padding: 0.65rem 1.25rem;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-decoration: none;
             transition: all 0.3s;
-            box-shadow: 0 4px 16px rgba(26,122,122,0.3);
             white-space: nowrap;
         }
-        .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,122,122,0.45); }
+        .btn-buy:hover { background: var(--teal); transform: translateY(-1px); }
         .guide-card.featured .btn-buy {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            background: var(--gold);
             color: var(--navy);
-            box-shadow: 0 4px 16px rgba(212,168,67,0.35);
         }
-        .guide-card.featured .btn-buy:hover { box-shadow: 0 8px 24px rgba(212,168,67,0.5); }
+        .guide-card.featured .btn-buy:hover { background: var(--gold-light); }
 
-        /* ── PEPTIDE CATEGORIES VISUAL ── */
-        .categories-section {
-            background: var(--navy);
-            padding: 5rem 2.5rem;
-        }
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-        .cat-pill {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 10px;
-            padding: 1.25rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s;
-            cursor: default;
-        }
-        .cat-pill:hover {
-            background: rgba(212,168,67,0.08);
-            border-color: rgba(212,168,67,0.25);
-        }
-        .cat-pill-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-        .cat-pill-text {}
-        .cat-pill-name {
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-        .cat-pill-count {
-            font-size: 0.75rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        /* ── TRUST SECTION ── */
+        /* ── TRUST — DARK NAVY ── */
         .trust-section {
             background: var(--navy-mid);
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 6rem 2.5rem;
         }
         .trust-grid {
             display: grid;
@@ -711,51 +709,37 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-        .trust-card {
-            text-align: center;
-        }
+        .trust-card { text-align: center; }
         .trust-icon {
-            width: 64px; height: 64px;
-            background: rgba(212,168,67,0.1);
-            border: 1px solid rgba(212,168,67,0.2);
+            width: 60px; height: 60px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.25rem;
-            font-size: 1.6rem;
+            margin: 0 auto 1.1rem;
+            font-size: 1.5rem;
         }
-        .trust-card h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .trust-card p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.7;
-        }
+        .trust-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; color: white; }
+        .trust-card p { font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
 
         /* ── FOOTER ── */
         footer {
-            background: #060E1C;
+            background: var(--navy);
             padding: 3.5rem 2.5rem 2rem;
-            border-top: 1px solid rgba(212,168,67,0.1);
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+        .footer-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
+            font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: 0.08em;
-            color: var(--white);
+            color: white;
             margin-bottom: 1.5rem;
         }
-        .footer-logo span { color: var(--gold); }
+        .footer-logo span { color: var(--teal-light); }
         .footer-links {
             display: flex;
             justify-content: center;
@@ -764,74 +748,63 @@
             margin-bottom: 2rem;
         }
         .footer-links a {
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.45);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             transition: color 0.3s;
         }
-        .footer-links a:hover { color: var(--gold); }
+        .footer-links a:hover { color: var(--teal-light); }
         .footer-disclaimer {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.28);
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.06);
         }
-        .footer-copy {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.2);
-        }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.18); }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
             .hero-content { grid-template-columns: 1fr; }
-            .hero-right { display: none; }
-            .hero h1 { font-size: 3.5rem; }
+            .hero-imgs { display: none; }
+            .hero h1 { font-size: 3.25rem; }
             .statement-inner { grid-template-columns: 1fr; }
-            .statement-img { height: 300px; }
-            .free-inner { grid-template-columns: 1fr; }
+            .statement-img { height: 280px; }
+            .free-inner { grid-template-columns: 1fr; gap: 3rem; }
             .guides-grid { grid-template-columns: repeat(2, 1fr); }
             .inside-grid { grid-template-columns: repeat(2, 1fr); }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .categories-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .header { padding: 1rem 1.5rem; }
+            .header { padding: 1rem 1.25rem; }
             nav { display: none; }
             .hero { padding: 7rem 1.5rem 4rem; }
             .hero h1 { font-size: 2.75rem; }
-            .hero-stats { gap: 1.5rem; }
             .guides-grid { grid-template-columns: 1fr; }
             .inside-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .categories-grid { grid-template-columns: 1fr 1fr; }
-            section { padding: 4rem 1.5rem; }
+            .section-title { font-size: 2.1rem; }
             .statement-text { padding: 3rem 1.5rem; }
             .bundle-banner { padding: 2rem 1.5rem; }
-            .section-title { font-size: 2.25rem; }
+            .guides-header-note { display: none; }
         }
 
-        /* fade in on scroll */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* scroll reveal */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease-out, transform 0.65s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER — white -->
     <header class="header">
         <a href="#" class="logo">
             <div class="logo-mark">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="2.5" fill="white"/>
                     <circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/>
                     <circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/>
@@ -857,24 +830,23 @@
             <a href="#guides">Guides</a>
             <a href="#about">About</a>
             <a href="mailto:hello@peptexa.com">Contact</a>
-            <a href="#free-guide" class="nav-cta">Free Guide</a>
+            <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="nav-cta">Free Guide</a>
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO — dark navy -->
     <section class="hero">
-        <div class="hero-bg"></div>
         <div class="hero-bg-img"></div>
-        <div class="hero-bg-overlay"></div>
-        <div class="hero-grid-pattern"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid"></div>
         <div class="hero-content">
-            <div class="hero-left reveal">
+            <div class="reveal">
                 <div class="hero-eyebrow">
-                    <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#D4A843"/></svg>
+                    <svg width="7" height="7" viewBox="0 0 7 7"><circle cx="3.5" cy="3.5" r="3.5" fill="#E8B84B"/></svg>
                     The Complete Peptide Reference Library
                 </div>
                 <h1>The Science of<br><em>Peptides,</em><br>Simplified.</h1>
-                <p class="hero-sub">202 peptides. 9 specialized guides. Full dosing protocols, stacking strategies, and safety profiles for every goal — fat loss, longevity, performance, beauty, and beyond.</p>
+                <p class="hero-sub">202 peptides. 9 specialized guides. Full dosing protocols, stacking strategies, and safety profiles for every goal.</p>
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <div class="hero-stat-num">202</div>
@@ -891,25 +863,25 @@
                 </div>
                 <div class="hero-ctas">
                     <a href="#guides" class="btn-gold">Browse All Guides →</a>
-                    <a href="#free-guide" class="btn-outline">Get Free Guide</a>
+                    <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="btn-outline-white">Get Free Guide</a>
                 </div>
             </div>
-            <div class="hero-right reveal">
-                <div class="hero-img-card tall">
+            <div class="hero-imgs reveal">
+                <div class="hero-img-main">
                     <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_cover.png" alt="Fat Loss Guide">
-                    <div class="hero-img-card" style="position:absolute;bottom:0;left:0;right:0;height:40%;border-radius:0;"><div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.95),transparent);border-radius:0;"></div><div style="position:absolute;bottom:1rem;left:1rem;font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.9);letter-spacing:0.05em;">FAT LOSS & BODY RECOMP</div></div>
+                    <div class="hero-img-label">Fat Loss & Body Recomp</div>
                 </div>
-                <div class="hero-img-card">
-                    <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g2_cover.png" alt="Anti-Aging Guide">
+                <div class="hero-img-small">
+                    <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g2_cover.png" alt="Anti-Aging">
                 </div>
-                <div class="hero-img-card">
-                    <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g5_cover.png" alt="Skin Hair Beauty">
+                <div class="hero-img-small">
+                    <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g5_cover.png" alt="Skin & Hair">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MARQUEE -->
+    <!-- MARQUEE — gold -->
     <div class="marquee-strip">
         <div class="marquee-inner">
             <span>Fat Loss</span><span>Anti-Aging</span><span>Sexual Health</span><span>Muscle Recovery</span><span>Skin & Hair</span><span>Cognitive Enhancement</span><span>Sleep & Stress</span><span>Gut Health</span><span>Emerging Peptides</span>
@@ -917,13 +889,14 @@
         </div>
     </div>
 
-    <!-- STATEMENT -->
+    <!-- STATEMENT — light cream -->
     <div class="statement-section">
         <div class="statement-inner">
             <div class="statement-img">
                 <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_peptides101.png" alt="Peptides 101">
             </div>
             <div class="statement-text reveal">
+                <div class="statement-kicker">Our Philosophy</div>
                 <div class="statement-divider"></div>
                 <div class="statement-quote">Your body already <em>knows</em> how to heal.<br>Peptides just remind it <em>how.</em></div>
                 <p class="statement-body">Peptides are the body's original messengers — short chains of amino acids that signal, repair, and restore. Peptexa exists to give you the education you need to use them wisely, safely, and effectively.</p>
@@ -931,12 +904,12 @@
         </div>
     </div>
 
-    <!-- WHAT'S INSIDE EVERY GUIDE -->
+    <!-- WHAT'S INSIDE — navy -->
     <section class="inside-section" id="about">
         <div class="container">
             <div class="section-label">What You Get</div>
-            <h2 class="section-title">Every guide is <em>built to execute</em></h2>
-            <p class="section-sub">Not just theory. Every profile gives you exactly what you need to make an informed decision.</p>
+            <h2 class="section-title" style="color:white;">Every guide is <em>built to execute</em></h2>
+            <p class="section-sub" style="color:rgba(255,255,255,0.55);">Not just theory. Every profile gives you exactly what you need to make a confident, informed decision.</p>
             <div class="inside-grid">
                 <div class="inside-card reveal">
                     <div class="inside-card-num">01</div>
@@ -966,52 +939,33 @@
                 <div class="inside-card reveal">
                     <div class="inside-card-num">06</div>
                     <h3>Legal Status</h3>
-                    <p>Current availability, FDA status, and sourcing context — so you know what you're dealing with.</p>
+                    <p>FDA status, availability, and sourcing context for every peptide — no guesswork.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CATEGORIES VISUAL -->
+    <!-- CATEGORIES — soft teal -->
     <section class="categories-section">
         <div class="container">
             <div class="section-label">9 Categories · 202 Peptides</div>
             <h2 class="section-title">Every goal. <em>Covered.</em></h2>
             <div class="categories-grid">
-                <div class="cat-pill reveal"><div class="cat-pill-icon">🔥</div><div class="cat-pill-text"><div class="cat-pill-name">Fat Loss & Body Recomp</div><div class="cat-pill-count">24 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">⏳</div><div class="cat-pill-text"><div class="cat-pill-name">Anti-Aging & Longevity</div><div class="cat-pill-count">30 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">💫</div><div class="cat-pill-text"><div class="cat-pill-name">Sexual Health & Performance</div><div class="cat-pill-count">21 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">💪</div><div class="cat-pill-text"><div class="cat-pill-name">Muscle, Recovery & Performance</div><div class="cat-pill-count">31 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">✨</div><div class="cat-pill-text"><div class="cat-pill-name">Skin, Hair & Beauty</div><div class="cat-pill-count">28 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">🧠</div><div class="cat-pill-text"><div class="cat-pill-name">Cognitive Enhancement & Focus</div><div class="cat-pill-count">23 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">🌙</div><div class="cat-pill-text"><div class="cat-pill-name">Sleep, Stress & Mood</div><div class="cat-pill-count">19 peptides</div></div></div>
-                <div class="cat-pill reveal"><div class="cat-pill-icon">🛡️</div><div class="cat-pill-text"><div class="cat-pill-name">Gut Health & Immunity</div><div class="cat-pill-count">18 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">🔥</div><div><div class="cat-pill-name">Fat Loss & Body Recomp</div><div class="cat-pill-count">24 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">⏳</div><div><div class="cat-pill-name">Anti-Aging & Longevity</div><div class="cat-pill-count">30 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">💫</div><div><div class="cat-pill-name">Sexual Health & Performance</div><div class="cat-pill-count">21 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">💪</div><div><div class="cat-pill-name">Muscle, Recovery & Performance</div><div class="cat-pill-count">31 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">✨</div><div><div class="cat-pill-name">Skin, Hair & Beauty</div><div class="cat-pill-count">28 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">🧠</div><div><div class="cat-pill-name">Cognitive Enhancement & Focus</div><div class="cat-pill-count">23 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">🌙</div><div><div class="cat-pill-name">Sleep, Stress & Mood</div><div class="cat-pill-count">19 peptides</div></div></div>
+                <div class="cat-pill reveal"><div class="cat-pill-icon">🛡️</div><div><div class="cat-pill-name">Gut Health & Immunity</div><div class="cat-pill-count">18 peptides</div></div></div>
             </div>
         </div>
     </section>
 
-    <!-- FREE GUIDE -->
-    <section class="free-section" id="free-guide">
-        <div class="container">
-            <div class="free-inner">
-                <div class="free-img reveal">
-                    <div class="free-img-badge">Free Download</div>
-                    <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g6_cover.png" alt="Free Peptide Guide">
-                </div>
-                <div class="reveal">
-                    <div class="section-label">Free Resource</div>
-                    <h2 class="section-title">Start your<br><em>peptide journey</em></h2>
-                    <p class="section-sub" style="margin-bottom:2rem;">Get our Top 5 Peptides guide free. No credit card, no fluff — just the 5 most powerful peptides for beginners, with dosing and safety notes.</p>
-                    <script async data-uid="6f12260c69" src="https://peptexa.kit.com/6f12260c69/index.js"></script>
-                    <div class="kit-form-note">
-                        <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank">↓ Prefer to download directly?</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PREMIUM GUIDES -->
+
+    <!-- GUIDES — light off-white -->
     <section class="guides-section" id="guides">
         <div class="container">
             <div class="guides-header">
@@ -1019,10 +973,9 @@
                     <div class="section-label">Premium Guides</div>
                     <h2 class="section-title">Choose your <em>category</em></h2>
                 </div>
-                <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;max-width:300px;text-align:right;">Each guide is a complete standalone reference. Buy one, or get all 9.</p>
+                <p class="guides-header-note">Each guide is a complete standalone reference. Buy one, or get all 9 at a discount.</p>
             </div>
 
-            <!-- Bundle -->
             <div class="bundle-banner reveal">
                 <div class="bundle-label">Best Value</div>
                 <h3 class="bundle-title">The Complete Collection — All 9 Guides</h3>
@@ -1033,9 +986,7 @@
                 </div>
             </div>
 
-            <!-- Guide Cards -->
             <div class="guides-grid">
-
                 <div class="guide-card featured reveal">
                     <div class="guide-card-img">
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_cover.png" alt="Fat Loss">
@@ -1046,11 +997,7 @@
                         <div class="guide-card-category">Fat Loss</div>
                         <h3>Fat Loss & Body Recomp</h3>
                         <p class="guide-card-desc">Semaglutide, Tirzepatide, AOD-9604, and 21 more. The complete peptide playbook for burning fat and recomposing your body.</p>
-                        <ul class="guide-card-features">
-                            <li>24 peptide profiles</li>
-                            <li>Top 5 stacking guides</li>
-                            <li>12-week cycle calendar</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>24 peptide profiles</li><li>Top 5 stacking guides</li><li>12-week cycle calendar</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1067,11 +1014,7 @@
                         <div class="guide-card-category">Longevity</div>
                         <h3>Anti-Aging & Longevity</h3>
                         <p class="guide-card-desc">Epithalon, GHK-Cu, MOTS-C, SS-31, and 26 more. Turn back the clock at the cellular level.</p>
-                        <ul class="guide-card-features">
-                            <li>30 peptide profiles</li>
-                            <li>Top 5 longevity stacks</li>
-                            <li>12-week longevity cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>30 peptide profiles</li><li>Top 5 longevity stacks</li><li>12-week longevity cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$37</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1088,11 +1031,7 @@
                         <div class="guide-card-category">Sexual Health</div>
                         <h3>Sexual Health & Performance</h3>
                         <p class="guide-card-desc">PT-141, Kisspeptin, Oxytocin, Melanotan II, and 17 more. Separate protocols for men and women.</p>
-                        <ul class="guide-card-features">
-                            <li>21 peptide profiles</li>
-                            <li>Separate men & women stacks</li>
-                            <li>8-week performance cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>21 peptide profiles</li><li>Separate men & women stacks</li><li>8-week performance cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1102,18 +1041,14 @@
 
                 <div class="guide-card reveal">
                     <div class="guide-card-img">
-                        <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g4_cover.png" alt="Muscle Recovery">
+                        <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g4_cover.png" alt="Muscle">
                         <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
                         <div class="guide-card-category">Performance</div>
                         <h3>Muscle, Recovery & Performance</h3>
                         <p class="guide-card-desc">BPC-157, TB-500, the Wolverine Stack, and 28 more for athletes and serious gym-goers.</p>
-                        <ul class="guide-card-features">
-                            <li>31 peptide profiles</li>
-                            <li>The Wolverine Stack</li>
-                            <li>12-week performance cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>31 peptide profiles</li><li>The Wolverine Stack</li><li>12-week performance cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1123,18 +1058,14 @@
 
                 <div class="guide-card reveal">
                     <div class="guide-card-img">
-                        <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g5_cover.png" alt="Skin Hair Beauty">
+                        <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g5_cover.png" alt="Skin Hair">
                         <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
                         <div class="guide-card-category">Beauty</div>
                         <h3>Skin, Hair & Beauty</h3>
                         <p class="guide-card-desc">GHK-Cu, Argireline, Matrixyl, and 25 more. The peptide beauty bible for glowing skin and thicker hair.</p>
-                        <ul class="guide-card-features">
-                            <li>28 peptide profiles</li>
-                            <li>Anti-wrinkle & hair stacks</li>
-                            <li>12-week skin transformation</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>28 peptide profiles</li><li>Anti-wrinkle & hair stacks</li><li>12-week skin transformation</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$37</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1151,11 +1082,7 @@
                         <div class="guide-card-category">Brain Health</div>
                         <h3>Cognitive Enhancement & Focus</h3>
                         <p class="guide-card-desc">Semax, Selank, Dihexa, Noopept, and 19 more for peak mental performance and neuroprotection.</p>
-                        <ul class="guide-card-features">
-                            <li>23 peptide profiles</li>
-                            <li>Focus & memory stacks</li>
-                            <li>8-week cognitive cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>23 peptide profiles</li><li>Focus & memory stacks</li><li>8-week cognitive cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1172,11 +1099,7 @@
                         <div class="guide-card-category">Wellness</div>
                         <h3>Sleep, Stress & Mood</h3>
                         <p class="guide-card-desc">DSIP, Selank, Oxytocin, Pinealon, and 15 more to restore your nervous system and lift your mood.</p>
-                        <ul class="guide-card-features">
-                            <li>19 peptide profiles</li>
-                            <li>Deep sleep & anxiety stacks</li>
-                            <li>8-week reset cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>19 peptide profiles</li><li>Deep sleep & anxiety stacks</li><li>8-week reset cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1193,11 +1116,7 @@
                         <div class="guide-card-category">Gut & Immune</div>
                         <h3>Gut Health & Immunity</h3>
                         <p class="guide-card-desc">BPC-157, KPV, Larazotide, Thymosin Alpha-1, and 14 more for leaky gut, IBS, and immune repair.</p>
-                        <ul class="guide-card-features">
-                            <li>18 peptide profiles</li>
-                            <li>Leaky gut repair stack</li>
-                            <li>12-week healing cycle</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>18 peptide profiles</li><li>Leaky gut repair stack</li><li>12-week healing cycle</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$27</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
@@ -1214,48 +1133,27 @@
                         <div class="guide-card-category">Advanced</div>
                         <h3>Specialty & Emerging Peptides</h3>
                         <p class="guide-card-desc">FOXO4-DRI, Retatrutide, PNC-27, ACE-031. The frontier peptides reshaping what's possible. Advanced users only.</p>
-                        <ul class="guide-card-features">
-                            <li>8 deep-dive profiles</li>
-                            <li>The Frontier Stack</li>
-                            <li>Clinical trials watch list</li>
-                        </ul>
+                        <ul class="guide-card-features"><li>8 deep-dive profiles</li><li>The Frontier Stack</li><li>Clinical trials watch list</li></ul>
                         <div class="guide-card-footer">
                             <div><div class="guide-price">$47</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- TRUST -->
+    <!-- TRUST — dark -->
     <section class="trust-section">
         <div class="container">
-            <div class="section-label">Why Peptexa</div>
-            <h2 class="section-title">Built to be <em>trusted</em></h2>
+            <div class="section-label" style="color:rgba(255,255,255,0.45);">Why Peptexa</div>
+            <h2 class="section-title" style="color:white;">Built to be <em style="color:var(--teal-light);">trusted</em></h2>
             <div class="trust-grid">
-                <div class="trust-card reveal">
-                    <div class="trust-icon">🔬</div>
-                    <h3>Research-Backed</h3>
-                    <p>Every profile is grounded in peer-reviewed studies and clinical research — not forums or anecdotes.</p>
-                </div>
-                <div class="trust-card reveal">
-                    <div class="trust-icon">📋</div>
-                    <h3>Actionable Protocols</h3>
-                    <p>Exact doses, cycle lengths, and timing. No vague guidance — just what you need to execute.</p>
-                </div>
-                <div class="trust-card reveal">
-                    <div class="trust-icon">🛡️</div>
-                    <h3>Safety First</h3>
-                    <p>Every peptide includes full side effects, contraindications, and who should avoid it.</p>
-                </div>
-                <div class="trust-card reveal">
-                    <div class="trust-icon">⚡</div>
-                    <h3>Instant Access</h3>
-                    <p>Download immediately after purchase. Yours forever — no subscriptions, no recurring fees.</p>
-                </div>
+                <div class="trust-card reveal"><div class="trust-icon">🔬</div><h3>Research-Backed</h3><p>Every profile grounded in peer-reviewed studies — not forums or anecdotes.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">📋</div><h3>Actionable Protocols</h3><p>Exact doses, cycle lengths, and timing. No vague guidance — just execute.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">🛡️</div><h3>Safety First</h3><p>Full side effects, contraindications, and warnings for every peptide.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">⚡</div><h3>Instant Access</h3><p>Download immediately. Yours forever — no subscriptions, no recurring fees.</p></div>
             </div>
         </div>
     </section>
@@ -1270,26 +1168,16 @@
                 <a href="mailto:hello@peptexa.com">Contact</a>
                 <a href="/disclaimer.html">Disclaimer</a>
             </div>
-            <p class="footer-disclaimer">
-                <strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider before starting any peptide regimen. Peptexa does not sell peptides — we sell education only.
-            </p>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider before starting any peptide regimen. Peptexa does not sell peptides — we sell education only.</p>
             <p class="footer-copy">© 2026 Peptexa. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('visible');
-                    observer.unobserve(e.target);
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 const t = document.querySelector(a.getAttribute('href'));
