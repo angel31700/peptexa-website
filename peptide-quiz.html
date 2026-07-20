@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Peptide Guide Is Right for You? | Peptexa Quiz</title>
+    <meta name="description" content="Not sure where to start with peptides? Take this free 5-question quiz to find your ideal Peptexa reference guide — matched to your health goals.">
+    <meta name="keywords" content="which peptide is right for me, best peptide for weight loss, best peptide for anti-aging, peptide guide for beginners, what peptide should I take, peptide comparison">
+    <meta property="og:title" content="Which Peptide Guide Is Right for You? | Peptexa">
+    <meta property="og:description" content="5 questions. Instant match. Find the peptide category guide built for your exact health goals.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://peptexa.com/peptide-quiz">
+    <link rel="canonical" href="https://peptexa.com/peptide-quiz">
+
+    <!-- JSON-LD Structured Data for Google + AI crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Quiz",
+      "name": "Which Peptide Guide Is Right for You?",
+      "description": "A free 5-question quiz that matches your personal health goals to the right Peptexa peptide reference guide. Covers weight loss, anti-aging, muscle recovery, cognitive enhancement, sleep, gut health, sexual function, skin and hair, hormonal health, and specialty peptides.",
+      "url": "https://peptexa.com/peptide-quiz",
+      "provider": {
+        "@type": "Organization",
+        "name": "Peptexa",
+        "url": "https://peptexa.com"
+      },
+      "educationalLevel": "beginner",
+      "about": [
+        {"@type": "Thing", "name": "peptide therapy"},
+        {"@type": "Thing", "name": "biohacking"},
+        {"@type": "Thing", "name": "health optimization"},
+        {"@type": "Thing", "name": "peptide education"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which peptide is right for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The right peptide depends on your health goal. For fat loss and metabolism, peptides like Semaglutide and AOD-9604 are commonly studied. For muscle recovery and healing, BPC-157 and TB-500 have strong research support. For anti-aging and longevity, GHK-Cu and Epithalon are well-documented. Peptexa's free quiz matches you to the right reference guide based on your personal goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best peptide for weight loss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GLP-1 peptides like Semaglutide and Tirzepatide have the strongest clinical evidence for weight loss and metabolic health. AOD-9604 and CJC-1295 are also studied for fat metabolism. Peptexa's Weight Loss and Metabolism guide profiles all major compounds in this category with research summaries and FDA status."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best peptide for anti-aging?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GHK-Cu (copper peptide) is one of the most researched peptides for cellular aging and skin regeneration. Epithalon, a bioregulator peptide, has been studied for telomere extension and longevity. Peptexa's Anti-Aging and Longevity guide covers 20+ compounds with detailed research profiles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I learn about peptides without medical jargon?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peptexa publishes professional reference guides that explain peptide research in plain language — what each compound is, how it works in the body, what the studies show, and its FDA status. No dosing advice, no medical claims. Pure education."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy2: #0f2040;
+            --teal: #00d2c8;
+            --teal2: #00a89f;
+            --gold: #c8a84b;
+            --white: #f5f7fa;
+            --muted: rgba(255,255,255,0.55);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            background: rgba(10,22,40,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+        }
+        .nav-back {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-family: sans-serif;
+            transition: color 0.2s;
+        }
+        .nav-back:hover { color: var(--teal); }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .hero-kicker {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 1.2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--white);
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero-sub {
+            font-family: sans-serif;
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 560px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+        }
+        .hero-meta {
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+            margin-bottom: 3rem;
+        }
+
+        /* ── SEO TEXT SECTION ── */
+        .seo-section {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+        .seo-section h2 {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+        .seo-section p {
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .seo-section .guide-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .guide-pill {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(0,210,200,0.2);
+            color: rgba(255,255,255,0.65);
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── QUIZ CONTAINER ── */
+        .quiz-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1.5rem 5rem;
+        }
+
+        .quiz-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .quiz-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--teal), var(--gold));
+        }
+
+        /* Progress bar */
+        .progress-wrap {
+            margin-bottom: 2rem;
+        }
+        .progress-label {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .progress-bar {
+            height: 3px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--teal), var(--gold));
+            border-radius: 99px;
+            transition: width 0.4s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        /* Question */
+        .q-number {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.6rem;
+        }
+        .q-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            line-height: 1.35;
+        }
+        .q-sub {
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 1.8rem;
+        }
+
+        /* Options */
+        .options {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .option {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: sans-serif;
+        }
+        .option:hover {
+            background: rgba(0,210,200,0.07);
+            border-color: rgba(0,210,200,0.35);
+        }
+        .option.selected {
+            background: rgba(0,210,200,0.1);
+            border-color: var(--teal);
+        }
+        .option-letter {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--muted);
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .option.selected .option-letter {
+            background: var(--teal);
+            border-color: var(--teal);
+            color: var(--navy);
+        }
+        .option-text {
+            font-size: 0.95rem;
+            color: var(--white);
+            line-height: 1.4;
+        }
+        .option-sub {
+            font-size: 0.78rem;
+            color: var(--muted);
+            display: block;
+            margin-top: 0.15rem;
+        }
+
+        /* Nav buttons */
+        .quiz-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        .btn-back {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--muted);
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .btn-back:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+        .btn-next {
+            background: var(--teal);
+            border: none;
+            color: var(--navy);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            letter-spacing: 0.05em;
+        }
+        .btn-next:hover { background: #00b8af; transform: translateY(-1px); }
+        .btn-next:disabled { opacity: 0.35; cursor: default; transform: none; }
+
+        /* Email gate */
+        .email-gate {
+            text-align: center;
+        }
+        .email-gate h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+            color: var(--white);
+        }
+        .email-gate p {
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+        }
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .email-form input {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            color: var(--white);
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            width: 100%;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .email-form input:focus { border-color: var(--teal); }
+        .email-form input::placeholder { color: rgba(255,255,255,0.3); }
+        .btn-reveal {
+            background: linear-gradient(135deg, var(--teal), var(--teal2));
+            border: none;
+            color: var(--navy);
+            padding: 0.9rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            letter-spacing: 0.04em;
+        }
+        .btn-reveal:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,210,200,0.25); }
+        .email-fine-print {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.25);
+            margin-top: 0.5rem;
+        }
+
+        /* Result */
+        .result-section { text-align: center; }
+        .result-badge {
+            display: inline-block;
+            background: rgba(0,210,200,0.1);
+            border: 1px solid rgba(0,210,200,0.3);
+            color: var(--teal);
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+        }
+        .result-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            line-height: 1.25;
+        }
+        .result-subtitle {
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .result-img {
+            width: 200px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(0,210,200,0.2);
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        .result-desc {
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .result-covers {
+            margin-bottom: 1.8rem;
+            text-align: left;
+        }
+        .result-covers h4 {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 0.8rem;
+        }
+        .covers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .covers-list li {
+            font-family: sans-serif;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .covers-list li::before {
+            content: '✦';
+            color: var(--teal);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+        .result-price {
+            font-family: sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+        .result-price span {
+            font-size: 1rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+        .btn-buy {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            font-family: sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: all 0.2s;
+            margin-bottom: 0.8rem;
+        }
+        .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(200,168,75,0.3); }
+        .btn-retake {
+            display: block;
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-family: sans-serif;
+            font-size: 0.82rem;
+            cursor: pointer;
+            text-decoration: underline;
+            margin: 0.5rem auto 0;
+            transition: color 0.2s;
+        }
+        .btn-retake:hover { color: var(--white); }
+
+        /* Also consider */
+        .also-consider {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            text-align: left;
+        }
+        .also-consider h4 {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.8rem;
+        }
+        .also-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .also-pill {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.55);
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .also-pill:hover {
+            background: rgba(0,210,200,0.07);
+            border-color: rgba(0,210,200,0.3);
+            color: var(--teal);
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 760px;
+            margin: 4rem auto 0;
+            padding: 0 2rem 5rem;
+        }
+        .faq-section h2 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 1.2rem 0;
+        }
+        .faq-q {
+            font-family: sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .faq-a {
+            font-family: sans-serif;
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .faq-a a { color: var(--teal); text-decoration: none; }
+
+        /* Disclaimer */
+        .disclaimer {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.2);
+            line-height: 1.6;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 2rem;
+        }
+
+        /* Animations */
+        .fade-in { animation: fadeIn 0.4s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 600px) {
+            .quiz-card { padding: 1.5rem; }
+            .hero { padding: 3rem 1.5rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="/" class="nav-logo">PEPTEXA</a>
+    <a href="/" class="nav-back">← Back to peptexa.com</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-kicker">Free Quiz</div>
+    <h1>Which Peptide Guide Is <span>Right for You?</span></h1>
+    <p class="hero-sub">Not sure where to start with peptides? Answer 5 questions and we'll match you to the reference guide built for your exact health goals.</p>
+    <p class="hero-meta">Takes less than 2 minutes &nbsp;·&nbsp; No sign-up required to start &nbsp;·&nbsp; 202 peptides across 11 categories</p>
+</section>
+
+<!-- SEO TEXT -->
+<section class="seo-section">
+    <h2>Find your peptide starting point</h2>
+    <p>Peptides are short chains of amino acids that act as biological messengers — signaling the body to repair, regulate, and restore. With over 200 compounds now studied for therapeutic applications, knowing where to start can feel overwhelming. This quiz cuts through the noise.</p>
+    <p>Whether you're researching peptides for fat loss and metabolic health, muscle recovery and healing, cognitive performance, anti-aging and longevity, hormonal balance, sleep, gut health, or skin and hair — Peptexa has a professionally researched reference guide built for that exact category. Each guide profiles every major compound with plain-language explanations, mechanism of action, research summaries, and FDA status.</p>
+    <p>Peptexa covers all major peptide categories:</p>
+    <div class="guide-list">
+        <span class="guide-pill">Weight Loss & Metabolism</span>
+        <span class="guide-pill">Muscle Recovery & Healing</span>
+        <span class="guide-pill">Anti-Aging & Longevity</span>
+        <span class="guide-pill">Cognitive Enhancement</span>
+        <span class="guide-pill">Sleep & Stress Management</span>
+        <span class="guide-pill">Gut Health & Immune</span>
+        <span class="guide-pill">Sexual Function & Libido</span>
+        <span class="guide-pill">Skin, Hair & Aesthetics</span>
+        <span class="guide-pill">Hormonal Health & Optimization</span>
+        <span class="guide-pill">Specialty & Emerging</span>
+    </div>
+    <p>Take the quiz below to find your match. Results include your recommended guide plus a free copy of <em>The Top 5 Peptides</em> — Peptexa's most popular free resource.</p>
+</section>
+
+<!-- QUIZ -->
+<div class="quiz-wrap">
+    <div class="quiz-card" id="quiz-card">
+        <!-- Injected by JS -->
+    </div>
+</div>
+
+<!-- FAQ (SEO) -->
+<section class="faq-section">
+    <h2>Common questions about peptides</h2>
+
+    <div class="faq-item">
+        <div class="faq-q">Which peptide is right for me?</div>
+        <div class="faq-a">The right peptide depends entirely on your health goal. For fat loss, GLP-1 peptides like Semaglutide and AOD-9604 have strong research backing. For recovery, BPC-157 and TB-500 are among the most studied. For anti-aging, GHK-Cu and Epithalon have substantial peer-reviewed literature. Take the quiz above to get a personalized recommendation based on your specific goals.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">What is the best peptide for weight loss?</div>
+        <div class="faq-a">GLP-1 receptor agonist peptides — including Semaglutide, Tirzepatide, and Retatrutide — have the strongest clinical evidence for weight loss and metabolic regulation. AOD-9604 and CJC-1295 are also studied for fat metabolism. Peptexa's <a href="https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa">Weight Loss and Metabolism guide</a> profiles all major compounds with research summaries and FDA status. This is educational content only — not medical advice.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">What is the best peptide for muscle recovery?</div>
+        <div class="faq-a">BPC-157 (Body Protection Compound) and TB-500 (Thymosin Beta-4) are the most extensively studied peptides for tissue repair and muscle recovery. Both have significant preclinical research on healing and regeneration. Peptexa's Muscle Recovery and Healing guide covers these and more with clear mechanism explanations and current research status.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">What is the best peptide for anti-aging?</div>
+        <div class="faq-a">GHK-Cu (copper peptide) is one of the most researched naturally occurring peptides for cellular aging, with studies on collagen synthesis, tissue repair, and gene expression. Epithalon, a bioregulator peptide developed from Russian longevity research, has been studied for telomere extension. Peptexa's Anti-Aging and Longevity guide profiles 20+ compounds with plain-language research summaries.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Are peptides safe?</div>
+        <div class="faq-a">Peptexa is an educational resource only and does not provide medical advice, dosing guidance, or sourcing recommendations. The safety profile of any peptide depends on the compound, the individual, and the context of use. Always consult a qualified healthcare provider before using any peptide or therapeutic compound. All content on Peptexa is for informational purposes only.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">What does Peptexa include in each guide?</div>
+        <div class="faq-a">Each Peptexa guide profiles all major peptides in its category with: what the compound is, how it works in the body (mechanism of action), what peer-reviewed research shows, known side effects and contraindications, and FDA approval status. All content is written in plain language — no PhD required. No dosing advice or sourcing information is included.</div>
+    </div>
+</section>
+
+<div class="disclaimer">
+    <strong>Educational Disclaimer:</strong> Peptexa is an educational reference resource only. All content — including quiz results, guide descriptions, and FAQ answers — is provided for informational purposes and does not constitute medical advice, diagnosis, or treatment recommendations. No dosing guidance or sourcing information is provided. Always consult a qualified healthcare provider before using any peptide, supplement, or therapeutic compound. These statements have not been evaluated by the Food and Drug Administration.
+</div>
+
+<script>
+// ═══════════════════════════════════════════
+// QUIZ DATA
+// ═══════════════════════════════════════════
+const QUESTIONS = [
+    {
+        q: "What's your primary health goal right now?",
+        sub: "Choose the one that resonates most — you can explore others later.",
+        options: [
+            { text: "Lose fat, improve metabolism, or manage weight", sub: "Including GLP-1 peptides, semaglutide, metabolic health", tags: ["weight"] },
+            { text: "Build muscle, recover faster, or heal an injury", sub: "Recovery, tissue repair, performance", tags: ["muscle"] },
+            { text: "Slow aging, increase longevity, or feel younger", sub: "Anti-aging, cellular health, lifespan optimization", tags: ["antiaging"] },
+            { text: "Sharpen focus, memory, or mental performance", sub: "Nootropics, cognitive enhancement, neuroprotection", tags: ["cognitive"] },
+            { text: "Sleep better, reduce stress, or balance mood", sub: "Sleep quality, cortisol, HPA axis regulation", tags: ["sleep"] },
+        ]
+    },
+    {
+        q: "What best describes where you are in your health journey?",
+        sub: "Be honest — there are no wrong answers.",
+        options: [
+            { text: "Just starting to research peptides for the first time", sub: "Curious but new to this space", tags: ["weight", "muscle", "antiaging", "cognitive", "sleep", "gut", "sexual", "skin", "hormonal", "specialty"] },
+            { text: "I've done some reading and want to go deeper", sub: "Familiar with the basics, ready for detail", tags: ["muscle", "antiaging", "cognitive", "specialty"] },
+            { text: "I've used peptides before and want a better reference", sub: "Experienced, looking for a comprehensive resource", tags: ["specialty", "hormonal", "muscle", "antiaging"] },
+            { text: "I'm a practitioner or researcher", sub: "Healthcare professional, researcher, or educator", tags: ["specialty", "hormonal", "cognitive"] },
+        ]
+    },
+    {
+        q: "Which area of your body or health concerns you most?",
+        sub: "Pick the one you think about most often.",
+        options: [
+            { text: "My gut — digestion, bloating, immune function", sub: "GI health, microbiome, inflammation", tags: ["gut"] },
+            { text: "My skin, hair, or physical appearance", sub: "Collagen, skin aging, hair loss, aesthetics", tags: ["skin"] },
+            { text: "My hormones — energy, libido, or vitality", sub: "Testosterone, estrogen, growth hormone, thyroid", tags: ["hormonal", "sexual"] },
+            { text: "My performance — strength, endurance, recovery", sub: "Athletic performance, body composition", tags: ["muscle"] },
+            { text: "My overall longevity and long-term health", sub: "Aging well, cellular health, organ function", tags: ["antiaging", "specialty"] },
+        ]
+    },
+    {
+        q: "How do you prefer to learn about complex health topics?",
+        sub: "This helps us point you to the right depth of content.",
+        options: [
+            { text: "Plain language — just tell me what it does and if it works", sub: "Clear, accessible, no jargon", tags: ["weight", "sleep", "gut", "skin"] },
+            { text: "I want the science — mechanisms, studies, data", sub: "Research-backed, detailed, comprehensive", tags: ["muscle", "antiaging", "cognitive", "hormonal", "specialty"] },
+            { text: "Both — start simple, go deep when I'm ready", sub: "Layered approach, accessible then detailed", tags: ["weight", "muscle", "antiaging", "cognitive"] },
+        ]
+    },
+    {
+        q: "Which of these sounds most like you?",
+        sub: "The most honest answer gives the best match.",
+        options: [
+            { text: "I want to understand what semaglutide and GLP-1 peptides actually do", sub: "You've heard the buzz — now you want the real science", tags: ["weight"] },
+            { text: "I want to know which peptides elite athletes and biohackers actually use", sub: "Performance, recovery, edge", tags: ["muscle", "specialty"] },
+            { text: "I want to understand the science behind aging and what can actually slow it", sub: "Longevity, cellular health, anti-aging protocols", tags: ["antiaging"] },
+            { text: "I want to learn about peptides for hormones, libido, or sexual health", sub: "Often overlooked, heavily researched", tags: ["sexual", "hormonal"] },
+            { text: "I want to start with a broad overview before going deep", sub: "Get the big picture first", tags: ["weight", "cognitive", "sleep"] },
+        ]
+    }
+];
+
+const GUIDES = {
+    weight: {
+        title: "Weight Loss & Metabolism",
+        subtitle: "Peptexa Category Guide",
+        desc: "The most in-demand category in peptide research right now. This guide profiles every major peptide studied for fat loss, metabolic regulation, and body composition — including the GLP-1 compounds that have changed the conversation around weight management permanently. Written in plain language with FDA status clearly marked on every compound.",
+        covers: [
+            "GLP-1 peptides: Semaglutide, Tirzepatide, Retatrutide",
+            "AOD-9604 — the fat-loss fragment",
+            "CJC-1295 and growth hormone secretagogues",
+            "Melanotan and melanocortin peptides",
+            "20+ compounds total with full research profiles"
+        ],
+        img: "images/peptexa_g1_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["muscle", "hormonal", "sleep"]
+    },
+    muscle: {
+        title: "Muscle Recovery & Healing",
+        subtitle: "Peptexa Category Guide",
+        desc: "BPC-157. TB-500. The peptides that serious athletes and biohackers have been using for years — now profiled with clear science and research summaries. This guide covers every major compound studied for tissue repair, muscle healing, injury recovery, and athletic performance enhancement.",
+        covers: [
+            "BPC-157 — mechanism, research, FDA status",
+            "TB-500 (Thymosin Beta-4) — tissue repair evidence",
+            "GHRPs and growth hormone peptides",
+            "IGF-1 and muscle signaling peptides",
+            "20+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g4_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["antiaging", "specialty", "weight"]
+    },
+    antiaging: {
+        title: "Anti-Aging & Longevity",
+        subtitle: "Peptexa Category Guide",
+        desc: "From telomere research to cellular senescence, this guide profiles the peptides with the strongest evidence base for slowing biological aging. GHK-Cu, Epithalon, Thymalin, and more — explained clearly with mechanism of action, research summaries, and current regulatory status.",
+        covers: [
+            "GHK-Cu — collagen, gene expression, aging research",
+            "Epithalon — telomere extension studies",
+            "Thymalin and thymic peptides",
+            "Bioregulator peptides from Russian longevity research",
+            "20+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g2_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["cognitive", "skin", "specialty"]
+    },
+    cognitive: {
+        title: "Cognitive Enhancement",
+        subtitle: "Peptexa Category Guide",
+        desc: "The neuroscience of peptides — explained clearly. This guide profiles every major compound studied for cognitive function, memory, focus, neuroprotection, and brain health. From nootropic peptides to nerve growth factors, the research is here in plain language.",
+        covers: [
+            "Semax and Selank — Russian nootropic peptides",
+            "Dihexa — memory and neurogenesis research",
+            "BPC-157 and neuroprotection evidence",
+            "NGF peptides and brain health compounds",
+            "20+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g6_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["sleep", "antiaging", "specialty"]
+    },
+    sleep: {
+        title: "Sleep & Stress Management",
+        subtitle: "Peptexa Category Guide",
+        desc: "Cortisol, circadian rhythm, HPA axis dysregulation — peptides studied for sleep, stress, and nervous system regulation are among the most impactful and least understood. This guide profiles the research clearly, including delta sleep-inducing peptide, Selank, and more.",
+        covers: [
+            "DSIP (Delta Sleep-Inducing Peptide) — mechanism and research",
+            "Selank — anxiolytic and adaptogenic evidence",
+            "Epithalon and circadian rhythm studies",
+            "Cortistatin and stress peptides",
+            "15+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g7_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["cognitive", "gut", "hormonal"]
+    },
+    gut: {
+        title: "Gut Health & Immune",
+        subtitle: "Peptexa Category Guide",
+        desc: "The gut-peptide connection is one of the most researched and least talked about areas of peptide science. This guide profiles every major compound studied for gut lining integrity, microbiome support, immune regulation, and GI function — including BPC-157's GI applications.",
+        covers: [
+            "BPC-157 — gut healing and GI research",
+            "Larazotide — intestinal permeability studies",
+            "Thymosin Alpha-1 — immune modulation",
+            "LL-37 and antimicrobial peptides",
+            "15+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g8_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["weight", "sleep", "skin"]
+    },
+    sexual: {
+        title: "Sexual Function & Libido",
+        subtitle: "Peptexa Category Guide",
+        desc: "One of the most researched and least openly discussed areas of peptide science. This guide profiles every major compound studied for sexual function, libido, arousal, and reproductive health — in both men and women — with peer-reviewed research summaries and clear FDA status.",
+        covers: [
+            "PT-141 (Bremelanotide) — mechanism and approval status",
+            "Kisspeptin — reproductive axis research",
+            "Oxytocin and bonding peptides",
+            "PDE5-related peptide research",
+            "15+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g3_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["hormonal", "sleep", "weight"]
+    },
+    skin: {
+        title: "Skin, Hair & Aesthetics",
+        subtitle: "Peptexa Category Guide",
+        desc: "The crossover between peptide science and aesthetics is enormous — and this guide covers all of it. From the gold-standard collagen peptides to emerging hair loss compounds, every major compound studied for skin, hair, and connective tissue is profiled with research clarity.",
+        covers: [
+            "GHK-Cu — the copper peptide and skin research",
+            "Matrixyl (Palmitoyl Pentapeptide) — collagen stimulation",
+            "PTD-DBM — hair follicle regeneration studies",
+            "Snap-8 and wrinkle-reduction peptides",
+            "20+ compounds with full research profiles"
+        ],
+        img: "images/peptexa_g5_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["antiaging", "gut", "hormonal"]
+    },
+    hormonal: {
+        title: "Hormonal Health & Optimization",
+        subtitle: "Peptexa Category Guide",
+        desc: "Hormones and peptides are deeply intertwined. Growth hormone secretagogues, thyroid peptides, adrenal compounds — this guide profiles every major peptide studied for hormonal regulation, endocrine health, and vitality in both men and women.",
+        covers: [
+            "CJC-1295, Ipamorelin — growth hormone secretagogues",
+            "PT-141 and melanocortin axis",
+            "Thyroid and adrenal peptides",
+            "GHRP-2, GHRP-6 — comparison and research",
+            "20+ compounds with full research profiles"
+        ],
+        img: "images/g10_hormonal.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["sexual", "antiaging", "muscle"]
+    },
+    specialty: {
+        title: "Specialty & Emerging",
+        subtitle: "Peptexa Category Guide",
+        desc: "The frontier of peptide research. This guide covers the compounds that don't fit neatly into one category — experimental peptides, frontier bioregulators, compounds with active clinical trials, and emerging research that serious biohackers and researchers are watching closely.",
+        covers: [
+            "KPV — anti-inflammatory and emerging applications",
+            "5-Amino-1MQ — NAD+ pathway research",
+            "Cerebrolysin and neurotrophic peptides",
+            "Russian bioregulator peptides overview",
+            "15+ compounds with current clinical trial status"
+        ],
+        img: "images/peptexa_g9_cover.png",
+        price: "$19.99",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
+        also: ["antiaging", "cognitive", "hormonal"]
+    }
+};
+
+const GUIDE_NAMES = {
+    weight: "Weight Loss & Metabolism",
+    muscle: "Muscle Recovery & Healing",
+    antiaging: "Anti-Aging & Longevity",
+    cognitive: "Cognitive Enhancement",
+    sleep: "Sleep & Stress Management",
+    gut: "Gut Health & Immune",
+    sexual: "Sexual Function & Libido",
+    skin: "Skin, Hair & Aesthetics",
+    hormonal: "Hormonal Health & Optimization",
+    specialty: "Specialty & Emerging"
+};
+
+// ═══════════════════════════════════════════
+// QUIZ STATE
+// ═══════════════════════════════════════════
+let currentQ = 0;
+let answers = [];
+let scores = {};
+
+function resetScores() {
+    scores = {};
+    Object.keys(GUIDES).forEach(k => scores[k] = 0);
+}
+
+function computeResult() {
+    resetScores();
+    answers.forEach(tags => {
+        tags.forEach(tag => {
+            if (scores[tag] !== undefined) scores[tag] += 1;
+        });
+    });
+    return Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+}
+
+// ═══════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════
+function render() {
+    const card = document.getElementById('quiz-card');
+
+    if (currentQ < QUESTIONS.length) {
+        renderQuestion(card);
+    } else if (currentQ === QUESTIONS.length) {
+        renderEmailGate(card);
+    } else {
+        renderResult(card);
+    }
+}
+
+function renderQuestion(card) {
+    const q = QUESTIONS[currentQ];
+    const pct = Math.round((currentQ / QUESTIONS.length) * 100);
+    const selected = answers[currentQ];
+
+    card.innerHTML = `
+        <div class="progress-wrap">
+            <div class="progress-label">
+                <span>Question ${currentQ + 1} of ${QUESTIONS.length}</span>
+                <span>${pct}% complete</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        </div>
+        <div class="q-number">Question ${currentQ + 1}</div>
+        <div class="q-text">${q.q}</div>
+        <div class="q-sub">${q.sub}</div>
+        <div class="options">
+            ${q.options.map((opt, i) => `
+                <button class="option ${selected !== undefined && answers[currentQ] === i ? 'selected' : ''}" onclick="selectOption(${i})">
+                    <div class="option-letter">${String.fromCharCode(65+i)}</div>
+                    <div>
+                        <div class="option-text">${opt.text}</div>
+                        ${opt.sub ? `<span class="option-sub">${opt.sub}</span>` : ''}
+                    </div>
+                </button>
+            `).join('')}
+        </div>
+        <div class="quiz-nav">
+            ${currentQ > 0 
+                ? `<button class="btn-back" onclick="goBack()">← Back</button>` 
+                : `<div></div>`}
+            <button class="btn-next" id="btn-next" onclick="goNext()" ${answers[currentQ] === undefined ? 'disabled' : ''}>
+                ${currentQ < QUESTIONS.length - 1 ? 'Next →' : 'See My Result →'}
+            </button>
+        </div>
+    `;
+    card.classList.add('fade-in');
+}
+
+function selectOption(idx) {
+    answers[currentQ] = idx;
+    render();
+}
+
+function goNext() {
+    if (answers[currentQ] === undefined) return;
+    currentQ++;
+    render();
+}
+
+function goBack() {
+    if (currentQ > 0) { currentQ--; render(); }
+}
+
+function renderEmailGate(card) {
+    card.innerHTML = `
+        <div class="email-gate fade-in">
+            <div class="q-number">Almost there</div>
+            <h3>Your result is ready.</h3>
+            <p>Enter your email to see which Peptexa guide is matched to your goals — plus we'll send you <strong>The Top 5 Peptides</strong>, our most popular free resource.</p>
+            <div class="email-form">
+                <input type="text" id="fname-input" placeholder="First name" autocomplete="given-name">
+                <input type="email" id="email-input" placeholder="Your email address" autocomplete="email">
+                <button class="btn-reveal" onclick="submitEmail()">Show My Result →</button>
+                <div class="email-fine-print">No spam. Unsubscribe anytime. Your email is used only to send your result and the free guide.</div>
+            </div>
+        </div>
+    `;
+}
+
+function submitEmail() {
+    const email = document.getElementById('email-input').value.trim();
+    const fname = document.getElementById('fname-input').value.trim();
+    if (!email || !email.includes('@')) {
+        document.getElementById('email-input').style.borderColor = 'rgba(255,80,80,0.6)';
+        return;
+    }
+    // Store locally (in production: POST to your email platform)
+    console.log('Quiz lead:', { fname, email, answers, result: computeResult() });
+    // You can add a fetch() here to send to Kit/Beehiiv API
+    currentQ++;
+    render();
+}
+
+function renderResult(card) {
+    const key = computeResult();
+    const g = GUIDES[key];
+    const alsoNames = (g.also || []).slice(0, 3).map(k => ({ key: k, name: GUIDE_NAMES[k] }));
+
+    card.innerHTML = `
+        <div class="result-section fade-in">
+            <div class="result-badge">Your Match</div>
+            <div class="result-title">${g.title}</div>
+            <div class="result-subtitle">${g.subtitle}</div>
+            <img class="result-img" src="${g.img}" alt="${g.title} — Peptexa Guide">
+            <div class="result-desc">${g.desc}</div>
+            <div class="result-covers">
+                <h4>What this guide covers</h4>
+                <ul class="covers-list">
+                    ${g.covers.map(c => `<li>${c}</li>`).join('')}
+                </ul>
+            </div>
+            <div class="result-price">${g.price} <span>one-time · instant download · no subscription</span></div>
+            <br>
+            <a href="${g.url}" class="btn-buy" target="_blank" rel="noopener">Get the ${g.title} Guide →</a>
+            <button class="btn-retake" onclick="retake()">Retake the quiz</button>
+
+            <div class="also-consider">
+                <h4>You might also consider</h4>
+                <div class="also-pills">
+                    ${alsoNames.map(a => `<a href="/" class="also-pill">${a.name}</a>`).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function retake() {
+    currentQ = 0;
+    answers = [];
+    resetScores();
+    render();
+}
+
+// Init
+resetScores();
+render();
+</script>
+
+</body>
+</html>
