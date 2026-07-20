@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The world's most complete peptide education library. 202 peptides. 11 specialized guides. FDA status clearly marked. Education only — no dosing, no protocols.">
-    <title>Peptexa — The Complete Peptide Reference</title>
+    <meta name="description" content="The world's most complete peptide education library. 202 peptides. 11 specialized guides. FDA status clearly marked. Education only. No dosing, no protocols.">
+    <title>Peptexa: The Complete Peptide Reference</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -93,7 +93,7 @@
         }
         .nav-cta:hover { background: var(--teal) !important; transform: translateY(-1px); }
 
-        /* ── HERO — DARK ── */
+        /* ── HERO. DARK ── */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -130,24 +130,16 @@
         }
         .hero-content { z-index: 2; position: relative; }
 
-        /* ── TILT CARDS ── */
+        /* ── GUIDE CARD GLOW + LIFT ── */
         .guide-card {
-            transform-style: preserve-3d;
-            transition: box-shadow 0.3s, transform 0.1s;
+            transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s, border-color 0.25s;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
-        .guide-card .tilt-shimmer {
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            pointer-events: none;
-            z-index: 1;
-            background: radial-gradient(circle at 50% 50%, rgba(0,210,200,0) 0%, transparent 70%);
-            transition: background 0.05s;
+        .guide-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.45), 0 0 0 1px rgba(0,210,200,0.35), 0 0 28px rgba(0,210,200,0.12);
+            border-color: rgba(0,210,200,0.3) !important;
         }
-        .guide-card > * { position: relative; z-index: 2; }
 
         /* ── CURSOR TRAIL ── */
         #cursor-trail-canvas {
@@ -312,29 +304,51 @@
             color: rgba(255,255,255,0.85);
         }
 
-        /* ── MARQUEE — GOLD ── */
-        .marquee-strip {
-            background: var(--gold);
-            padding: 0.8rem 0;
-            overflow: hidden;
+        /* ── CATEGORY PILLS STRIP ── */
+        .pills-strip {
+            background: rgba(10,22,40,0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            padding: 1.1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            justify-content: center;
+            align-items: center;
+        }
+        .pill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(0,210,200,0.22);
+            color: rgba(255,255,255,0.75);
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
             white-space: nowrap;
         }
-        .marquee-inner {
-            display: inline-block;
-            animation: marquee 35s linear infinite;
+        .pill-tag:hover {
+            background: rgba(0,210,200,0.12);
+            border-color: rgba(0,210,200,0.5);
+            color: rgba(255,255,255,0.95);
         }
-        .marquee-inner span {
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0 2rem;
+        .pill-tag .pill-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: rgba(0,210,200,0.7);
+            flex-shrink: 0;
         }
-        .marquee-inner span::before { content: '✦'; margin-right: 2rem; opacity: 0.4; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* ── STATEMENT — LIGHT CREAM ── */
+        /* ── STATEMENT. LIGHT CREAM ── */
         .statement-section {
             background: var(--cream);
             padding: 0;
@@ -391,7 +405,7 @@
             max-width: 440px;
         }
 
-        /* ── WHAT'S INSIDE — NAVY ── */
+        /* ── WHAT'S INSIDE. NAVY ── */
         .inside-section {
             background: var(--navy);
             padding: 6rem 2.5rem;
@@ -463,7 +477,7 @@
         .inside-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: white; }
         .inside-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
-        /* ── CATEGORIES — SOFT TEAL TINT ── */
+        /* ── CATEGORIES. SOFT TEAL TINT ── */
         .categories-section {
             background: var(--teal-pale);
             padding: 6rem 2.5rem;
@@ -496,7 +510,7 @@
         .cat-pill-name { font-weight: 700; font-size: 0.875rem; color: var(--navy); margin-bottom: 0.2rem; }
         .cat-pill-count { font-size: 0.72rem; color: var(--teal); font-weight: 600; }
 
-        /* ── FREE GUIDE — DARK NAVY ── */
+        /* ── FREE GUIDE. DARK NAVY ── */
         .free-section {
             background: var(--navy);
             padding: 6rem 2.5rem;
@@ -540,7 +554,7 @@
         .kit-note a { color: rgba(255,255,255,0.45); font-size: 0.8rem; text-decoration: none; transition: color 0.3s; }
         .kit-note a:hover { color: var(--gold-light); }
 
-        /* ── GUIDES SECTION — WHITE/LIGHT ── */
+        /* ── GUIDES SECTION. WHITE/LIGHT ── */
         .guides-section {
             background: var(--off-white);
             padding: 6rem 2.5rem;
@@ -762,7 +776,7 @@
         }
         .guide-card.featured .btn-buy:hover { background: var(--gold-light); }
 
-        /* ── TRUST — DARK NAVY ── */
+        /* ── TRUST. DARK NAVY ── */
         .trust-section {
             background: var(--navy-mid);
             padding: 6rem 2.5rem;
@@ -864,7 +878,7 @@
 </head>
 <body>
 
-    <!-- HEADER — white -->
+    <!-- HEADER. white -->
     <header class="header">
         <a href="#" class="logo">
             <div class="logo-mark">
@@ -898,7 +912,7 @@
         </nav>
     </header>
 
-    <!-- HERO — dark navy -->
+    <!-- HERO. dark navy -->
     <canvas id="cursor-trail-canvas"></canvas>
     <section class="hero">
         <div class="hero-bg-img"></div>
@@ -913,7 +927,7 @@
                     The Complete Peptide Reference Library
                 </div>
                 <h1>The Science of<br><em>Peptides,</em><br>Simplified.</h1>
-                <p class="hero-sub">202 peptides. 11 category guides. Every compound clearly profiled — what it is, how it works, what the science shows. FDA status marked on every peptide.</p>
+                <p class="hero-sub">202 peptides. 11 category guides. Every compound clearly profiled: what it is, how it works, what the science shows. FDA status marked on every peptide.</p>
                 <div class="hero-stats">
                     <div class="hero-stat">
                         <div class="hero-stat-num">202</div>
@@ -939,15 +953,21 @@
         </div>
     </section>
 
-    <!-- MARQUEE — gold -->
-    <div class="marquee-strip">
-        <div class="marquee-inner">
-            <span>Weight Loss & Metabolism</span><span>Anti-Aging & Longevity</span><span>Sexual Function & Libido</span><span>Muscle Recovery & Healing</span><span>Skin, Hair & Aesthetics</span><span>Cognitive Enhancement</span><span>Sleep & Stress Management</span><span>Gut Health & Immune</span><span>Specialty & Emerging</span><span>Hormonal Health & Optimization</span>
-            <span>Weight Loss & Metabolism</span><span>Anti-Aging & Longevity</span><span>Sexual Function & Libido</span><span>Muscle Recovery & Healing</span><span>Skin, Hair & Aesthetics</span><span>Cognitive Enhancement</span><span>Sleep & Stress Management</span><span>Gut Health & Immune</span><span>Specialty & Emerging</span><span>Hormonal Health & Optimization</span>
-        </div>
+    <!-- CATEGORY PILLS STRIP -->
+    <div class="pills-strip">
+        <div class="pill-tag"><span class="pill-dot"></span>Weight Loss &amp; Metabolism</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Anti-Aging &amp; Longevity</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Sexual Function &amp; Libido</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Muscle Recovery &amp; Healing</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Skin, Hair &amp; Aesthetics</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Cognitive Enhancement</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Sleep &amp; Stress Management</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Gut Health &amp; Immune</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Specialty &amp; Emerging</div>
+        <div class="pill-tag"><span class="pill-dot"></span>Hormonal Health &amp; Optimization</div>
     </div>
 
-    <!-- STATEMENT — light cream -->
+    <!-- STATEMENT. light cream -->
     <div class="statement-section">
         <div class="statement-inner">
             <div class="statement-img">
@@ -957,12 +977,12 @@
                 <div class="statement-kicker">Our Philosophy</div>
                 <div class="statement-divider"></div>
                 <div class="statement-quote">Your body already <em>knows</em> how to heal.<br>Peptides just remind it <em>how.</em></div>
-                <p class="statement-body">Peptides are the body's original messengers — short chains of amino acids that signal, repair, and restore. Peptexa exists to give you the education you need to use them wisely, safely, and effectively.</p>
+                <p class="statement-body">Peptides are the body's original messengers: short chains of amino acids that signal, repair, and restore. Peptexa exists to give you the education you need to use them wisely, safely, and effectively.</p>
             </div>
         </div>
     </div>
 
-    <!-- WHAT'S INSIDE — navy -->
+    <!-- WHAT'S INSIDE. navy -->
     <section class="inside-section" id="about">
         <div class="container">
             <div class="section-label">What You Get</div>
@@ -972,22 +992,22 @@
                 <div class="inside-card reveal">
                     <div class="inside-card-num">01</div>
                     <h3>Full Peptide Profiles</h3>
-                    <p>What it is, how it works, what it does — in plain language. No PhD required.</p>
+                    <p>What it is, how it works, what it does. In plain language. No PhD required.</p>
                 </div>
                 <div class="inside-card reveal">
                     <div class="inside-card-num">02</div>
                     <h3>Mechanism of Action</h3>
-                    <p>How each peptide signals, binds, and interacts in the body — explained in plain language.</p>
+                    <p>How each peptide signals, binds, and interacts in the body. Explained in plain language.</p>
                 </div>
                 <div class="inside-card reveal">
                     <div class="inside-card-num">03</div>
                     <h3>Research Summary</h3>
-                    <p>What the peer-reviewed studies actually show — summarized clearly for non-scientists.</p>
+                    <p>What the peer-reviewed studies actually show. Summarized clearly for non-scientists.</p>
                 </div>
                 <div class="inside-card reveal">
                     <div class="inside-card-num">04</div>
                     <h3>Safety Profiles</h3>
-                    <p>Side effects, contraindications, and who should avoid each peptide — clearly stated.</p>
+                    <p>Side effects, contraindications, and who should avoid each peptide. Clearly stated.</p>
                 </div>
                 <div class="inside-card reveal">
                     <div class="inside-card-num">05</div>
@@ -997,13 +1017,13 @@
                 <div class="inside-card reveal">
                     <div class="inside-card-num">06</div>
                     <h3>Legal Status</h3>
-                    <p>FDA status, availability, and sourcing context for every peptide — no guesswork.</p>
+                    <p>FDA status, availability, and sourcing context for every peptide. No guesswork.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CATEGORIES — soft teal -->
+    <!-- CATEGORIES. soft teal -->
     <section class="categories-section">
         <div class="container">
             <div class="section-label">11 Guides · 202 Peptides</div>
@@ -1025,7 +1045,7 @@
 
 
 
-    <!-- GUIDES — light off-white -->
+    <!-- GUIDES. light off-white -->
     <section class="guides-section" id="guides">
         <div class="container">
             <div class="guides-header">
@@ -1033,12 +1053,12 @@
                     <div class="section-label">Premium Guides</div>
                     <h2 class="section-title">Choose your <em>category</em></h2>
                 </div>
-                <p class="guides-header-note">Each guide is a complete standalone reference for education only. No dosing advice — just the science, clearly explained.</p>
+                <p class="guides-header-note">Each guide is a complete standalone reference for education only. No dosing advice. just the science, clearly explained.</p>
             </div>
 
             <div class="bundle-banner reveal">
                 <div class="bundle-label">Best Value</div>
-                <h3 class="bundle-title">The Complete Collection — All 11 Guides</h3>
+                <h3 class="bundle-title">The Complete Collection. All 11 Guides</h3>
                 <p class="bundle-sub">202 peptides. Every category. One price. &nbsp;<s>$219.89 if purchased separately</s></p>
                 <div class="bundle-cta-row">
                     <div class="bundle-price">$99.99</div>
@@ -1046,25 +1066,19 @@
                 </div>
             </div>
 
-            <div class="guides-grid" style="perspective: 1200px;">
+            <div class="guides-grid">
                 <div class="guide-card featured reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g1_cover.png" alt="Fat Loss">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                         <div class="featured-badge">Best Seller</div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Weight Loss</div>
+                        <div class="guide-card-category">Weight Loss</div>
                         <h3>Weight Loss & Metabolism</h3>
-                        <p class="guide-card-desc">Semaglutide, Tirzepatide, AOD-9604, and 21 more. Every profile covers what it is, how it works, and what the science shows — with FDA status clearly marked.</p>
-                        <ul class="guide-card-features"><li>24 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <p class="guide-card-desc">Semaglutide, Tirzepatide, AOD-9604, and 21 more. Every profile covers what it is, how it works, and what the science shows. FDA status clearly marked.</p>
+                        <ul class="guide-card-features"><li>24 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1072,22 +1086,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g2_cover.png" alt="Anti-Aging">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Longevity</div>
+                        <div class="guide-card-category">Longevity</div>
                         <h3>Anti-Aging & Longevity</h3>
                         <p class="guide-card-desc">Epithalon, GHK-Cu, MOTS-C, SS-31, and 26 more. Turn back the clock at the cellular level.</p>
                         <ul class="guide-card-features"><li>30 peptide profiles</li><li>Top 5 longevity stacks</li><li>12-week longevity cycle</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$37</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1095,22 +1103,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g3_cover.png" alt="Sexual Health">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Sexual Function</div>
+                        <div class="guide-card-category">Sexual Function</div>
                         <h3>Sexual Function & Libido</h3>
                         <p class="guide-card-desc">PT-141, Kisspeptin, Oxytocin, Melanotan II, and 17 more. Research-backed profiles on how each compound works in the body.</p>
-                        <ul class="guide-card-features"><li>21 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>21 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1118,22 +1120,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g4_cover.png" alt="Muscle">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Recovery</div>
+                        <div class="guide-card-category">Recovery</div>
                         <h3>Muscle Recovery & Healing</h3>
                         <p class="guide-card-desc">BPC-157, TB-500, and 29 more. Understand what the research says about each compound's role in repair, recovery, and performance.</p>
-                        <ul class="guide-card-features"><li>31 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>31 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1141,22 +1137,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g5_cover.png" alt="Skin Hair">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Aesthetics</div>
+                        <div class="guide-card-category">Aesthetics</div>
                         <h3>Skin, Hair & Aesthetics</h3>
                         <p class="guide-card-desc">GHK-Cu, Argireline, Matrixyl, and 25 more. Detailed profiles on how each compound interacts with skin, hair, and connective tissue.</p>
-                        <ul class="guide-card-features"><li>28 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>28 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1164,22 +1154,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g6_cover.png" alt="Cognitive">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Cognitive</div>
+                        <div class="guide-card-category">Cognitive</div>
                         <h3>Cognitive Enhancement</h3>
                         <p class="guide-card-desc">Semax, Selank, Dihexa, Noopept, and 19 more. Clear profiles on each compound's mechanisms, research basis, and FDA status.</p>
-                        <ul class="guide-card-features"><li>23 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>23 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1187,22 +1171,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g7_cover.png" alt="Sleep Stress">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Wellness</div>
+                        <div class="guide-card-category">Wellness</div>
                         <h3>Sleep & Stress Management</h3>
                         <p class="guide-card-desc">DSIP, Selank, Oxytocin, Pinealon, and 15 more. Research-backed education on how each peptide interacts with the nervous system.</p>
-                        <ul class="guide-card-features"><li>19 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>19 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1210,22 +1188,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g8_cover.png" alt="Gut Health">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Gut & Immune</div>
+                        <div class="guide-card-category">Gut & Immune</div>
                         <h3>Gut Health & Immune</h3>
                         <p class="guide-card-desc">BPC-157, KPV, Larazotide, Thymosin Alpha-1, and 14 more. Understand the research on peptides studied for gut and immune function.</p>
-                        <ul class="guide-card-features"><li>18 peptide profiles</li><li>FDA status on every compound</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>18 peptide profiles</li><li>FDA status on every compound</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1233,22 +1205,16 @@
                 </div>
 
                 <div class="guide-card reveal">
-                        <div class="tilt-shimmer"></div>
                     <div class="guide-card-img">
-                        <div class="tilt-shimmer"></div>
                         <img src="https://magnet-monster-kiss-priority.trycloudflare.com/peptexa_g9_cover.png" alt="Specialty">
-                        <div class="guide-card-img-overlay">
-                        <div class="tilt-shimmer"></div></div>
+                        <div class="guide-card-img-overlay"></div>
                     </div>
                     <div class="guide-card-body">
-                        <div class="tilt-shimmer"></div>
-                        <div class="guide-card-category">
-                        <div class="tilt-shimmer"></div>Advanced</div>
+                        <div class="guide-card-category">Advanced</div>
                         <h3>Specialty & Emerging</h3>
                         <p class="guide-card-desc">FOXO4-DRI, Retatrutide, PNC-27, ACE-031. Deep-dive profiles on frontier compounds with current clinical trial status and research summaries.</p>
-                        <ul class="guide-card-features"><li>8 deep-dive profiles</li><li>Clinical trials status</li><li>Education only — no dosing</li></ul>
+                        <ul class="guide-card-features"><li>8 deep-dive profiles</li><li>Clinical trials status</li><li>Education only. No dosing</li></ul>
                         <div class="guide-card-footer">
-                        <div class="tilt-shimmer"></div>
                             <div><div class="guide-price">$19.99</div><div class="guide-price-note">one-time · instant download</div></div>
                             <a href="https://peptexaangel.gumroad.com" target="_blank" class="btn-buy">Get Guide →</a>
                         </div>
@@ -1258,16 +1224,16 @@
         </div>
     </section>
 
-    <!-- TRUST — dark -->
+    <!-- TRUST. dark -->
     <section class="trust-section">
         <div class="container">
             <div class="section-label" style="color:rgba(255,255,255,0.45);">Why Peptexa</div>
             <h2 class="section-title" style="color:white;">Built to be <em style="color:var(--teal-light);">trusted</em></h2>
             <div class="trust-grid">
-                <div class="trust-card reveal"><div class="trust-icon">🔬</div><h3>Research-Backed</h3><p>Every profile grounded in peer-reviewed studies — not forums or anecdotes.</p></div>
-                <div class="trust-card reveal"><div class="trust-icon">📋</div><h3>Clear Research Summaries</h3><p>What studies show, what they don't, and why it matters — in plain language.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">🔬</div><h3>Research-Backed</h3><p>Every profile grounded in peer-reviewed studies. not forums or anecdotes.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">📋</div><h3>Clear Research Summaries</h3><p>What studies show, what they don't, and why it matters. In plain language.</p></div>
                 <div class="trust-card reveal"><div class="trust-icon">🛡️</div><h3>Safety First</h3><p>Full side effects, contraindications, and warnings for every peptide.</p></div>
-                <div class="trust-card reveal"><div class="trust-icon">⚡</div><h3>Instant Access</h3><p>Download immediately. Yours forever — no subscriptions, no recurring fees.</p></div>
+                <div class="trust-card reveal"><div class="trust-icon">⚡</div><h3>Instant Access</h3><p>Download immediately. Yours forever. no subscriptions, no recurring fees.</p></div>
             </div>
         </div>
     </section>
@@ -1282,7 +1248,7 @@
                 <a href="mailto:hello@peptexa.com">Contact</a>
                 <a href="/disclaimer.html">Disclaimer</a>
             </div>
-            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider before starting any peptide regimen. Peptexa does not sell peptides — we sell education only.</p>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider before starting any peptide regimen. Peptexa does not sell peptides. we sell education only.</p>
             <p class="footer-copy">© 2026 Peptexa. All rights reserved.</p>
         </div>
     </footer>
@@ -1301,7 +1267,7 @@
     </script>
 
 
-    <!-- ═══ AMINO CHAIN — WebGL Helix ═══ -->
+    <!-- ═══ AMINO CHAIN. WebGL Helix ═══ -->
     <script>
     (function() {
         const wrap = document.getElementById('amino-chain-canvas-wrap');
@@ -1432,7 +1398,7 @@
                 // Outer glow
                 drawGlow(ctx, n.x, n.y, glowR, 0, 210, 200, (0.08 + depth * 0.14 + pulseAmt * 0.15));
 
-                // Node body — radial gradient sphere
+                // Node body. radial gradient sphere
                 const grad = ctx.createRadialGradient(
                     n.x - r * 0.3, n.y - r * 0.3, 0,
                     n.x, n.y, r
@@ -1649,44 +1615,6 @@
             requestAnimationFrame(frame);
         }
         requestAnimationFrame(frame);
-    })();
-    </script>
-
-    <!-- ═══ EFFECT: 3D TILT CARDS ═══ -->
-    <script>
-    (function() {
-        function initTilt(card) {
-            const shimmer = card.querySelector('.tilt-shimmer');
-            card.addEventListener('mousemove', e => {
-                const r  = card.getBoundingClientRect();
-                const cx = r.left + r.width  / 2;
-                const cy = r.top  + r.height / 2;
-                const rx = ((e.clientY - cy) / (r.height / 2)) * -10;
-                const ry = ((e.clientX - cx) / (r.width  / 2)) *  10;
-                card.style.transform   = `rotateX(${rx}deg) rotateY(${ry}deg) scale(1.035) translateZ(10px)`;
-                card.style.boxShadow   = `0 24px 48px rgba(0,0,0,0.55), 0 0 28px rgba(0,210,200,0.18)`;
-                card.style.borderColor = 'rgba(0,210,200,0.35)';
-                if (shimmer) {
-                    const px = ((e.clientX - r.left) / r.width)  * 100;
-                    const py = ((e.clientY - r.top)  / r.height) * 100;
-                    shimmer.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(0,210,200,0.16) 0%, transparent 65%)`;
-                }
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform   = '';
-                card.style.boxShadow   = '';
-                card.style.borderColor = '';
-                if (shimmer) shimmer.style.background = '';
-            });
-        }
-
-        // Init existing + watch for future ones
-        document.querySelectorAll('.guide-card').forEach(initTilt);
-        new MutationObserver(muts => {
-            muts.forEach(m => m.addedNodes.forEach(n => {
-                if (n.classList && n.classList.contains('guide-card')) initTilt(n);
-            }));
-        }).observe(document.body, { childList: true, subtree: true });
     })();
     </script>
 
