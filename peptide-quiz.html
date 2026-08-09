@@ -1070,9 +1070,19 @@ function submitEmail() {
         document.getElementById('email-input').style.borderColor = 'rgba(255,80,80,0.6)';
         return;
     }
-    // Store locally (in production: POST to your email platform)
-    console.log('Quiz lead:', { fname, email, answers, result: computeResult() });
-    // You can add a fetch() here to send to Kit/Beehiiv API
+
+    // Submit to Kit form 6f12260c69
+    const kitData = new FormData();
+    kitData.append('email_address', email);
+    if (fname) kitData.append('fields[first_name]', fname);
+    kitData.append('tags[]', 'quiz-lead');
+
+    fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {
+        method: 'POST',
+        body: kitData,
+        mode: 'no-cors'
+    }).catch(() => {}); // fire-and-forget; no-cors means no response body
+
     currentQ++;
     render();
 }
