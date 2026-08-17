@@ -693,7 +693,7 @@
 
     <div class="faq-item">
         <div class="faq-q">What is the best peptide for weight loss?</div>
-        <div class="faq-a">GLP-1 receptor agonist peptides — including Semaglutide, Tirzepatide, and Retatrutide — have the strongest clinical evidence for weight loss and metabolic regulation. AOD-9604 and CJC-1295 are also studied for fat metabolism. Peptexa's <a href="https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa">Weight Loss and Metabolism guide</a> profiles all major compounds with research summaries and FDA status. This is educational content only — not medical advice.</div>
+        <div class="faq-a">GLP-1 receptor agonist peptides — including Semaglutide, Tirzepatide, and Retatrutide — have the strongest clinical evidence for weight loss and metabolic regulation. AOD-9604 and CJC-1295 are also studied for fat metabolism. Peptexa's <a href="https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa">Weight Loss and Metabolism guide</a> profiles all major compounds with research summaries and FDA status. This is educational content only — not medical advice.</div>
     </div>
 
     <div class="faq-item">
@@ -725,10 +725,14 @@
 // ═══════════════════════════════════════════
 // QUIZ DATA
 // ═══════════════════════════════════════════
+
+// multi: true = "select all that apply" (checkboxes)
+// multi: false = single select (radio)
 const QUESTIONS = [
     {
         q: "What's your primary health goal right now?",
-        sub: "Choose the one that resonates most — you can explore others later.",
+        sub: "Choose the one that resonates most.",
+        multi: false,
         options: [
             { text: "Lose fat, improve metabolism, or manage weight", sub: "Including GLP-1 peptides, semaglutide, metabolic health", tags: ["weight"] },
             { text: "Build muscle, recover faster, or heal an injury", sub: "Recovery, tissue repair, performance", tags: ["muscle"] },
@@ -739,7 +743,8 @@ const QUESTIONS = [
     },
     {
         q: "What best describes where you are in your health journey?",
-        sub: "Be honest — there are no wrong answers.",
+        sub: "Be honest -- there are no wrong answers.",
+        multi: false,
         options: [
             { text: "Just starting to research peptides for the first time", sub: "Curious but new to this space", tags: ["weight", "muscle", "antiaging", "cognitive", "sleep", "gut", "sexual", "skin", "hormonal", "specialty"] },
             { text: "I've done some reading and want to go deeper", sub: "Familiar with the basics, ready for detail", tags: ["muscle", "antiaging", "cognitive", "specialty"] },
@@ -748,34 +753,37 @@ const QUESTIONS = [
         ]
     },
     {
-        q: "Which area of your body or health concerns you most?",
-        sub: "Pick the one you think about most often.",
+        q: "Which areas of your body or health concern you?",
+        sub: "Select all that apply.",
+        multi: true,
         options: [
-            { text: "My gut — digestion, bloating, immune function", sub: "GI health, microbiome, inflammation", tags: ["gut"] },
-            { text: "My skin, hair, or physical appearance", sub: "Collagen, skin aging, hair loss, aesthetics", tags: ["skin"] },
-            { text: "My hormones — energy, libido, or vitality", sub: "Testosterone, estrogen, growth hormone, thyroid", tags: ["hormonal", "sexual"] },
-            { text: "My performance — strength, endurance, recovery", sub: "Athletic performance, body composition", tags: ["muscle"] },
-            { text: "My overall longevity and long-term health", sub: "Aging well, cellular health, organ function", tags: ["antiaging", "specialty"] },
+            { text: "Gut -- digestion, bloating, immune function", sub: "GI health, microbiome, inflammation", tags: ["gut"] },
+            { text: "Skin, hair, or physical appearance", sub: "Collagen, skin aging, hair loss, aesthetics", tags: ["skin"] },
+            { text: "Hormones -- energy, libido, or vitality", sub: "Testosterone, estrogen, growth hormone, thyroid", tags: ["hormonal", "sexual"] },
+            { text: "Performance -- strength, endurance, recovery", sub: "Athletic performance, body composition", tags: ["muscle"] },
+            { text: "Overall longevity and long-term health", sub: "Aging well, cellular health, organ function", tags: ["antiaging", "specialty"] },
         ]
     },
     {
         q: "How do you prefer to learn about complex health topics?",
-        sub: "This helps us point you to the right depth of content.",
+        sub: "This helps us match you to the right depth of content.",
+        multi: false,
         options: [
-            { text: "Plain language — just tell me what it does and if it works", sub: "Clear, accessible, no jargon", tags: ["weight", "sleep", "gut", "skin"] },
-            { text: "I want the science — mechanisms, studies, data", sub: "Research-backed, detailed, comprehensive", tags: ["muscle", "antiaging", "cognitive", "hormonal", "specialty"] },
-            { text: "Both — start simple, go deep when I'm ready", sub: "Layered approach, accessible then detailed", tags: ["weight", "muscle", "antiaging", "cognitive"] },
+            { text: "Plain language -- just tell me what it does and if it works", sub: "Clear, accessible, no jargon", tags: ["weight", "sleep", "gut", "skin"] },
+            { text: "I want the science -- mechanisms, studies, data", sub: "Research-backed, detailed, comprehensive", tags: ["muscle", "antiaging", "cognitive", "hormonal", "specialty"] },
+            { text: "Both -- start simple, go deep when I'm ready", sub: "Layered approach, accessible then detailed", tags: ["weight", "muscle", "antiaging", "cognitive"] },
         ]
     },
     {
-        q: "Which of these sounds most like you?",
-        sub: "The most honest answer gives the best match.",
+        q: "Which of these sound like you?",
+        sub: "Select all that apply.",
+        multi: true,
         options: [
-            { text: "I want to understand what semaglutide and GLP-1 peptides actually do", sub: "You've heard the buzz — now you want the real science", tags: ["weight"] },
-            { text: "I want to know which peptides elite athletes and biohackers actually use", sub: "Performance, recovery, edge", tags: ["muscle", "specialty"] },
-            { text: "I want to understand the science behind aging and what can actually slow it", sub: "Longevity, cellular health, anti-aging protocols", tags: ["antiaging"] },
+            { text: "I want to understand what semaglutide and GLP-1 peptides actually do", sub: "You've heard the buzz -- now you want the real science", tags: ["weight"] },
+            { text: "I want to know which peptides serious athletes and biohackers use", sub: "Performance, recovery, edge", tags: ["muscle", "specialty"] },
+            { text: "I want to understand the science behind aging and what can actually slow it", sub: "Longevity, cellular health, anti-aging", tags: ["antiaging"] },
             { text: "I want to learn about peptides for hormones, libido, or sexual health", sub: "Often overlooked, heavily researched", tags: ["sexual", "hormonal"] },
-            { text: "I want to start with a broad overview before going deep", sub: "Get the big picture first", tags: ["weight", "cognitive", "sleep"] },
+            { text: "I want a broad overview before going deep on any one category", sub: "Get the big picture first", tags: ["weight", "cognitive", "sleep"] },
         ]
     }
 ];
@@ -784,161 +792,161 @@ const GUIDES = {
     weight: {
         title: "Weight Loss & Metabolism",
         subtitle: "Peptexa Category Guide",
-        desc: "The most in-demand category in peptide research right now. This guide profiles every major peptide studied for fat loss, metabolic regulation, and body composition — including the GLP-1 compounds that have changed the conversation around weight management permanently. Written in plain language with FDA status clearly marked on every compound.",
+        desc: "The most in-demand category in peptide research right now. This guide profiles every major peptide studied for fat loss, metabolic regulation, and body composition -- including the GLP-1 compounds that have changed the conversation around weight management permanently. Written in plain language with FDA status clearly marked on every compound.",
         covers: [
             "GLP-1 peptides: Semaglutide, Tirzepatide, Retatrutide",
-            "AOD-9604 — the fat-loss fragment",
+            "AOD-9604 -- the fat-loss fragment",
             "CJC-1295 and growth hormone secretagogues",
             "Melanotan and melanocortin peptides",
             "20+ compounds total with full research profiles"
         ],
         img: "images/peptexa_g1_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa",
         also: ["muscle", "hormonal", "sleep"]
     },
     muscle: {
         title: "Muscle Recovery & Healing",
         subtitle: "Peptexa Category Guide",
-        desc: "BPC-157. TB-500. The peptides that serious athletes and biohackers have been using for years — now profiled with clear science and research summaries. This guide covers every major compound studied for tissue repair, muscle healing, injury recovery, and athletic performance enhancement.",
+        desc: "BPC-157. TB-500. The peptides serious athletes and biohackers have been using for years -- now profiled with clear science and research summaries. This guide covers every major compound studied for tissue repair, muscle healing, injury recovery, and athletic performance enhancement.",
         covers: [
-            "BPC-157 — mechanism, research, FDA status",
-            "TB-500 (Thymosin Beta-4) — tissue repair evidence",
+            "BPC-157 -- mechanism, research, FDA status",
+            "TB-500 (Thymosin Beta-4) -- tissue repair evidence",
             "GHRPs and growth hormone peptides",
             "IGF-1 and muscle signaling peptides",
             "20+ compounds with full research profiles"
         ],
         img: "images/peptexa_g4_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/muscle-recovery-healing-peptexa",
         also: ["antiaging", "specialty", "weight"]
     },
     antiaging: {
         title: "Anti-Aging & Longevity",
         subtitle: "Peptexa Category Guide",
-        desc: "From telomere research to cellular senescence, this guide profiles the peptides with the strongest evidence base for slowing biological aging. GHK-Cu, Epithalon, Thymalin, and more — explained clearly with mechanism of action, research summaries, and current regulatory status.",
+        desc: "From telomere research to cellular senescence, this guide profiles the peptides with the strongest evidence base for slowing biological aging. GHK-Cu, Epithalon, Thymalin, and more -- explained clearly with mechanism of action, research summaries, and current regulatory status.",
         covers: [
-            "GHK-Cu — collagen, gene expression, aging research",
-            "Epithalon — telomere extension studies",
+            "GHK-Cu -- collagen, gene expression, aging research",
+            "Epithalon -- telomere extension studies",
             "Thymalin and thymic peptides",
             "Bioregulator peptides from Russian longevity research",
             "20+ compounds with full research profiles"
         ],
         img: "images/peptexa_g2_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/anti-aging-longevity-peptexa",
         also: ["cognitive", "skin", "specialty"]
     },
     cognitive: {
         title: "Cognitive Enhancement",
         subtitle: "Peptexa Category Guide",
-        desc: "The neuroscience of peptides — explained clearly. This guide profiles every major compound studied for cognitive function, memory, focus, neuroprotection, and brain health. From nootropic peptides to nerve growth factors, the research is here in plain language.",
+        desc: "The neuroscience of peptides -- explained clearly. This guide profiles every major compound studied for cognitive function, memory, focus, neuroprotection, and brain health. From nootropic peptides to nerve growth factors, the research is here in plain language.",
         covers: [
-            "Semax and Selank — Russian nootropic peptides",
-            "Dihexa — memory and neurogenesis research",
+            "Semax and Selank -- Russian nootropic peptides",
+            "Dihexa -- memory and neurogenesis research",
             "BPC-157 and neuroprotection evidence",
             "NGF peptides and brain health compounds",
             "20+ compounds with full research profiles"
         ],
         img: "images/peptexa_g6_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/cognitive-enhancement-peptexa",
         also: ["sleep", "antiaging", "specialty"]
     },
     sleep: {
         title: "Sleep & Stress Management",
         subtitle: "Peptexa Category Guide",
-        desc: "Cortisol, circadian rhythm, HPA axis dysregulation — peptides studied for sleep, stress, and nervous system regulation are among the most impactful and least understood. This guide profiles the research clearly, including delta sleep-inducing peptide, Selank, and more.",
+        desc: "Cortisol, circadian rhythm, HPA axis dysregulation -- peptides studied for sleep, stress, and nervous system regulation are among the most impactful and least understood. This guide profiles the research clearly, including delta sleep-inducing peptide, Selank, and more.",
         covers: [
-            "DSIP (Delta Sleep-Inducing Peptide) — mechanism and research",
-            "Selank — anxiolytic and adaptogenic evidence",
+            "DSIP (Delta Sleep-Inducing Peptide) -- mechanism and research",
+            "Selank -- anxiolytic and adaptogenic evidence",
             "Epithalon and circadian rhythm studies",
             "Cortistatin and stress peptides",
             "15+ compounds with full research profiles"
         ],
         img: "images/peptexa_g7_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/sleep-stress-management-peptexa",
         also: ["cognitive", "gut", "hormonal"]
     },
     gut: {
         title: "Gut Health & Immune",
         subtitle: "Peptexa Category Guide",
-        desc: "The gut-peptide connection is one of the most researched and least talked about areas of peptide science. This guide profiles every major compound studied for gut lining integrity, microbiome support, immune regulation, and GI function — including BPC-157's GI applications.",
+        desc: "The gut-peptide connection is one of the most researched and least talked about areas of peptide science. This guide profiles every major compound studied for gut lining integrity, microbiome support, immune regulation, and GI function -- including BPC-157's GI applications.",
         covers: [
-            "BPC-157 — gut healing and GI research",
-            "Larazotide — intestinal permeability studies",
-            "Thymosin Alpha-1 — immune modulation",
+            "BPC-157 -- gut healing and GI research",
+            "Larazotide -- intestinal permeability studies",
+            "Thymosin Alpha-1 -- immune modulation",
             "LL-37 and antimicrobial peptides",
             "15+ compounds with full research profiles"
         ],
         img: "images/peptexa_g8_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/gut-health-immune-peptexa",
         also: ["weight", "sleep", "skin"]
     },
     sexual: {
         title: "Sexual Function & Libido",
         subtitle: "Peptexa Category Guide",
-        desc: "One of the most researched and least openly discussed areas of peptide science. This guide profiles every major compound studied for sexual function, libido, arousal, and reproductive health — in both men and women — with peer-reviewed research summaries and clear FDA status.",
+        desc: "One of the most researched and least openly discussed areas of peptide science. This guide profiles every major compound studied for sexual function, libido, arousal, and reproductive health -- in both men and women -- with peer-reviewed research summaries and clear FDA status.",
         covers: [
-            "PT-141 (Bremelanotide) — mechanism and approval status",
-            "Kisspeptin — reproductive axis research",
+            "PT-141 (Bremelanotide) -- mechanism and approval status",
+            "Kisspeptin -- reproductive axis research",
             "Oxytocin and bonding peptides",
             "PDE5-related peptide research",
             "15+ compounds with full research profiles"
         ],
         img: "images/peptexa_g3_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/sexual-function-libido-peptexa",
         also: ["hormonal", "sleep", "weight"]
     },
     skin: {
         title: "Skin, Hair & Aesthetics",
         subtitle: "Peptexa Category Guide",
-        desc: "The crossover between peptide science and aesthetics is enormous — and this guide covers all of it. From the gold-standard collagen peptides to emerging hair loss compounds, every major compound studied for skin, hair, and connective tissue is profiled with research clarity.",
+        desc: "The crossover between peptide science and aesthetics is enormous -- and this guide covers all of it. From the gold-standard collagen peptides to emerging hair loss compounds, every major compound studied for skin, hair, and connective tissue is profiled with research clarity.",
         covers: [
-            "GHK-Cu — the copper peptide and skin research",
-            "Matrixyl (Palmitoyl Pentapeptide) — collagen stimulation",
-            "PTD-DBM — hair follicle regeneration studies",
+            "GHK-Cu -- the copper peptide and skin research",
+            "Matrixyl (Palmitoyl Pentapeptide) -- collagen stimulation",
+            "PTD-DBM -- hair follicle regeneration studies",
             "Snap-8 and wrinkle-reduction peptides",
             "20+ compounds with full research profiles"
         ],
         img: "images/peptexa_g5_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/skin-hair-aesthetics-peptexa",
         also: ["antiaging", "gut", "hormonal"]
     },
     hormonal: {
         title: "Hormonal Health & Optimization",
         subtitle: "Peptexa Category Guide",
-        desc: "Hormones and peptides are deeply intertwined. Growth hormone secretagogues, thyroid peptides, adrenal compounds — this guide profiles every major peptide studied for hormonal regulation, endocrine health, and vitality in both men and women.",
+        desc: "Hormones and peptides are deeply intertwined. Growth hormone secretagogues, thyroid peptides, adrenal compounds -- this guide profiles every major peptide studied for hormonal regulation, endocrine health, and vitality in both men and women.",
         covers: [
-            "CJC-1295, Ipamorelin — growth hormone secretagogues",
+            "CJC-1295, Ipamorelin -- growth hormone secretagogues",
             "PT-141 and melanocortin axis",
             "Thyroid and adrenal peptides",
-            "GHRP-2, GHRP-6 — comparison and research",
+            "GHRP-2, GHRP-6 -- comparison and research",
             "20+ compounds with full research profiles"
         ],
         img: "images/g10_hormonal.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/hormonal-health-optimization-peptexa",
         also: ["sexual", "antiaging", "muscle"]
     },
     specialty: {
         title: "Specialty & Emerging",
         subtitle: "Peptexa Category Guide",
-        desc: "The frontier of peptide research. This guide covers the compounds that don't fit neatly into one category — experimental peptides, frontier bioregulators, compounds with active clinical trials, and emerging research that serious biohackers and researchers are watching closely.",
+        desc: "The frontier of peptide research. This guide covers the compounds that don't fit neatly into one category -- experimental peptides, frontier bioregulators, compounds with active clinical trials, and emerging research that serious biohackers and researchers are watching closely.",
         covers: [
-            "KPV — anti-inflammatory and emerging applications",
-            "5-Amino-1MQ — NAD+ pathway research",
+            "KPV -- anti-inflammatory and emerging applications",
+            "5-Amino-1MQ -- NAD+ pathway research",
             "Cerebrolysin and neurotrophic peptides",
             "Russian bioregulator peptides overview",
             "15+ compounds with current clinical trial status"
         ],
         img: "images/peptexa_g9_cover.png",
         price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/weight-loss-metabolism-peptexa",
+        url: "https://peptexaangel.gumroad.com/l/specialty-emerging-peptexa",
         also: ["antiaging", "cognitive", "hormonal"]
     }
 };
@@ -960,8 +968,9 @@ const GUIDE_NAMES = {
 // QUIZ STATE
 // ═══════════════════════════════════════════
 let currentQ = 0;
-let answers = [];
+let answers = []; // single-select: answers[i] = index | multi-select: answers[i] = Set of indexes
 let scores = {};
+let quizResultKey = '';
 
 function resetScores() {
     scores = {};
@@ -970,12 +979,38 @@ function resetScores() {
 
 function computeResult() {
     resetScores();
-    answers.forEach(tags => {
-        tags.forEach(tag => {
-            if (scores[tag] !== undefined) scores[tag] += 1;
-        });
+    answers.forEach((ans, qi) => {
+        const q = QUESTIONS[qi];
+        if (q.multi) {
+            // ans is a Set of selected indexes
+            ans.forEach(idx => {
+                q.options[idx].tags.forEach(tag => {
+                    if (scores[tag] !== undefined) scores[tag] += 1;
+                });
+            });
+        } else {
+            // ans is a single index
+            if (ans !== undefined) {
+                q.options[ans].tags.forEach(tag => {
+                    if (scores[tag] !== undefined) scores[tag] += 1;
+                });
+            }
+        }
     });
     return Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+}
+
+function getAnswerSummary() {
+    // Returns a plain-text summary of answers for Kit custom fields
+    return answers.map((ans, qi) => {
+        const q = QUESTIONS[qi];
+        if (q.multi) {
+            const selected = [...ans].map(i => q.options[i].text).join(' | ');
+            return `Q${qi+1}: ${selected}`;
+        } else {
+            return ans !== undefined ? `Q${qi+1}: ${q.options[ans].text}` : `Q${qi+1}: (skipped)`;
+        }
+    }).join(' // ');
 }
 
 // ═══════════════════════════════════════════
@@ -983,7 +1018,6 @@ function computeResult() {
 // ═══════════════════════════════════════════
 function render() {
     const card = document.getElementById('quiz-card');
-
     if (currentQ < QUESTIONS.length) {
         renderQuestion(card);
     } else if (currentQ === QUESTIONS.length) {
@@ -996,7 +1030,17 @@ function render() {
 function renderQuestion(card) {
     const q = QUESTIONS[currentQ];
     const pct = Math.round((currentQ / QUESTIONS.length) * 100);
-    const selected = answers[currentQ];
+    const isMulti = q.multi;
+
+    // Determine what's currently selected
+    let selected;
+    if (isMulti) {
+        selected = answers[currentQ] instanceof Set ? answers[currentQ] : new Set();
+    } else {
+        selected = answers[currentQ]; // index or undefined
+    }
+
+    const hasSelection = isMulti ? selected.size > 0 : selected !== undefined;
 
     card.innerHTML = `
         <div class="progress-wrap">
@@ -1008,37 +1052,56 @@ function renderQuestion(card) {
         </div>
         <div class="q-number">Question ${currentQ + 1}</div>
         <div class="q-text">${q.q}</div>
-        <div class="q-sub">${q.sub}</div>
+        <div class="q-sub">${q.sub}${isMulti ? ' <span style="color:var(--teal);font-weight:600;font-size:0.85rem">(pick as many as apply)</span>' : ''}</div>
         <div class="options">
-            ${q.options.map((opt, i) => `
-                <button class="option ${selected !== undefined && answers[currentQ] === i ? 'selected' : ''}" onclick="selectOption(${i})">
-                    <div class="option-letter">${String.fromCharCode(65+i)}</div>
+            ${q.options.map((opt, i) => {
+                const isSel = isMulti ? selected.has(i) : selected === i;
+                const indicator = isMulti
+                    ? `<div class="option-letter" style="${isSel ? 'background:var(--teal);color:white' : ''}">${isSel ? '&#10003;' : String.fromCharCode(65+i)}</div>`
+                    : `<div class="option-letter">${String.fromCharCode(65+i)}</div>`;
+                return `
+                <button class="option ${isSel ? 'selected' : ''}" onclick="selectOption(${i})">
+                    ${indicator}
                     <div>
                         <div class="option-text">${opt.text}</div>
                         ${opt.sub ? `<span class="option-sub">${opt.sub}</span>` : ''}
                     </div>
-                </button>
-            `).join('')}
+                </button>`;
+            }).join('')}
         </div>
         <div class="quiz-nav">
-            ${currentQ > 0 
-                ? `<button class="btn-back" onclick="goBack()">← Back</button>` 
+            ${currentQ > 0
+                ? `<button class="btn-back" onclick="goBack()">&#8592; Back</button>`
                 : `<div></div>`}
-            <button class="btn-next" id="btn-next" onclick="goNext()" ${answers[currentQ] === undefined ? 'disabled' : ''}>
-                ${currentQ < QUESTIONS.length - 1 ? 'Next →' : 'See My Result →'}
+            <button class="btn-next" id="btn-next" onclick="goNext()" ${!hasSelection ? 'disabled' : ''}>
+                ${currentQ < QUESTIONS.length - 1 ? 'Next &#8594;' : 'See My Result &#8594;'}
             </button>
         </div>
+        ${isMulti && selected.size > 0 ? `<p style="text-align:center;font-size:0.8rem;color:var(--teal);margin-top:0.5rem">${selected.size} selected</p>` : ''}
     `;
-    card.classList.add('fade-in');
 }
 
 function selectOption(idx) {
-    answers[currentQ] = idx;
+    const q = QUESTIONS[currentQ];
+    if (q.multi) {
+        // Toggle in Set
+        if (!(answers[currentQ] instanceof Set)) answers[currentQ] = new Set();
+        if (answers[currentQ].has(idx)) {
+            answers[currentQ].delete(idx);
+        } else {
+            answers[currentQ].add(idx);
+        }
+    } else {
+        answers[currentQ] = idx;
+    }
     render();
 }
 
 function goNext() {
-    if (answers[currentQ] === undefined) return;
+    const q = QUESTIONS[currentQ];
+    const ans = answers[currentQ];
+    const hasSelection = q.multi ? (ans instanceof Set && ans.size > 0) : ans !== undefined;
+    if (!hasSelection) return;
     currentQ++;
     render();
 }
@@ -1052,11 +1115,11 @@ function renderEmailGate(card) {
         <div class="email-gate fade-in">
             <div class="q-number">Almost there</div>
             <h3>Your result is ready.</h3>
-            <p>Enter your email to see which Peptexa guide is matched to your goals — plus we'll send you <strong>The Top 5 Peptides</strong>, our most popular free resource.</p>
+            <p>Enter your email to see which Peptexa guide is matched to your goals -- plus we'll send you <strong>The Top 5 Peptides</strong>, our most popular free resource.</p>
             <div class="email-form">
                 <input type="text" id="fname-input" placeholder="First name" autocomplete="given-name">
                 <input type="email" id="email-input" placeholder="Your email address" autocomplete="email">
-                <button class="btn-reveal" onclick="submitEmail()">Show My Result →</button>
+                <button class="btn-reveal" onclick="submitEmail()">Show My Result &#8594;</button>
                 <div class="email-fine-print">No spam. Unsubscribe anytime. Your email is used only to send your result and the free guide.</div>
             </div>
         </div>
@@ -1071,33 +1134,45 @@ function submitEmail() {
         return;
     }
 
-    // Submit to Kit form 6f12260c69
+    // Compute result now so we can send it to Kit
+    quizResultKey = computeResult();
+    const resultTitle = GUIDES[quizResultKey].title;
+    const resultUrl = GUIDES[quizResultKey].url;
+    const answerSummary = getAnswerSummary();
+
+    // Submit to Kit with custom fields
     const kitData = new FormData();
     kitData.append('email_address', email);
     if (fname) kitData.append('fields[first_name]', fname);
     kitData.append('tags[]', 'quiz-lead');
+    kitData.append('tags[]', 'quiz-result-' + quizResultKey);
+    // Custom fields -- these show in Kit subscriber profile
+    kitData.append('fields[quiz_matched_guide]', resultTitle);
+    kitData.append('fields[quiz_matched_url]', resultUrl);
+    kitData.append('fields[quiz_answers]', answerSummary);
+    kitData.append('fields[quiz_date]', new Date().toISOString().slice(0,10));
 
     fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {
         method: 'POST',
         body: kitData,
         mode: 'no-cors'
-    }).catch(() => {}); // fire-and-forget; no-cors means no response body
+    }).catch(() => {});
 
     currentQ++;
     render();
 }
 
 function renderResult(card) {
-    const key = computeResult();
+    const key = quizResultKey || computeResult();
     const g = GUIDES[key];
-    const alsoNames = (g.also || []).slice(0, 3).map(k => ({ key: k, name: GUIDE_NAMES[k] }));
+    const alsoNames = (g.also || []).slice(0, 3).map(k => ({ key: k, name: GUIDE_NAMES[k], url: GUIDES[k].url }));
 
     card.innerHTML = `
         <div class="result-section fade-in">
             <div class="result-badge">Your Match</div>
             <div class="result-title">${g.title}</div>
             <div class="result-subtitle">${g.subtitle}</div>
-            <img class="result-img" src="${g.img}" alt="${g.title} — Peptexa Guide">
+            <img class="result-img" src="${g.img}" alt="${g.title} -- Peptexa Guide">
             <div class="result-desc">${g.desc}</div>
             <div class="result-covers">
                 <h4>What this guide covers</h4>
@@ -1105,15 +1180,15 @@ function renderResult(card) {
                     ${g.covers.map(c => `<li>${c}</li>`).join('')}
                 </ul>
             </div>
-            <div class="result-price">${g.price} <span>one-time · instant download · no subscription</span></div>
+            <div class="result-price">${g.price} <span>one-time &middot; instant download &middot; no subscription</span></div>
             <br>
-            <a href="${g.url}" class="btn-buy" target="_blank" rel="noopener">Get the ${g.title} Guide →</a>
+            <a href="${g.url}" class="btn-buy" target="_blank" rel="noopener">Get the ${g.title} Guide &#8594;</a>
             <button class="btn-retake" onclick="retake()">Retake the quiz</button>
 
             <div class="also-consider">
                 <h4>You might also consider</h4>
                 <div class="also-pills">
-                    ${alsoNames.map(a => `<a href="/" class="also-pill">${a.name}</a>`).join('')}
+                    ${alsoNames.map(a => `<a href="${a.url}" class="also-pill" target="_blank" rel="noopener">${a.name}</a>`).join('')}
                 </div>
             </div>
         </div>
@@ -1123,6 +1198,7 @@ function renderResult(card) {
 function retake() {
     currentQ = 0;
     answers = [];
+    quizResultKey = '';
     resetScores();
     render();
 }
