@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The FDA Pharmacy Compounding Advisory Committee voted on BPC-157, TB-500, Epithalon, and 4 other peptides in July 2026. Here is what the vote actually decides -- and what it does not touch.">
+    <link rel="canonical" href="https://peptexa.com/blog/fda-peptide-compounding-review-2026.html">
+    <meta property="og:title" content="What the FDA compounding review actually means for peptides | Peptexa">
+    <meta property="og:description" content="The FDA Pharmacy Compounding Advisory Committee voted on BPC-157, TB-500, Epithalon, and 4 other peptides in July 2026. Here is what the vote actually decides -- and what it does not touch.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/fda-peptide-compounding-review-2026.html">
+    <title>What the FDA compounding review actually means for peptides | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        strong { font-weight: 700; }
+        em { font-style: italic; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; display: block; margin-top: 0.5rem; }
+        .news-tag { display: inline-block; background: rgba(200,150,58,0.15); color: var(--gold); border: 1px solid rgba(200,150,58,0.4); padding: 3px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        .email-gate { background: var(--teal-pale); border-radius: 14px; padding: 2rem 2.5rem; margin: 2.5rem 0; text-align: center; }
+        .email-gate h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .email-gate p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1rem; }
+        .email-gate form { display: flex; flex-direction: column; gap: 10px; max-width: 360px; margin: 0 auto; }
+        .email-gate input { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 11px 14px; font-family: 'Inter', sans-serif; font-size: 0.92rem; }
+        .email-gate input:focus { border-color: var(--teal); outline: none; }
+        .email-gate button { background: linear-gradient(135deg, var(--teal), var(--teal-light)); border: none; color: white; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700; }
+        .email-fine { font-size: 0.7rem; color: rgba(0,0,0,0.4); margin-top: 4px; }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"What the FDA compounding review actually means for peptides","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":{"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/fda-peptide-compounding-review-2026.html","description":"The FDA Pharmacy Compounding Advisory Committee voted on BPC-157, TB-500, Epithalon, and 4 other peptides in July 2026. Here is what the vote actually decides -- and what it does not touch.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="news-tag">&#128240; Breaking &nbsp;&middot;&nbsp; July 2026</div>
+            <div class="blog-eyebrow">FDA &amp; Regulation</div>
+            <h1>What the FDA compounding review actually means for peptides</h1>
+            <p class="blog-hero-sub">The FDA held a landmark hearing on seven peptides in July 2026. The coverage has been mostly either alarmist or dismissive. Here is what is actually being decided -- and what is not.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; August 17, 2026</span>
+                <span>Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+                <p class="reveal">In July 2026, the FDA's Pharmacy Compounding Advisory Committee (PCAC) convened to vote on seven peptides: BPC-157, TB-500, KPV, MOTS-c, Semax, Epithalon, and DSIP. If you are in the peptide space at all, you probably saw the coverage. Most of it missed the point.</p>
+        <p class="reveal">So let me be direct about what this committee actually decides, because the confusion is creating a lot of unnecessary anxiety -- and some very misplaced confidence.</p>
+
+        <h2 class="reveal">What the PCAC actually is</h2>
+        <p class="reveal">The Pharmacy Compounding Advisory Committee is an FDA advisory body that evaluates substances to determine whether they are appropriate for use in compounded drug preparations. The key word is <em>compounded</em>.</p>
+        <p class="reveal">Compounding pharmacies are licensed pharmacies that prepare customized medications for individual patients under a prescriber's order. They operate under a specific legal framework (503A and 503B of the Federal Food, Drug, and Cosmetic Act). When the PCAC evaluates a substance, the narrow question it is answering is: <strong>can a licensed compounding pharmacy prepare this compound for a patient with a valid prescription?</strong></p>
+        <p class="reveal">That is it. That is the whole question.</p>
+        <p class="reveal">The PCAC does not regulate research use. It does not govern what adults do with substances outside the prescription pathway. It does not determine the legality of the compounds themselves for research purposes. What it decides is whether they can be legally dispensed by a licensed pharmacy as a compounded prescription drug.</p>
+
+        <div class="callout reveal">
+            <p>If a compound gets placed on the "do not compound" list, it means a licensed pharmacy cannot prepare it for a patient walking in with a script. It does not mean the compound has been banned, declared dangerous, or made illegal for research use.</p>
+            <span class="callout-source">Peptexa editorial note</span>
+        </div>
+
+        <h2 class="reveal">The seven peptides under review</h2>
+        <p class="reveal">Here is a plain-language summary of the compounds the committee reviewed and why each one matters:</p>
+        <ul class="reveal">
+            <li><strong>BPC-157</strong> -- Body Protection Compound, gastric-derived peptide with extensive rodent healing data. One of the most-used research peptides in existence.</li>
+            <li><strong>TB-500</strong> -- Synthetic fragment of Thymosin Beta-4. Systemic repair and inflammation modulation. Widely used in athletic recovery contexts and veterinary settings.</li>
+            <li><strong>KPV</strong> -- Tripeptide fragment of alpha-MSH. Primarily studied for gut inflammation and wound healing. Less mainstream but active research area.</li>
+            <li><strong>MOTS-c</strong> -- Mitochondria-derived peptide involved in metabolic regulation and exercise response. Early but compelling research.</li>
+            <li><strong>Semax</strong> -- Synthetic ACTH fragment. Primarily studied for neuroprotection and cognitive function. Popular in Eastern European medical practice.</li>
+            <li><strong>Epithalon</strong> -- Synthetic tetrapeptide. Studied for anti-aging effects via telomerase activation and pineal gland function. Limited but interesting human data.</li>
+            <li><strong>DSIP</strong> -- Delta Sleep-Inducing Peptide. Studied for sleep regulation and stress response. Smaller following than the others on this list.</li>
+        </ul>
+
+        <h2 class="reveal">Why the compounding pathway matters anyway</h2>
+        <p class="reveal">Even though the PCAC's authority is narrow, the practical stakes are real. For many people who have been using these compounds through clinician-supervised pathways -- peptide clinics, functional medicine practices, longevity doctors -- the compounding pharmacy was the sourcing mechanism. A prescription from a physician, filled by a licensed 503A pharmacy. That is a legitimate, quality-controlled supply chain with accountability built in.</p>
+        <p class="reveal">If these compounds are removed from the compounding-permitted list, those patients lose access to that pathway. They do not disappear. They move to other sourcing options. Which in most cases means less oversight, not more. That outcome is worse for the people the regulation is ostensibly trying to protect.</p>
+        <p class="reveal">That is the argument that the peptide and integrative medicine community has been making, and it is a reasonable one.</p>
+
+        <h2 class="reveal">What this review does not change</h2>
+        <p class="reveal">Research use, self-directed use, and the broader gray market for these compounds operate outside the compounding framework entirely. The PCAC vote does not touch that world. Whatever the committee decided, millions of people who have been using these compounds will continue to have access to them through research chemical suppliers.</p>
+        <p class="reveal">What changes -- if adverse determinations are issued -- is whether the safest, most quality-controlled pathway (licensed pharmacy, physician oversight) remains available. The irony is that restricting the legitimate pathway tends to push volume toward the less regulated one, not eliminate use.</p>
+
+        <div class="mid-cta reveal">
+            <h3>Get the free Peptexa Top-5 guide</h3>
+            <p>Five of the most-researched compounds -- mechanism, evidence level, and current FDA status explained plainly.</p>
+            <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" rel="noopener">Get the Free Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">What happened at the July 2026 PCAC meeting? <span class="faq-icon">+</span></button>
+                <div class="faq-a">The FDA's Pharmacy Compounding Advisory Committee reviewed seven peptides -- BPC-157, TB-500, KPV, MOTS-c, Semax, Epithalon, and DSIP -- to evaluate whether they are appropriate for use in compounded drug preparations. The committee's recommendations inform FDA decisions about the bulk drug substances list for compounding pharmacies.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does this mean BPC-157 is now illegal? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. A PCAC review concerns the compounding pharmacy pathway specifically. It does not make a compound illegal. Research use designation and the legal frameworks around self-directed use are separate from compounding regulations.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What is the difference between a compounded peptide and a research peptide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">A compounded peptide comes from a licensed 503A or 503B pharmacy, prepared for a specific patient under a physician's prescription. A research peptide (labeled RUO, Research Use Only) is sold outside the prescription pathway. Both can come from the same synthesis source -- the label reflects regulatory classification, not quality level.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What does Peptexa think should happen? <span class="faq-icon">+</span></button>
+                <div class="faq-a">My view: any regulatory framework that restricts the safest, most accountable pathway (pharmacy + physician oversight) while doing nothing about the unregulated supply chain is solving the wrong problem. Build a quality floor across the market. Don't just shut the door on the cleanest part of it.</div>
+            </div>
+        </div>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/blog/ruo-peptides-explained.html">What "Research Use Only" actually means</a>
+                <a class="related-link" href="/blog/peptide-supply-chain-quality.html">Peptide supply chain: how to think about quality</a>
+                <a class="related-link" href="/peptides/bpc-157.html">BPC-157 -- compound reference</a>
+                <a class="related-link" href="/peptides/tb-500.html">TB-500 -- compound reference</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+
+        <div class="email-gate reveal">
+            <h3>Stay ahead of the regulatory curve</h3>
+            <p>The Peptexa newsletter covers FDA updates, new research, and what it means for the peptide space. No fluff.</p>
+            <form id="blog-form" novalidate>
+                <input type="text" id="fname-input" name="first_name" placeholder="First name (optional)" autocomplete="given-name">
+                <input type="email" id="email-input" name="email" placeholder="Your email" required autocomplete="email">
+                <button type="submit">Subscribe</button>
+                <div class="email-fine">Tag: blog-fda-compounding-2026. No spam. Unsubscribe anytime.</div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+        (function() {
+            var form = document.getElementById('blog-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email-input').value.trim();
+                var fname = document.getElementById('fname-input').value.trim();
+                if (!email || email.indexOf('@') === -1) return;
+                var fd = new FormData();
+                fd.append('email_address', email);
+                if (fname) fd.append('fields[first_name]', fname);
+                fd.append('tags[]', 'quiz-lead');
+                fd.append('tags[]', 'blog-fda-compounding-2026');
+                fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {method:'POST',body:fd,mode:'no-cors'}).catch(function(){});
+                form.innerHTML = '<p style="font-family:Playfair Display,serif;font-size:1.1rem;color:var(--navy)"><strong>You're in.</strong> Check your inbox shortly.</p>';
+            });
+        })();
+    </script>
+</body>
+</html>

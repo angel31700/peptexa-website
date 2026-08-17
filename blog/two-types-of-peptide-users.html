@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Regulatory frameworks for peptides are built around one type of user: the patient with a prescription. They consistently ignore the other -- the self-directed optimizer. Here is why that matters.">
+    <link rel="canonical" href="https://peptexa.com/blog/two-types-of-peptide-users.html">
+    <meta property="og:title" content="The two types of peptide users regulators keep ignoring | Peptexa">
+    <meta property="og:description" content="Regulatory frameworks for peptides are built around one type of user: the patient with a prescription. They consistently ignore the other -- the self-directed optimizer. Here is why that matters.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/two-types-of-peptide-users.html">
+    <title>The two types of peptide users regulators keep ignoring | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        strong { font-weight: 700; }
+        em { font-style: italic; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; display: block; margin-top: 0.5rem; }
+        .news-tag { display: inline-block; background: rgba(200,150,58,0.15); color: var(--gold); border: 1px solid rgba(200,150,58,0.4); padding: 3px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        .email-gate { background: var(--teal-pale); border-radius: 14px; padding: 2rem 2.5rem; margin: 2.5rem 0; text-align: center; }
+        .email-gate h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .email-gate p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1rem; }
+        .email-gate form { display: flex; flex-direction: column; gap: 10px; max-width: 360px; margin: 0 auto; }
+        .email-gate input { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 11px 14px; font-family: 'Inter', sans-serif; font-size: 0.92rem; }
+        .email-gate input:focus { border-color: var(--teal); outline: none; }
+        .email-gate button { background: linear-gradient(135deg, var(--teal), var(--teal-light)); border: none; color: white; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700; }
+        .email-fine { font-size: 0.7rem; color: rgba(0,0,0,0.4); margin-top: 4px; }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"The two types of peptide users regulators keep ignoring","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":{"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/two-types-of-peptide-users.html","description":"Regulatory frameworks for peptides are built around one type of user: the patient with a prescription. They consistently ignore the other -- the self-directed optimizer. Here is why that matters.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="news-tag">&#128240; Breaking &nbsp;&middot;&nbsp; July 2026</div>
+            <div class="blog-eyebrow">FDA &amp; Regulation</div>
+            <h1>The two types of peptide users regulators keep ignoring</h1>
+            <p class="blog-hero-sub">Every regulatory framework for this space is built around one type of person. It consistently ignores the other. Until that changes, the rules will keep solving the wrong problem.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; August 17, 2026</span>
+                <span>Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+                <p class="reveal">Here is something that does not get said plainly enough in most coverage of peptide regulation: the market is not one thing, and the people in it are not one type.</p>
+        <p class="reveal">Most regulatory thinking in this space is built around a single mental model -- the patient. Someone with a medical complaint, seeing a doctor, receiving a prescription, having it filled by a licensed pharmacy. That model is real and it deserves serious attention. But it describes a fraction of the people using these compounds.</p>
+        <p class="reveal">There is a second population. It is large, it is not going away, and policy built without accounting for it will consistently produce worse outcomes than policy built with it in mind.</p>
+
+        <h2 class="reveal">Population one: the clinical patient</h2>
+        <p class="reveal">This is the person the current regulatory framework is designed for. They have a health condition or concern. They see a physician. The physician evaluates them and decides that a peptide -- BPC-157, TB-500, PT-141, whatever -- might help. They write a prescription. A compounding pharmacy prepares the medication. The patient receives it.</p>
+        <p class="reveal">This pathway has real benefits: physician oversight, quality-controlled sourcing, dosing guidance calibrated to the individual. It is the safest version of accessing these compounds, and protecting it matters. Any regulation that restricts or eliminates this pathway without replacing it with something equally or more accountable is moving backward.</p>
+
+        <h2 class="reveal">Population two: the self-directed optimizer</h2>
+        <p class="reveal">This person has read the studies. They understand the evidence base. They have made an informed decision about their own biology. They are not sick, or they are not seeking conventional medical treatment, or they do not want to navigate the prescription system for something that is not FDA-approved. They source independently and use independently.</p>
+        <p class="reveal">This population is not small. It includes biohackers, competitive athletes, longevity-focused individuals, functional health enthusiasts, and people who have been using these compounds for a decade or more with results they can describe in detail. It includes physicians using things on themselves they are not ready to prescribe. It includes people in countries where the regulatory framework is different. It is a real and substantial market.</p>
+        <p class="reveal">And it is almost entirely invisible in regulatory discussions.</p>
+
+        <div class="callout reveal">
+            <p>The wellness sector is driven by consumers, not by clinicians and not by pharmaceutical companies. Pretending the market does not exist does not make it disappear -- it just pushes it further into the dark.</p>
+            <span class="callout-source">Peptexa editorial perspective</span>
+        </div>
+
+        <h2 class="reveal">Why the gap matters</h2>
+        <p class="reveal">When regulation is designed only for population one, here is what happens to population two: nothing changes except the quality of their sourcing options.</p>
+        <p class="reveal">If compounding pharmacies are restricted from preparing BPC-157, the self-directed optimizer does not get a prescription and do it "the right way." They do not stop. They source from the gray market. The research chemical supply chain. The channels with the least oversight and the most contamination risk.</p>
+        <p class="reveal">The net outcome: the safest, most accountable sourcing pathway gets restricted, and the volume moves to less accountable channels. That is not harm reduction. That is harm displacement.</p>
+
+        <h2 class="reveal">What regulation that works for both would look like</h2>
+        <p class="reveal">I am not arguing against regulation. I am arguing for regulation that accounts for the actual market. Here is what that looks like:</p>
+        <ul class="reveal">
+            <li><strong>Protect the compounding pathway</strong> for compounds with legitimate clinical applications and physician oversight. Restricting it without providing an alternative just removes the accountability without removing the use.</li>
+            <li><strong>Build a quality floor for the gray market.</strong> Minimum testing standards, COA requirements, traceability mandates. The infrastructure to do this already exists among reputable suppliers. Make it the floor, not just a differentiator.</li>
+            <li><strong>Distinguish between access restriction and safety improvement.</strong> These are not the same thing. A rule that restricts access while doing nothing to improve the quality or safety of the market that persists anyway is not a safety rule -- it is a restriction for its own sake.</li>
+            <li><strong>Include the self-directed population in the conversation.</strong> They are the majority of users. Building policy without them is building incomplete policy.</li>
+        </ul>
+
+        <h2 class="reveal">The honest version of this argument</h2>
+        <p class="reveal">The peptide community has a bad habit of framing every regulatory move as an attack to be resisted. That framing is not only wrong -- it is counterproductive. It signals that the community is not serious about safety, which makes regulators less likely to engage seriously with nuanced arguments.</p>
+        <p class="reveal">The honest version is this: real risks exist in this market, concentrated at the unaccountable end of the supply chain. The right response is regulation that addresses those risks directly -- quality standards, traceability, contamination testing. What does not help is restriction of the cleanest parts of the market paired with no action on the parts that are actually dangerous.</p>
+        <p class="reveal">Both populations -- the clinical patient and the self-directed optimizer -- deserve a market with a quality floor. The current moment is an opportunity to build one. Whether the regulatory process takes it seriously enough to try is a different question.</p>
+
+        <div class="mid-cta reveal">
+            <h3>Get the free Peptexa Top-5 guide</h3>
+            <p>Five of the most-researched compounds with evidence levels and current FDA status. The research-first resource for everyone in this space.</p>
+            <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" rel="noopener">Get the Free Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">Is self-directed peptide use legal? <span class="faq-icon">+</span></button>
+                <div class="faq-a">The legality depends on the specific compound, jurisdiction, and how it is obtained and labeled. Many peptides are sold legally as research chemicals when not marketed for human consumption. This area is evolving rapidly following the 2026 PCAC review. Consult a qualified attorney for specific guidance.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Why does the FDA focus on compounding pharmacies? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Compounding pharmacies are directly regulated under the Federal Food, Drug, and Cosmetic Act, specifically 503A and 503B. The FDA has clear statutory authority over them. The broader research chemical market is harder to regulate because it operates outside the drug/pharmacy framework. The PCAC process is using the authority it has, even if that authority does not reach the part of the market with the most risk.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How big is the self-directed peptide user population? <span class="faq-icon">+</span></button>
+                <div class="faq-a">There are no precise published figures. Market tracking data on the shadow peptide economy puts the transaction volume at over $100 million (and growing rapidly as of 2026). Given average transaction sizes in this market, the user base numbers in the millions globally. It is not a niche.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does Peptexa take a regulatory position? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Peptexa is an educational resource. My perspective is that both populations -- the clinical patient and the self-directed optimizer -- deserve a market with real quality standards and accountability. I support regulation that builds that floor. I am skeptical of regulation that restricts accountable channels without addressing the unaccountable ones.</div>
+            </div>
+        </div>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/blog/fda-peptide-compounding-review-2026.html">What the FDA compounding review means</a>
+                <a class="related-link" href="/blog/peptide-supply-chain-quality.html">Peptide supply chain quality</a>
+                <a class="related-link" href="/blog/ruo-peptides-explained.html">"Research Use Only" explained</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+
+        <div class="email-gate reveal">
+            <h3>Stay ahead of the regulatory curve</h3>
+            <p>The Peptexa newsletter covers FDA updates, new research, and what it means for the peptide space. No fluff.</p>
+            <form id="blog-form" novalidate>
+                <input type="text" id="fname-input" name="first_name" placeholder="First name (optional)" autocomplete="given-name">
+                <input type="email" id="email-input" name="email" placeholder="Your email" required autocomplete="email">
+                <button type="submit">Subscribe</button>
+                <div class="email-fine">Tag: blog-two-populations. No spam. Unsubscribe anytime.</div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+        (function() {
+            var form = document.getElementById('blog-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email-input').value.trim();
+                var fname = document.getElementById('fname-input').value.trim();
+                if (!email || email.indexOf('@') === -1) return;
+                var fd = new FormData();
+                fd.append('email_address', email);
+                if (fname) fd.append('fields[first_name]', fname);
+                fd.append('tags[]', 'quiz-lead');
+                fd.append('tags[]', 'blog-two-populations');
+                fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {method:'POST',body:fd,mode:'no-cors'}).catch(function(){});
+                form.innerHTML = '<p style="font-family:Playfair Display,serif;font-size:1.1rem;color:var(--navy)"><strong>You're in.</strong> Check your inbox shortly.</p>';
+            });
+        })();
+    </script>
+</body>
+</html>

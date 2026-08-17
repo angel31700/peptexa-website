@@ -148,4 +148,36 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog: FDA Regulation Series (Aug 17, 2026) -->
+  <url>
+    <loc>https://peptexa.com/blog/fda-peptide-compounding-review-2026.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peptexa.com/blog/ruo-peptides-explained.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peptexa.com/blog/peptide-supply-chain-quality.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peptexa.com/blog/bpc-157-tb-500-epithalon-fda-2026.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peptexa.com/blog/two-types-of-peptide-users.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
