@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Three generations of incretin therapy compared. Semaglutide, tirzepatide, and retatrutide -- mechanism differences, trial data, and weight loss numbers explained plainly.">
+    <link rel="canonical" href="https://peptexa.com/blog/glp1-peptides-ranked.html">
+    <meta property="og:title" content="GLP-1 peptides ranked: semaglutide vs tirzepatide vs retatrutide | Peptexa">
+    <meta property="og:description" content="Three generations of incretin therapy compared. Semaglutide, tirzepatide, and retatrutide -- mechanism differences, trial data, and weight loss numbers explained plainly.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/glp1-peptides-ranked.html">
+    <title>GLP-1 peptides ranked: semaglutide vs tirzepatide vs retatrutide | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero h1 em { color: var(--teal-light); font-style: italic; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); position: relative; }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-style: normal; font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        .email-gate { background: var(--teal-pale); border-radius: 14px; padding: 2rem 2.5rem; margin: 2.5rem 0; text-align: center; }
+        .email-gate h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .email-gate p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1rem; }
+        .email-gate form { display: flex; flex-direction: column; gap: 10px; max-width: 360px; margin: 0 auto; }
+        .email-gate input { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 11px 14px; font-family: 'Inter', sans-serif; font-size: 0.92rem; }
+        .email-gate input:focus { border-color: var(--teal); outline: none; }
+        .email-gate button { background: linear-gradient(135deg, var(--teal), var(--teal-light)); border: none; color: white; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700; }
+        .email-fine { font-size: 0.7rem; color: rgba(0,0,0,0.4); margin-top: 4px; }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"GLP-1 peptides ranked: semaglutide vs tirzepatide vs retatrutide","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":{"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/glp1-peptides-ranked.html","description":"Three generations of incretin therapy compared. Semaglutide, tirzepatide, and retatrutide -- mechanism differences, trial data, and weight loss numbers explained plainly.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="blog-eyebrow">GLP-1 &nbsp;&middot;&nbsp; Weight Loss</div>
+            <h1>GLP-1 peptides ranked: semaglutide vs tirzepatide vs retatrutide</h1>
+            <p class="blog-hero-sub">One receptor, two receptors, three receptors. Each generation added a pathway and the weight loss numbers kept climbing. Here is what each one does differently and what the actual trial data shows.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; August 16, 2026</span>
+                <span>Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+                <p class="reveal">When people talk about "GLP-1 drugs" they are actually talking about three different things at this point. Semaglutide, tirzepatide, and retatrutide all work through the GLP-1 receptor -- but they are not the same compound, and the differences matter a lot if you are trying to understand what the science actually shows.</p>
+        <p class="reveal">Let me walk through each one, what it does, and what the trials found. Then I will put them side by side so you can see how the numbers compare.</p>
+
+        <h2 class="reveal">Semaglutide: the original</h2>
+        <p class="reveal">Semaglutide is a GLP-1 receptor agonist -- one receptor, one pathway. It mimics GLP-1, the hormone your gut releases after you eat, which tells your pancreas to release insulin, tells your stomach to slow down, and tells your brain you are full.</p>
+        <p class="reveal">The key thing that makes semaglutide work as a once-weekly drug: it was engineered to resist the enzyme that destroys natural GLP-1 in about two minutes. A fatty-acid modification lets it bind to albumin in the blood, extending its half-life to about a week.</p>
+        <p class="reveal">The landmark trial for weight management: <strong>STEP 1</strong> (Wilding et al., NEJM 2021). 1,961 adults with obesity. Mean weight loss of 14.9% at 68 weeks vs 2.4% for placebo. That was groundbreaking at the time.</p>
+        <p class="reveal">Then SELECT happened -- 17,604 adults with established cardiovascular disease, no diabetes. Semaglutide reduced cardiovascular death, non-fatal heart attack, and non-fatal stroke by 20% over about 40 months. That expanded the story from weight loss to CV risk reduction, which is why Wegovy got the expanded approval in 2024.</p>
+
+        <div class="callout reveal">
+            <p>Semaglutide changed the conversation about obesity treatment. Before STEP 1, no drug had reliably produced close to 15% weight loss. The SELECT trial added something more -- a cardiovascular outcome benefit independent of how much weight was lost.</p>
+            <div class="callout-source">Peptexa editorial note</div>
+        </div>
+
+        <h2 class="reveal">Tirzepatide: two receptors</h2>
+        <p class="reveal">Tirzepatide adds GIP receptor agonism to GLP-1. GIP is another incretin -- released from the small intestine, it enhances insulin secretion and plays a role in fat storage and energy balance. Activating both GIP and GLP-1 simultaneously produces a synergistic effect that goes beyond what either pathway does alone.</p>
+        <p class="reveal">The key trial: <strong>SURMOUNT-1</strong> (Jastreboff et al., NEJM 2022). 2,539 adults with obesity. Mean weight loss of 22.5% at the highest dose at 72 weeks. That was a step-change from semaglutide's ~15%.</p>
+        <p class="reveal">In head-to-head vs semaglutide (SURPASS-2), tirzepatide at comparable doses produced greater HbA1c reduction and weight loss. The dual receptor approach demonstrably outperformed single-receptor agonism.</p>
+
+        <h2 class="reveal">Retatrutide: three receptors</h2>
+        <p class="reveal">Retatrutide adds glucagon receptor agonism to the GIP + GLP-1 combination. Here is why that matters: glucagon receptor activation directly increases energy expenditure and stimulates fat breakdown (lipolysis). It is a metabolic accelerator on top of the satiety and insulin effects of the first two pathways.</p>
+        <p class="reveal">The theoretical concern with activating glucagon is that glucagon raises blood glucose. Retatrutide's designers solved this by balancing the glucagon activity against the enhanced insulin secretion from GIP and GLP-1 -- the net effect is more fat burned without a glucose spike.</p>
+        <p class="reveal">Phase 2 (NEJM 2023): 24.2% weight loss at 48 weeks at the highest dose. Phase 3 TRIUMPH-1 (80 weeks): 28.3% mean weight loss. 45.3% of participants achieved 30% or more weight loss -- approaching bariatric surgery outcomes.</p>
+        <p class="reveal">Retatrutide is not FDA-approved yet. Eli Lilly plans to file a BLA in Q1 2027.</p>
+
+        <h2 class="reveal">The comparison, side by side</h2>
+        <table class="data-table reveal">
+            <thead><tr><th>Agent</th><th>Receptors</th><th>Max Trial Weight Loss</th><th>FDA Status</th></tr></thead>
+            <tbody>
+                <tr><td>Semaglutide (Wegovy)</td><td>GLP-1R</td><td>~14.9% (STEP 1, 68wk)</td><td>Approved 2021</td></tr>
+                <tr><td>Tirzepatide (Zepbound)</td><td>GLP-1R + GIPR</td><td>~22.5% (SURMOUNT-1, 72wk)</td><td>Approved 2023</td></tr>
+                <tr><td>Retatrutide</td><td>GLP-1R + GIPR + GCGR</td><td>~28.3% (TRIUMPH-1, 80wk)</td><td>Investigational; BLA Q1 2027</td></tr>
+            </tbody>
+        </table>
+        <p class="reveal">A few things worth noting about that table: the trials are not identical in length or population, so direct comparisons are imperfect. What is consistent is the directional pattern -- each additional receptor target produced meaningfully more weight loss in properly powered randomized controlled trials.</p>
+
+        <div class="callout reveal">
+            <p>Adding the glucagon receptor to the dual agonist framework appears to be the difference between "impressive pharmaceutical weight loss" and "approaching what surgery achieves." That is a remarkable pharmacological development.</p>
+            <div class="callout-source">Peptexa editorial note</div>
+        </div>
+
+        <div class="mid-cta reveal">
+            <h3>The full Weight Loss &amp; Metabolism reference</h3>
+            <p>24 compounds -- all three GLP-1 agents plus AOD-9604, Fragment 176-191, Liraglutide, and more. Mechanism, evidence level, and FDA status for each. Free PDF.</p>
+            <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/weight-loss-metabolism-peptexa" target="_blank" rel="noopener">Get the Weight Loss Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">Which is better -- semaglutide or tirzepatide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Head-to-head trials show tirzepatide produces greater weight loss and HbA1c reduction at comparable doses. Whether "better" is the right framing depends on individual factors a prescribing physician would evaluate. Both are FDA-approved and have large phase 3 evidence bases.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">When will retatrutide be available? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Eli Lilly plans to submit a Biologics License Application to the FDA in Q1 2027 based on the TRIUMPH phase 3 program. FDA review typically takes 6-12 months after submission. Estimated earliest approval: late 2027 or 2028.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does Peptexa sell any of these compounds? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. Peptexa is educational only. All three are prescription drugs that require a physician evaluation and prescription. We do not sell, ship, or advise on any of these.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What does "receptor agonist" actually mean? <span class="faq-icon">+</span></button>
+                <div class="faq-a">A receptor agonist binds to a receptor and activates it -- producing the same downstream effect as the natural hormone that normally activates that receptor. Semaglutide, tirzepatide, and retatrutide all activate their respective receptors to produce effects similar to (and more sustained than) the natural incretin hormones GLP-1 and GIP.</div>
+            </div>
+        </div>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/peptides/semaglutide.html">Semaglutide -- compound reference</a>
+                <a class="related-link" href="/peptides/tirzepatide.html">Tirzepatide -- compound reference</a>
+                <a class="related-link" href="/peptides/retatrutide.html">Retatrutide -- compound reference</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+
+        <div class="email-gate reveal">
+            <h3>Get the Peptexa Top-5 free</h3>
+            <p>Five compounds, mechanism-led. One email a week. No fluff.</p>
+            <form id="blog-form" novalidate>
+                <input type="text" id="fname-input" name="first_name" placeholder="First name (optional)" autocomplete="given-name">
+                <input type="email" id="email-input" name="email" placeholder="Your email" required autocomplete="email">
+                <button type="submit">Send Me the Top-5</button>
+                <div class="email-fine">Tag: blog-glp1-ranked. No spam. Unsubscribe anytime.</div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        // Reveal
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+        // Kit form
+        (function() {
+            var form = document.getElementById('blog-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email-input').value.trim();
+                var fname = document.getElementById('fname-input').value.trim();
+                if (!email || email.indexOf('@') === -1) return;
+                var fd = new FormData();
+                fd.append('email_address', email);
+                if (fname) fd.append('fields[first_name]', fname);
+                fd.append('tags[]', 'quiz-lead');
+                fd.append('tags[]', 'blog-glp1-ranked');
+                fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {method:'POST',body:fd,mode:'no-cors'}).catch(function(){});
+                form.innerHTML = '<p style="font-family:Playfair Display,serif;font-size:1.1rem;color:var(--navy)"><strong>Thanks.</strong> Check your inbox in a few minutes.</p>';
+            });
+        })();
+    </script>
+</body>
+</html>

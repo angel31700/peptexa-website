@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The skincare industry sells peptides hard. Here is what the research actually supports -- GHK-Cu, Matrixyl, Argireline -- and where the evidence runs out.">
+    <link rel="canonical" href="https://peptexa.com/blog/peptides-for-skin.html">
+    <meta property="og:title" content="Peptides for skin: GHK-Cu, collagen, and what the science says | Peptexa">
+    <meta property="og:description" content="The skincare industry sells peptides hard. Here is what the research actually supports -- GHK-Cu, Matrixyl, Argireline -- and where the evidence runs out.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/peptides-for-skin.html">
+    <title>Peptides for skin: GHK-Cu, collagen, and what the science says | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero h1 em { color: var(--teal-light); font-style: italic; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); position: relative; }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-style: normal; font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        .email-gate { background: var(--teal-pale); border-radius: 14px; padding: 2rem 2.5rem; margin: 2.5rem 0; text-align: center; }
+        .email-gate h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .email-gate p { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 1rem; }
+        .email-gate form { display: flex; flex-direction: column; gap: 10px; max-width: 360px; margin: 0 auto; }
+        .email-gate input { background: rgba(255,255,255,0.9); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 11px 14px; font-family: 'Inter', sans-serif; font-size: 0.92rem; }
+        .email-gate input:focus { border-color: var(--teal); outline: none; }
+        .email-gate button { background: linear-gradient(135deg, var(--teal), var(--teal-light)); border: none; color: white; padding: 11px 20px; border-radius: 8px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 700; }
+        .email-fine { font-size: 0.7rem; color: rgba(0,0,0,0.4); margin-top: 4px; }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Peptides for skin: GHK-Cu, collagen, and what the science says","datePublished":"2026-08-16","dateModified":"2026-08-16","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":{"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/peptides-for-skin.html","description":"The skincare industry sells peptides hard. Here is what the research actually supports -- GHK-Cu, Matrixyl, Argireline -- and where the evidence runs out.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="blog-eyebrow">Skin &amp; Beauty</div>
+            <h1>Peptides for skin: GHK-Cu, collagen, and what the science says</h1>
+            <p class="blog-hero-sub">The skincare industry has been selling peptides for decades. Some of it is real science. A lot of it is marketing dressed up in scientific-sounding language. Here is how to tell the difference.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; August 16, 2026</span>
+                <span>Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+                <p class="reveal">Walk into any Sephora and you will find shelves of products with "peptide complex" in the name, selling for $80-200 a bottle. The marketing is confident. The claims are vague. And if you try to track down the actual evidence -- it gets complicated fast.</p>
+        <p class="reveal">Here is what I found when I actually went looking for the research behind the most common peptides in skincare.</p>
+
+        <h2 class="reveal">GHK-Cu: the one with real data</h2>
+        <p class="reveal">GHK-Cu (copper peptide) is the skincare peptide I have the most respect for from an evidence standpoint. Here is why: it is endogenous. Your body makes it. It is found in plasma, saliva, and urine, and it declines significantly with age -- plasma concentrations drop roughly 60% between age 20 and age 60. That age-related decline is a real and documented biological fact, not a marketing construct.</p>
+        <p class="reveal">The mechanism: GHK-Cu activates fibroblasts to produce more collagen, elastin, and proteoglycans. It also modulates MMP activity (the enzymes that break down the extracellular matrix) in ways that favor repair over degradation. And it has documented antioxidant and anti-inflammatory effects in cell culture.</p>
+        <p class="reveal">The clinical evidence: Finkley et al. (2003, <em>Journal of Cosmetic Dermatology</em>) conducted a randomized, double-blind, vehicle-controlled trial and found that topical GHK-Cu significantly improved skin laxity and density. This is a real controlled trial, not an industry-funded poster presentation.</p>
+        <p class="reveal">Multiple additional studies support improved skin elasticity, reduced fine lines, and wound healing acceleration with topical GHK-Cu. By cosmetic ingredient standards, this is a strong evidence base.</p>
+
+        <div class="callout reveal">
+            <p>GHK-Cu is the cosmetic peptide I would point to if someone asked "show me one that actually has evidence." The data is not pharmaceutical-grade, but it is real, replicated, and mechanistically coherent.</p>
+            <div class="callout-source">Peptexa editorial note</div>
+        </div>
+
+        <h2 class="reveal">Matrixyl (Palmitoyl Pentapeptide-4): solid but industry-sourced</h2>
+        <p class="reveal">Matrixyl is Sederma's trademarked version of palmitoyl pentapeptide-4. It is one of the most-studied cosmetic peptides -- but the studies were largely funded by Sederma, which is a reason to look at them critically.</p>
+        <p class="reveal">The mechanism: palmitoyl pentapeptide-4 is a fragment of collagen that acts as a matrikine -- signaling to fibroblasts that collagen has been broken down and stimulating synthesis. In theory, it tells your skin cells that repair is needed.</p>
+        <p class="reveal">The evidence: several small trials show improvements in wrinkle depth and skin texture with topical application. A Sederma-funded double-blind trial showed ~36% reduction in wrinkle depth vs placebo over 3 months. Independent replication is limited but the mechanism is plausible and the ingredient has been around long enough that its general safety is well-established.</p>
+        <p class="reveal">My read: the evidence supports using it, but the studies being primarily industry-funded means I hold the effect size claims loosely. The mechanism is real. Whether the magnitude is as dramatic as the marketing suggests -- probably not.</p>
+
+        <h2 class="reveal">Argireline (Acetyl Hexapeptide-3): the "Botox alternative" claim</h2>
+        <p class="reveal">Argireline is marketed aggressively as a topical alternative to Botox. The mechanism behind the claim: it interferes with the SNARE protein complex involved in neurotransmitter release, similar (but much weaker) to how botulinum toxin works.</p>
+        <p class="reveal">Here is the thing about that claim: Botox is injected directly into the muscle. Argireline is applied to the surface of the skin. Penetrating the dermis to reach motor nerve endings is a significant delivery challenge that topical application does not reliably solve.</p>
+        <p class="reveal">The evidence: a few small studies show modest improvements in fine lines around the eyes with topical argireline. The effect is real but small, and the "Botox alternative" framing is marketing hyperbole. If you want Botox results, get Botox. If you want a gentle, evidence-supported topical ingredient, argireline is fine -- just do not expect it to replace an injectable neurotoxin.</p>
+
+        <h2 class="reveal">Topical vs systemic: a fundamental difference</h2>
+        <p class="reveal">Something worth understanding: the peptides in skincare products are applied topically. Most peptides do not penetrate skin well -- the stratum corneum (outer skin layer) is specifically designed to keep things out. This is why the lipid modifications in products like palmitoyl pentapeptide-4 exist -- the fatty acid tail improves penetration.</p>
+        <p class="reveal">Injectable GHK-Cu, used systemically in the biohacking community, is a different situation entirely with different pharmacokinetics and different evidence standards. The topical evidence I have described here applies to topical products, not systemic use.</p>
+
+        <div class="mid-cta reveal">
+            <h3>Get the Peptexa Top-5 Free Guide</h3>
+            <p>Five of the most-researched compounds across categories -- not just skin. Mechanism, evidence level, and FDA status for each. Free PDF.</p>
+            <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" rel="noopener">Get the Free Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">Is GHK-Cu in skincare the same as injectable GHK-Cu? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Same molecule, different delivery and context. Topical GHK-Cu in skincare products has controlled trial evidence for skin remodeling effects. Injectable systemic GHK-Cu has a different absorption profile and is used off-label with less clinical data. The topical evidence does not directly translate to systemic use and vice versa.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does Matrixyl actually work? <span class="faq-icon">+</span></button>
+                <div class="faq-a">The evidence suggests modest effects on wrinkle depth and skin texture, primarily from industry-funded trials. The mechanism (matrikine signaling to fibroblasts) is biologically plausible. Independent replication is limited. It is one of the better-studied cosmetic peptides, but the effect sizes in marketing materials should be taken with a grain of salt.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Is Argireline safe? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Topically applied argireline has a well-established safety record and is considered safe as a cosmetic ingredient. The "Botox alternative" marketing is overstated, but the ingredient itself is not harmful. Just calibrate your expectations accordingly.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does Peptexa sell any skincare products? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. Peptexa is an educational reference. We do not sell skincare, peptides, or any products. The <a href="/peptides/ghk-cu.html">GHK-Cu compound page</a> has more detail on the full evidence base for that specific compound.</div>
+            </div>
+        </div>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/peptides/ghk-cu.html">GHK-Cu -- compound reference</a>
+                <a class="related-link" href="/peptides/epithalon.html">Epithalon -- compound reference</a>
+                <a class="related-link" href="/blog/peptides-for-women.html">Peptides for women</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+
+        <div class="email-gate reveal">
+            <h3>Get the Peptexa Top-5 free</h3>
+            <p>Five compounds, mechanism-led. One email a week. No fluff.</p>
+            <form id="blog-form" novalidate>
+                <input type="text" id="fname-input" name="first_name" placeholder="First name (optional)" autocomplete="given-name">
+                <input type="email" id="email-input" name="email" placeholder="Your email" required autocomplete="email">
+                <button type="submit">Send Me the Top-5</button>
+                <div class="email-fine">Tag: blog-peptides-skin. No spam. Unsubscribe anytime.</div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        // Reveal
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+        // Kit form
+        (function() {
+            var form = document.getElementById('blog-form');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var email = document.getElementById('email-input').value.trim();
+                var fname = document.getElementById('fname-input').value.trim();
+                if (!email || email.indexOf('@') === -1) return;
+                var fd = new FormData();
+                fd.append('email_address', email);
+                if (fname) fd.append('fields[first_name]', fname);
+                fd.append('tags[]', 'quiz-lead');
+                fd.append('tags[]', 'blog-peptides-skin');
+                fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {method:'POST',body:fd,mode:'no-cors'}).catch(function(){});
+                form.innerHTML = '<p style="font-family:Playfair Display,serif;font-size:1.1rem;color:var(--navy)"><strong>Thanks.</strong> Check your inbox in a few minutes.</p>';
+            });
+        })();
+    </script>
+</body>
+</html>
