@@ -1154,9 +1154,23 @@ function submitEmail() {
 
     fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {
         method: 'POST',
-        body: kitData,
-        mode: 'no-cors'
-    }).catch(() => {});
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+            email_address: email,
+            first_name: fname || undefined,
+            tags: ['quiz-lead', 'quiz-result-' + quizResultKey],
+            fields: {
+                first_name: fname || undefined,
+                quiz_matched_guide: resultTitle,
+                quiz_matched_url: resultUrl,
+                quiz_answers: answerSummary,
+                quiz_date: new Date().toISOString().slice(0, 10)
+            }
+        })
+    }).then(r => {
+        if (!r.ok) console.error('Kit subscription failed:', r.status, r.statusText);
+        else console.log('Kit subscription success');
+    }).catch(err => console.error('Kit subscription error:', err));
 
     currentQ++;
     render();
