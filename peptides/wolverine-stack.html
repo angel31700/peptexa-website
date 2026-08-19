@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Wolverine Stack -- what the science actually shows. BPC-157 and TB-500 combined for tissue repair. Mechanism, evidence, FDA status. Plain-language reference.">
+    <meta name="keywords" content="Wolverine Stack, BPC-157, TB-500, Thymosin Beta-4, tissue repair, peptide stack, recovery">
+    <link rel="canonical" href="https://peptexa.com/peptides/wolverine-stack/">
+    <meta property="og:title" content="The Wolverine Stack (BPC-157 + TB-500) -- what the science actually shows | Peptexa">
+    <meta property="og:description" content="BPC-157 and TB-500 combined for tissue repair. Mechanism of each, the rationale for stacking, evidence, FDA status.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/peptides/wolverine-stack/">
+    <title>The Wolverine Stack (BPC-157 + TB-500) -- what the science actually shows | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0A1628;
+            --navy-mid: #0F1E3A;
+            --navy-light: #162544;
+            --teal: #1A7A7A;
+            --teal-light: #2C9A9A;
+            --teal-glow: rgba(26,122,122,0.4);
+            --teal-pale: #E6F4F4;
+            --gold: #C8963A;
+            --gold-light: #E8B84B;
+            --gold-pale: #FBF4E8;
+            --gold-glow: rgba(200,150,58,0.35);
+            --white: #FFFFFF;
+            --cream: #FAFAF8;
+            --off-white: #F4F2EE;
+            --text-dark: #1A1A2E;
+            --text-mid: #4A5568;
+            --text-light: #8A9AB5;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.7; overflow-x: hidden; }
+        #progress-bar { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; transition: width 0.1s linear; }
+        .header { position: fixed; top: 3px; left: 0; right: 0; z-index: 1000; padding: 1rem 2.5rem; background: rgba(10,22,40,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,122,122,0.2); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 38px; height: 38px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy-light) 100%); border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 18px rgba(26,122,122,0.4); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.08em; color: var(--white); }
+        .logo-text span { color: var(--teal-light); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.88rem; font-weight: 500; transition: color 0.3s; letter-spacing: 0.02em; }
+        nav a:hover { color: var(--teal-light); }
+        .nav-cta { background: linear-gradient(135deg, var(--teal), var(--teal-light)); color: white !important; padding: 0.55rem 1.3rem; border-radius: 6px; font-weight: 700 !important; letter-spacing: 0.05em !important; box-shadow: 0 4px 14px rgba(26,122,122,0.35); }
+        .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,122,122,0.5) !important; }
+        .hero { position: relative; min-height: 100vh; background: var(--navy); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.6; }
+        .hero-molecule { position: absolute; right: 8%; top: 50%; transform: translateY(-50%); width: 380px; height: 380px; opacity: 0.18; }
+        .hero-content { position: relative; z-index: 2; max-width: 760px; padding: 2rem 2.5rem; text-align: left; }
+        .eyebrow-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.18); border: 1px solid rgba(26,122,122,0.4); color: var(--teal-light); padding: 6px 16px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 22px; animation: fadeSlideUp 0.8s ease both; }
+        .eyebrow-chip::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--teal-light); animation: pulse 2s ease infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; color: var(--white); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; animation: fadeSlideUp 0.9s 0.15s ease both; }
+        .hero h1 em { font-style: italic; color: var(--teal-light); }
+        .hero-subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.68); line-height: 1.65; max-width: 620px; margin-bottom: 36px; font-weight: 300; animation: fadeSlideUp 1s 0.3s ease both; }
+        .hero-stats { display: flex; gap: 2.5rem; animation: fadeSlideUp 1s 0.45s ease both; }
+        .hero-stat { text-align: left; }
+        .hero-stat .n { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 800; color: var(--gold-light); line-height: 1; }
+        .hero-stat .l { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.45); margin-top: 4px; }
+        .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.35); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; animation: fadeSlideUp 1s 0.8s ease both; }
+        .scroll-arrow { width: 24px; height: 24px; border-right: 2px solid rgba(255,255,255,0.25); border-bottom: 2px solid rgba(255,255,255,0.25); transform: rotate(45deg); animation: bounceDown 2s ease infinite; }
+        @keyframes bounceDown { 0%, 100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(6px); } }
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+        .compliance-strip { background: rgba(200,150,58,0.07); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); backdrop-filter: blur(8px); padding: 14px 20px; border-radius: 10px; font-size: 0.88rem; color: var(--text-mid); margin-bottom: 40px; }
+        .compliance-strip strong { color: var(--gold); }
+        main { max-width: 960px; margin: 0 auto; padding: 80px 2.5rem 4rem; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .toc { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); border-radius: 14px; padding: 28px 32px; margin-bottom: 48px; }
+        .toc strong { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--teal); display: block; margin-bottom: 14px; }
+        .toc ol { list-style: none; counter-reset: toc; padding: 0; }
+        .toc li { counter-increment: toc; margin-bottom: 8px; }
+        .toc li::before { content: counter(toc, decimal-leading-zero); color: var(--gold); font-weight: 700; margin-right: 10px; font-size: 0.85rem; }
+        .toc a { color: var(--text-dark); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .toc a:hover { color: var(--teal); }
+        .quick-facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 56px; }
+        .fact-card { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 20px; transition: transform 0.3s, box-shadow 0.3s; }
+        .fact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .fact-card.gold-accent { border-left: 3px solid var(--gold); }
+        .fc-label { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--teal); font-weight: 700; margin-bottom: 8px; }
+        .fc-value { font-size: 0.92rem; color: var(--text-dark); line-height: 1.5; }
+        .fc-value a { color: var(--teal); text-decoration: underline; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--navy); margin: 56px 0 20px; padding-bottom: 14px; position: relative; }
+        h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); border-radius: 2px; }
+        p { margin-bottom: 18px; font-size: 1rem; }
+        p a { color: var(--teal); text-decoration: underline; }
+        .callout { background: linear-gradient(135deg, rgba(26,122,122,0.06), rgba(200,150,58,0.04)); border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 24px 28px; margin: 32px 0; }
+        .callout p { margin-bottom: 6px; font-style: italic; color: var(--text-mid); }
+        .callout-source { font-size: 0.78rem; color: var(--text-light); font-weight: 600; }
+        .mechanism-visual { display: flex; align-items: center; gap: 40px; margin: 36px 0; }
+        .mechanism-anim { width: 140px; height: 140px; position: relative; flex-shrink: 0; }
+        .molecule-ring { position: absolute; border: 2px solid; border-radius: 50%; }
+        .molecule-ring:nth-child(1) { inset: 0; border-color: rgba(26,122,122,0.5); animation: spin 12s linear infinite; }
+        .molecule-ring:nth-child(2) { inset: 15px; border-color: rgba(44,154,154,0.4); animation: spin 9s linear infinite reverse; }
+        .molecule-ring:nth-child(3) { inset: 30px; border-color: rgba(200,150,58,0.3); animation: spin 7s linear infinite; }
+        .molecule-core { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 22px; height: 22px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 20px var(--teal-glow); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .mechanism-stats { flex: 1; }
+        .mechanism-stat-row { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .mechanism-stat-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .msr-num { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.3rem; color: var(--teal); min-width: 70px; }
+        .msr-label { font-size: 0.9rem; color: var(--text-mid); }
+        .mid-cta { display: flex; align-items: center; gap: 28px; background: var(--navy); border-radius: 16px; padding: 36px; margin: 48px 0; }
+        .mid-cta-text { flex: 1; }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.3rem; margin-bottom: 8px; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin: 0; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 14px 30px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.92rem; letter-spacing: 0.04em; transition: all 0.3s; box-shadow: 0 4px 16px var(--gold-glow); white-space: nowrap; }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--gold-glow); }
+        .faq-block { margin-bottom: 48px; }
+        .faq-item { border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; margin-bottom: 12px; overflow: hidden; transition: box-shadow 0.3s; }
+        .faq-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+        .faq-q { width: 100%; background: var(--cream); border: none; padding: 18px 24px; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text-dark); font-family: 'Inter', sans-serif; transition: background 0.3s; }
+        .faq-q:hover { background: var(--off-white); }
+        .faq-icon { font-size: 1.3rem; color: var(--teal); transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; padding: 0 24px; font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; }
+        .faq-a.open { max-height: 500px; padding: 16px 24px 20px; }
+        .related { margin: 48px 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 16px; }
+        .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .related-link { display: block; padding: 14px 18px; background: var(--cream); border: 1px solid rgba(0,0,0,0.06); border-radius: 10px; color: var(--text-dark); text-decoration: none; font-size: 0.92rem; font-weight: 500; transition: all 0.3s; }
+        .related-link:hover { border-color: var(--teal); color: var(--teal); transform: translateX(4px); }
+        .email-gate { background: var(--navy); border-radius: 16px; padding: 40px; text-align: center; margin: 48px 0; }
+        .email-gate h3 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.5rem; margin-bottom: 8px; }
+        .eg-sub { color: rgba(255,255,255,0.55); font-size: 0.92rem; margin-bottom: 24px; }
+        .email-gate form { display: flex; gap: 10px; max-width: 520px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        .email-gate input { flex: 1; min-width: 180px; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: white; font-size: 0.92rem; font-family: 'Inter', sans-serif; }
+        .email-gate input:focus { border-color: var(--teal); outline: none; }
+        .email-gate input::placeholder { color: rgba(255,255,255,0.3); }
+        .email-gate button { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); border: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.92rem; font-family: 'Inter', sans-serif; transition: all 0.3s; }
+        .email-gate button:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--gold-glow); }
+        .email-fine { width: 100%; text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 8px; }
+        .bottom-cta { background: var(--navy); border-radius: 20px; padding: 60px 40px; text-align: center; margin: 48px -2.5rem -4rem; position: relative; overflow: hidden; }
+        .bottom-cta::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; border-radius: 50%; background: radial-gradient(ellipse, rgba(200,150,58,0.08), transparent 70%); }
+        .bottom-cta h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--white); margin: 0 0 14px; padding-bottom: 0; position: relative; }
+        .bottom-cta h2::after { display: none; }
+        .bottom-cta p { color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto 28px; font-size: 1rem; }
+        .bottom-cta .btn-gold { font-size: 1rem; padding: 16px 36px; }
+        footer { background: #050e1c; color: var(--off-white); padding: 50px 2.5rem 36px; }
+        .footer-inner { max-width: 960px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 20px; letter-spacing: 0.08em; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 20px; }
+        .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: var(--teal-light); }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.35); max-width: 700px; margin: 0 auto 16px; line-height: 1.65; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-molecule { display: none; }
+            .hero-stats { gap: 1.5rem; }
+            main { padding: 60px 1.25rem 3rem; }
+            .quick-facts-grid { grid-template-columns: 1fr; }
+            .mid-cta { flex-direction: column; text-align: center; }
+            .related-grid { grid-template-columns: 1fr; }
+            .mechanism-visual { flex-direction: column; text-align: center; }
+            nav a:not(.nav-cta) { display: none; }
+            .bottom-cta { margin: 0 -1.25rem -3rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "The Wolverine Stack (BPC-157 + TB-500) -- what the science actually shows",
+                "datePublished": "2026-08-19",
+                "dateModified": "2026-08-19",
+                "author": { "@type": "Organization", "name": "Peptexa" },
+                "publisher": { "@type": "Organization", "name": "Peptexa" },
+                "mainEntityOfPage": "https://peptexa.com/peptides/wolverine-stack/",
+                "description": "Wolverine Stack research summary: BPC-157 + TB-500 combination for tissue repair. Mechanism, evidence, FDA status.",
+                "keywords": ["Wolverine Stack","BPC-157","TB-500","Thymosin Beta-4","tissue repair","peptide stack","recovery"],
+                "inLanguage": "en",
+                "isAccessibleForFree": true
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {"@type": "Question", "name": "Is the Wolverine Stack FDA-approved?",
+                     "acceptedAnswer": {"@type": "Answer",
+                     "text": "No. Neither BPC-157 nor TB-500 is FDA-approved. The combination has no regulatory status anywhere. BPC-157 was restricted from compounding in 2023."}},
+                    {"@type": "Question", "name": "Does Peptexa sell the Wolverine Stack?",
+                     "acceptedAnswer": {"@type": "Answer",
+                     "text": "No. Peptexa is educational only. We do not sell or ship any peptide product."}},
+                    {"@type": "Question", "name": "Why is it called the Wolverine Stack?",
+                     "acceptedAnswer": {"@type": "Answer",
+                     "text": "It is a community-coined nickname referencing the X-Men character's regenerative abilities. The name is marketing, not science. The actual rationale is combining two peptides with complementary tissue repair mechanisms."}},
+                    {"@type": "Question", "name": "Is there clinical evidence for the combination?",
+                     "acceptedAnswer": {"@type": "Answer",
+                     "text": "No. There are no published studies on the BPC-157 + TB-500 combination in humans or animals. Evidence for each compound exists individually, primarily from animal studies."}},
+                    {"@type": "Question", "name": "What are the individual evidence levels?",
+                     "acceptedAnswer": {"@type": "Answer",
+                     "text": "BPC-157: extensive animal data, no published human RCTs. TB-500/Thymosin Beta-4: animal data plus some human trials for the parent molecule. Combined evidence level: preclinical only."}}
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header class="header">
+    <a href="/" class="logo">
+        <div class="logo-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="2.5" fill="white"/>
+                <circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="7" cy="7" r="1.5" fill="white" opacity="0.8"/>
+                <circle cx="17" cy="17" r="1.5" fill="white" opacity="0.8"/>
+                <circle cx="17" cy="7" r="1.5" fill="white" opacity="0.8"/>
+                <circle cx="7" cy="17" r="1.5" fill="white" opacity="0.8"/>
+                <line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/>
+                <line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/>
+                <line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/>
+                <line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/>
+            </svg>
+        </div>
+        <span class="logo-text">PEP<span>TEXA</span></span>
+    </a>
+    <nav>
+        <a href="/#guides">Guides</a>
+        <a href="/peptide-quiz.html">Quiz</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://peptexaangel.gumroad.com/l/top-5-peptides-free-guide" target="_blank" rel="noopener" class="nav-cta">Free Guide</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <svg class="hero-molecule" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="animation: spin 30s linear infinite;">
+        <circle cx="200" cy="200" r="180" stroke="#1A7A7A" stroke-width="1" stroke-dasharray="8 12" opacity="0.5"/>
+        <circle cx="200" cy="200" r="130" stroke="#2C9A9A" stroke-width="1" stroke-dasharray="4 8" opacity="0.4" style="animation: spin 18s linear infinite reverse;"/>
+        <circle cx="200" cy="200" r="80" stroke="#C8963A" stroke-width="1" opacity="0.3"/>
+        <circle cx="200" cy="40" r="10" fill="#1A7A7A" opacity="0.8"/>
+        <circle cx="200" cy="360" r="10" fill="#1A7A7A" opacity="0.8"/>
+        <circle cx="40" cy="200" r="10" fill="#2C9A9A" opacity="0.8"/>
+        <circle cx="360" cy="200" r="10" fill="#2C9A9A" opacity="0.8"/>
+        <circle cx="80" cy="80" r="8" fill="#C8963A" opacity="0.7"/>
+        <circle cx="320" cy="320" r="8" fill="#C8963A" opacity="0.7"/>
+        <circle cx="320" cy="80" r="8" fill="#C8963A" opacity="0.7"/>
+        <circle cx="80" cy="320" r="8" fill="#C8963A" opacity="0.7"/>
+        <circle cx="200" cy="200" r="22" fill="#1A7A7A" opacity="0.9"/>
+        <circle cx="200" cy="200" r="12" fill="#2C9A9A"/>
+        <line x1="200" y1="178" x2="200" y2="50" stroke="#1A7A7A" stroke-width="1.5" opacity="0.4"/>
+        <line x1="200" y1="222" x2="200" y2="350" stroke="#1A7A7A" stroke-width="1.5" opacity="0.4"/>
+        <line x1="178" y1="200" x2="50" y2="200" stroke="#2C9A9A" stroke-width="1.5" opacity="0.4"/>
+        <line x1="222" y1="200" x2="350" y2="200" stroke="#2C9A9A" stroke-width="1.5" opacity="0.4"/>
+        <line x1="186" y1="186" x2="90" y2="90" stroke="#C8963A" stroke-width="1" opacity="0.3"/>
+        <line x1="214" y1="214" x2="310" y2="310" stroke="#C8963A" stroke-width="1" opacity="0.3"/>
+        <line x1="214" y1="186" x2="310" y2="90" stroke="#C8963A" stroke-width="1" opacity="0.3"/>
+        <line x1="186" y1="214" x2="90" y2="310" stroke="#C8963A" stroke-width="1" opacity="0.3"/>
+    </svg>
+
+    <div class="hero-content">
+        <div class="eyebrow-chip">Educational &nbsp;·&nbsp; Combination Stack</div>
+        <h1>The Wolverine Stack -- what the <em>science</em> actually shows</h1>
+        <p class="hero-subtitle">Two well-studied repair peptides -- BPC-157 and TB-500 -- combined. The rationale is complementary tissue repair mechanisms. The name is hyperbolic. The individual compound data is real. Here is what the evidence actually supports.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="n">2</div>
+                <div class="l">Peptides combined</div>
+            </div>
+            <div class="hero-stat">
+                <div class="n">GI+</div>
+                <div class="l">BPC-157: gut-derived</div>
+            </div>
+            <div class="hero-stat">
+                <div class="n">T&beta;4</div>
+                <div class="l">TB-500: thymosin origin</div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+<main>
+
+    <aside class="compliance-strip reveal" role="note">
+        <strong>Educational summary. Not medical advice. No dosing on this site.</strong>
+        Consult a qualified provider for any health decision. Peptexa is the library, not a vendor.
+    </aside>
+
+    <div class="toc reveal">
+        <strong>On this page</strong>
+        <ol>
+            <li><a href="#origin">What The Wolverine Stack (BPC-157 + TB-500) is and where it comes from</a></li>
+            <li><a href="#mechanism">Mechanism, in plain English</a></li>
+            <li><a href="#evidence">What the human evidence shows</a></li>
+            <li><a href="#fda">Regulatory status</a></li>
+            <li><a href="#synonyms">Common synonyms researchers use</a></li>
+            <li><a href="#safety">Safety and adverse-event landscape</a></li>
+            <li><a href="#faq">Frequently asked questions</a></li>
+        </ol>
+    </div>
+
+    <div class="quick-facts-grid reveal">
+        <div class="fact-card">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                Mechanism
+            </div>
+            <div class="fc-value">BPC-157 promotes angiogenesis and GI tissue repair via growth factor modulation. TB-500 (Thymosin Beta-4 fragment) promotes cell migration, reduces inflammation, and supports tissue remodeling.</div>
+        </div>
+        <div class="fact-card">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                Evidence Level
+            </div>
+            <div class="fc-value">Preclinical evidence (&#9733;&#9733;&#9734;&#9734;&#9734;). Extensive animal data for each compound individually. No published human RCTs for either. No clinical data on the combination.</div>
+        </div>
+        <div class="fact-card gold-accent">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                FDA Status
+            </div>
+            <div class="fc-value">Neither compound is FDA-approved. Both are research compounds. BPC-157 restricted from compounding (2023).</div>
+        </div>
+        <div class="fact-card">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                Landmark Paper
+            </div>
+            <div class="fc-value"><a href="https://pubmed.ncbi.nlm.nih.gov/21030672/" target="_blank" rel="noopener">Sikiric et al. 2010 (BPC-157)</a> &amp; <a href="https://pubmed.ncbi.nlm.nih.gov/20626754/" target="_blank" rel="noopener">Goldstein et al. 2012 (TB-4)</a></div>
+        </div>
+        <div class="fact-card">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Common Synonyms
+            </div>
+            <div class="fc-value">Wolverine Stack, BPC-157 + TB-500, Body Protection Compound + Thymosin Beta-4 fragment, repair stack</div>
+        </div>
+        <div class="fact-card">
+            <div class="fc-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Last Reviewed
+            </div>
+            <div class="fc-value">August 19, 2026</div>
+        </div>
+    </div>
+
+    <h2 id="origin" class="reveal">What the Wolverine Stack is -- and where it comes from</h2>
+    <p class="reveal">The "Wolverine Stack" is a popular name for the combination of two peptides: BPC-157 (Body Protection Compound-157) and TB-500 (a fragment of Thymosin Beta-4). The name references the X-Men character known for rapid tissue regeneration -- which gives you a sense of the hype level. Let's look at what the data actually shows.</p>
+    <p class="reveal">BPC-157 is a 15-amino-acid peptide derived from a protein found in human gastric juice. TB-500 is a synthetic fragment of Thymosin Beta-4, a naturally occurring 43-amino-acid protein involved in tissue repair and cell migration. Both have extensive animal data. Neither has published human RCT data. The combination has no clinical data at all.</p>
+
+    <div class="callout reveal">
+        <p>The Wolverine Stack is a community-coined term, not a clinical protocol. The rationale -- combining complementary repair mechanisms -- is pharmacologically reasonable. But the evidence base is individual-compound animal data extrapolated to a combination used in humans. That's a meaningful gap.</p>
+        <div class="callout-source">Peptexa editorial note</div>
+    </div>
+
+    <h2 id="mechanism" class="reveal">Mechanism, in plain English</h2>
+    <p class="reveal">The theoretical rationale for combining BPC-157 and TB-500 is complementary mechanisms: one works through growth factor signaling and angiogenesis, the other through cell migration and inflammation reduction.</p>
+
+    <div class="mechanism-visual reveal">
+        <div class="mechanism-anim">
+            <div class="molecule-ring"></div>
+            <div class="molecule-ring"></div>
+            <div class="molecule-ring"></div>
+            <div class="molecule-core"></div>
+        </div>
+        <div class="mechanism-stats">
+            <div class="mechanism-stat-row">
+                <div class="msr-num">VEGF</div>
+                <div class="msr-label">BPC-157: promotes angiogenesis via VEGF, EGF, and FGF -- blood vessel formation for tissue repair</div>
+            </div>
+            <div class="mechanism-stat-row">
+                <div class="msr-num">GI</div>
+                <div class="msr-label">BPC-157: unique gastroprotective effects -- heals gut lining, modulates nitric oxide and dopamine systems</div>
+            </div>
+            <div class="mechanism-stat-row">
+                <div class="msr-num">Actin</div>
+                <div class="msr-label">TB-500: sequesters G-actin to promote cell migration -- cells move to injury sites faster</div>
+            </div>
+            <div class="mechanism-stat-row">
+                <div class="msr-num">Inflam</div>
+                <div class="msr-label">TB-500: reduces pro-inflammatory cytokines -- decreases inflammation at injury sites</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid-cta reveal">
+        <div class="mid-cta-text">
+            <h3>Want the full tissue repair reference?</h3>
+            <p>The Peptexa guide covers 200+ compounds -- mechanism, evidence level, and regulatory status for each.</p>
+        </div>
+        <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/the-complete-peptexa-reference" target="_blank" rel="noopener">Get the Guide &rarr;</a>
+    </div>
+
+    <h2 id="evidence" class="reveal">What the human evidence shows</h2>
+    <p class="reveal">BPC-157 has been studied extensively in animal models. <a href="https://pubmed.ncbi.nlm.nih.gov/21030672/" target="_blank" rel="noopener">Sikiric et al. (2010)</a> reviewed decades of research showing BPC-157's effects on tendon, ligament, muscle, bone, and GI tissue healing in animals. The consistency of animal data across multiple injury types is notable.</p>
+    <p class="reveal">TB-500 (Thymosin Beta-4) has a separate body of animal literature. <a href="https://pubmed.ncbi.nlm.nih.gov/20626754/" target="_blank" rel="noopener">Goldstein et al. (2012)</a> reviewed its role in wound healing, cardiac repair, and anti-inflammatory processes. Thymosin Beta-4 has been investigated in human clinical trials for wound healing and dry eye, though TB-500 is a specific fragment used in the peptide community.</p>
+    <p class="reveal">The combination itself has no published clinical or preclinical data. The "stack" rationale is based on complementary mechanisms from individual compound studies. Evidence level for the combination: &#9733;&#9733;&#9734;&#9734;&#9734; -- based on individual compound animal data only.</p>
+
+    <div class="callout reveal">
+        <p>The individual compounds have real data -- BPC-157 in particular has a remarkably consistent animal evidence base. But 'both compounds work individually in animals' does not automatically mean 'combining them in humans is safe and effective.' That extrapolation hasn't been tested.</p>
+        <div class="callout-source">Peptexa editorial note</div>
+    </div>
+
+    <h2 id="fda" class="reveal">Regulatory status</h2>
+    <p class="reveal">Neither BPC-157 nor TB-500 is <strong>FDA-approved</strong> for any indication. Both are research compounds. In 2023, the FDA added BPC-157 to its list of compounds that cannot be used in compounding, further restricting access.</p>
+    <p class="reveal">Thymosin Beta-4 (the parent molecule of TB-500) has been investigated in FDA-regulated clinical trials for wound healing. TB-500 specifically is not approved anywhere. The "Wolverine Stack" combination has no regulatory status in any country. <em>Last reviewed 2026-08-19.</em></p>
+
+    <h2 id="synonyms" class="reveal">Common synonyms researchers use</h2>
+    <p class="reveal">Wolverine Stack &nbsp;&middot;&nbsp; BPC-157 + TB-500 &nbsp;&middot;&nbsp; Body Protection Compound-157 + Thymosin Beta-4 fragment &nbsp;&middot;&nbsp; Repair stack &nbsp;&middot;&nbsp; Recovery stack. BPC-157 is sometimes called "Bepecin" in older literature.</p>
+
+    <h2 id="safety" class="reveal">Safety &amp; adverse-event landscape</h2>
+    <p class="reveal">BPC-157 has demonstrated a favorable safety profile in published animal studies, with no reported lethal dose (LD1) in toxicology studies. TB-500, as a fragment of the endogenous protein Thymosin Beta-4, has theoretical safety advantages. However, neither compound has undergone rigorous human safety monitoring.</p>
+    <p class="reveal">The primary safety concern with BPC-157 involves its angiogenic (blood vessel promoting) properties -- a theoretical concern for anyone with a history of cancer or active malignancy. TB-500 similarly promotes cell migration. The combination's safety profile is completely unstudied. Consult your provider.</p>
+    <p class="reveal">Peptexa is an educational resource. We do not provide dosing guidance, sourcing recommendations, or protocol advice. Always consult a qualified healthcare provider before any decision involving a peptide or therapeutic compound.</p>
+
+    <h2 id="faq" class="reveal">Frequently asked questions</h2>
+
+    <div class="faq-block reveal">
+        <div class="faq-item">
+            <button class="faq-q">Is the Wolverine Stack FDA-approved? <span class="faq-icon">+</span></button>
+            <div class="faq-a">No. Neither BPC-157 nor TB-500 is FDA-approved. The combination has no regulatory status anywhere. BPC-157 was restricted from compounding in 2023.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q">Does Peptexa sell the Wolverine Stack? <span class="faq-icon">+</span></button>
+            <div class="faq-a">No. Peptexa is educational only. We do not sell or ship any peptide product.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q">Why is it called the Wolverine Stack? <span class="faq-icon">+</span></button>
+            <div class="faq-a">It is a community-coined nickname referencing the X-Men character's regenerative abilities. The name is marketing, not science. The actual rationale is combining two peptides with complementary tissue repair mechanisms.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q">Is there clinical evidence for the combination? <span class="faq-icon">+</span></button>
+            <div class="faq-a">No. There are no published studies on the BPC-157 + TB-500 combination in humans or animals. Evidence for each compound exists individually, primarily from animal studies.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q">What are the individual evidence levels? <span class="faq-icon">+</span></button>
+            <div class="faq-a">BPC-157: extensive animal data, no published human RCTs. TB-500/Thymosin Beta-4: animal data plus some human trials for the parent molecule. Combined evidence level: preclinical only.</div>
+        </div>
+    </div>
+
+    <div class="related reveal">
+        <h3>Related on Peptexa</h3>
+        <div class="related-grid">
+            <a class="related-link" href="/peptides/bpc-157/">BPC-157 -- what the science actually shows</a>
+            <a class="related-link" href="/peptides/selank/">Selank -- what the science actually shows</a>
+            <a class="related-link" href="/peptides/ss-31/">SS-31 (Elamipretide) -- what the science actually shows</a>
+            <a class="related-link" href="/peptide-quiz.html">Take the peptide quiz</a>
+        </div>
+    </div>
+
+    <div class="email-gate reveal">
+        <h3>Want this in your inbox weekly?</h3>
+        <p class="eg-sub">Get the Peptexa Top-5 free -- five compounds, mechanism-led. One email a week. No spam.</p>
+        <form id="article-form" novalidate>
+            <input type="text" id="fname-input" name="first_name" placeholder="First name (optional)" autocomplete="given-name">
+            <input type="email" id="email-input" name="email" placeholder="Your email address" required autocomplete="email">
+            <button type="submit">Send Me the Top-5 &rarr;</button>
+            <div class="email-fine">Tag: article-wolverine-stack &nbsp;&middot;&nbsp; Unsubscribe anytime</div>
+        </form>
+    </div>
+
+    <div class="bottom-cta reveal">
+        <h2>The full Peptexa Reference</h2>
+        <p>200+ compounds. Mechanism, evidence level, and regulatory status for every one.</p>
+        <a class="btn-gold" href="https://peptexaangel.gumroad.com/l/cognitive-enhancement-peptexa" target="_blank" rel="noopener">Get the Complete Peptexa Reference &rarr;</a>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">PEPTEXA</div>
+        <div class="footer-links">
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="/disclaimer.html">Disclaimer</a>
+        </div>
+        <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider before starting any peptide regimen. Peptexa does not sell peptides. We sell education only.</p>
+        <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+(function(){var b=document.getElementById('progress-bar');window.addEventListener('scroll',function(){var s=window.scrollY;var d=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(d>0?(s/d)*100:0)+'%';},{passive:true})})();
+(function(){var c=document.getElementById('hero-canvas');if(!c)return;var x=c.getContext('2d');var p=[];var W,H;function r(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight}r();window.addEventListener('resize',r);var cl=['rgba(26,122,122,','rgba(44,154,154,','rgba(200,150,58,'];for(var i=0;i<80;i++){p.push({x:Math.random()*1200,y:Math.random()*800,r:Math.random()*2.5+0.5,c:cl[Math.floor(Math.random()*cl.length)],o:Math.random()*0.5+0.1,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3})}function d(){x.clearRect(0,0,W,H);p.forEach(function(q){q.x+=q.vx;q.y+=q.vy;if(q.x<0)q.x=W;if(q.x>W)q.x=0;if(q.y<0)q.y=H;if(q.y>H)q.y=0});for(var i=0;i<p.length;i++){for(var j=i+1;j<p.length;j++){var dx=p[i].x-p[j].x;var dy=p[i].y-p[j].y;var di=Math.sqrt(dx*dx+dy*dy);if(di<120){x.beginPath();x.strokeStyle='rgba(26,122,122,'+(0.12*(1-di/120))+')';x.lineWidth=0.8;x.moveTo(p[i].x,p[i].y);x.lineTo(p[j].x,p[j].y);x.stroke()}}}p.forEach(function(q){x.beginPath();x.arc(q.x,q.y,q.r,0,Math.PI*2);x.fillStyle=q.c+q.o+')';x.fill()});requestAnimationFrame(d)}d()})();
+(function(){var r=document.querySelectorAll('.reveal');var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('visible');o.unobserve(en.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});r.forEach(function(el){o.observe(el)})})();
+(function(){var items=document.querySelectorAll('.faq-item');items.forEach(function(item){var btn=item.querySelector('.faq-q');var ans=item.querySelector('.faq-a');btn.addEventListener('click',function(){var isOpen=item.classList.contains('open');items.forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').classList.remove('open')});if(!isOpen){item.classList.add('open');ans.classList.add('open')}})})})();
+(function(){var form=document.getElementById('article-form');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();var email=document.getElementById('email-input').value.trim();var fname=document.getElementById('fname-input').value.trim();if(!email||email.indexOf('@')===-1){document.getElementById('email-input').style.borderColor='rgba(255,80,80,0.6)';return}fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({email_address:email,first_name:fname||undefined,tags:['quiz-lead','article-semax'],fields:{first_name:fname||undefined}})}).then(function(r){if(!r.ok)console.error('Kit failed:',r.status)}).catch(function(err){console.error('Kit error:',err)});form.innerHTML='<p style="font-family:\'Playfair Display\',serif;font-size:1.2rem;color:white;margin:0;"><strong>You\'re in.</strong> The Peptexa Top-5 is on its way to your inbox.</p><p style="font-size:0.78rem;color:rgba(255,255,255,0.35);margin-top:8px;">Check your inbox in a few minutes. Unsubscribe anytime.</p>'})})();
+</script>
+</body>
+</html>
