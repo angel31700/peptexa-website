@@ -203,14 +203,14 @@
             .cta-tiers { grid-template-columns: 1fr; }
         }
     
-        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 9999; position: relative; }
         .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: white; margin: 5px 0; }
-        .mobile-nav { display: none; }
+        .mobile-nav { display: none !important; }
         @media (max-width: 768px) {
             .mobile-menu-btn { display: block; }
             nav { display: none !important; }
-            .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,22,40,0.98); backdrop-filter: blur(20px); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
-            .mobile-nav.open { display: flex; }
+            .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A1628; backdrop-filter: blur(20px); z-index: 9998; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+            .mobile-nav.open { display: flex !important; }
             .mobile-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 1.2rem; font-weight: 500; padding: 0.5rem 1rem; }
             .mobile-nav a:hover { color: white; }
             .mobile-nav .nav-cta { background: #1A7A7A; color: white !important; padding: 0.7rem 2rem; border-radius: 8px; font-weight: 600; }
@@ -236,7 +236,7 @@
         <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
-        <div class="mobile-nav">
+        <div class="mobile-nav" onclick="this.classList.remove("open");">
             <a href="/#guides">Guides</a>
             <a href="/categories/">Categories</a>
             <a href="/peptide-quiz.html">Take the Quiz</a>
