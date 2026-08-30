@@ -1148,27 +1148,17 @@ function submitEmail() {
     const resultUrl = GUIDES[quizResultKey].url;
     const answerSummary = getAnswerSummary();
 
-    // Submit to Kit with custom fields
-    const kitData = new FormData();
-    kitData.append('email_address', email);
-    if (fname) kitData.append('fields[first_name]', fname);
-    kitData.append('tags[]', 'quiz-lead');
-    kitData.append('tags[]', 'quiz-result-' + quizResultKey);
-    // Custom fields -- these show in Kit subscriber profile
-    kitData.append('fields[quiz_matched_guide]', resultTitle);
-    kitData.append('fields[quiz_matched_url]', resultUrl);
-    kitData.append('fields[quiz_answers]', answerSummary);
-    kitData.append('fields[quiz_date]', new Date().toISOString().slice(0,10));
-
-    fetch('https://app.convertkit.com/forms/6f12260c69/subscriptions', {
+    // Submit to Peptexa capture endpoint (server-side Kit v4 integration).
+    // Creates the subscriber, applies quiz-lead + quiz-result tags, delivers the
+    // free Top 5 guide, and enrolls in the matched nurture sequence.
+    fetch('https://ueogjxwv.gensparkclaw.com/quiz-signup', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             email_address: email,
             first_name: fname || undefined,
-            tags: ['quiz-lead', 'quiz-result-' + quizResultKey],
+            quiz_result_key: quizResultKey,
             fields: {
-                first_name: fname || undefined,
                 quiz_matched_guide: resultTitle,
                 quiz_matched_url: resultUrl,
                 quiz_answers: answerSummary,
@@ -1176,9 +1166,9 @@ function submitEmail() {
             }
         })
     }).then(r => {
-        if (!r.ok) console.error('Kit subscription failed:', r.status, r.statusText);
-        else console.log('Kit subscription success');
-    }).catch(err => console.error('Kit subscription error:', err));
+        if (!r.ok) console.error('Kit signup failed:', r.status, r.statusText);
+        else console.log('Kit signup success');
+    }).catch(err => console.error('Kit signup error:', err));
 
     currentQ++;
     render();
