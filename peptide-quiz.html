@@ -1170,6 +1170,14 @@ function submitEmail() {
         else console.log('Kit signup success');
     }).catch(err => console.error('Kit signup error:', err));
 
+    // GA4 conversion event: quiz completed + email captured
+    if (typeof gtag === 'function') {
+        gtag('event', 'quiz_complete', {
+            quiz_result: quizResultKey,
+            matched_guide: resultTitle
+        });
+    }
+
     currentQ++;
     render();
 }

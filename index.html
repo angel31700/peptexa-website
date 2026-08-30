@@ -8,6 +8,13 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-4VFP9FS729');
+      // GA4 conversion event: any click on a free-guide link (Gumroad)
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href*="gumroad.com/l/"]');
+        if (a && typeof gtag === 'function') {
+          gtag('event', 'free_guide_click', { link_url: a.href });
+        }
+      });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
