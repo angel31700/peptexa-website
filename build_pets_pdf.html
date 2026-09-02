@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Montserrat:wght@400;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Great+Vibes&display=swap');
+
+@page { size: letter; margin: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lato', sans-serif; color: #2C2C2C; font-size: 10.5pt; line-height: 1.55; }
+
+/* COVER PAGE */
+.cover { width: 8.5in; height: 11in; background: #ffffff; display: flex; flex-direction: column; align-items: center; page-break-after: always; position: relative; overflow: hidden; }
+.cover-label { margin-top: 0.8in; font-family: 'Montserrat', sans-serif; font-size: 9pt; font-weight: 600; letter-spacing: 6px; color: #1B3A5C; text-transform: uppercase; }
+.cover-hero { width: calc(100% - 1.2in); height: 6.5in; margin-top: 0.4in; border-radius: 12px; background: linear-gradient(135deg, #1B3A5C 0%, #2D6EB5 50%, #4A90D9 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+.cover-hero::before { content: '🐾'; position: absolute; font-size: 200pt; opacity: 0.06; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.cover-title { font-family: 'Playfair Display', serif; font-size: 52pt; font-weight: 800; color: white; text-align: center; line-height: 1.15; }
+.cover-title .accent { color: #F5D260; }
+.cover-subtitle { font-family: 'Great Vibes', cursive; font-size: 26pt; color: rgba(255,255,255,0.9); margin-top: 12px; }
+.cover-tagline { font-family: 'Lato', sans-serif; font-size: 11pt; color: rgba(255,255,255,0.7); margin-top: 20px; letter-spacing: 1px; }
+.cover-bottom { margin-top: auto; margin-bottom: 0.6in; text-align: center; }
+.cover-url { font-family: 'Montserrat', sans-serif; font-size: 11pt; font-weight: 700; letter-spacing: 5px; color: #1B3A5C; text-transform: uppercase; }
+.cover-line { width: 80px; height: 3px; background: #F5D260; margin: 10px auto 0; }
+
+/* INTERIOR PAGES */
+.page { width: 8.5in; min-height: 11in; background: #EEF1F6; padding: 0; page-break-after: always; position: relative; overflow: hidden; }
+
+/* INTRO PAGE */
+.intro { padding: 0.6in 0.75in; }
+.intro-welcome { font-family: 'Great Vibes', cursive; font-size: 28pt; color: #1B3A5C; }
+.intro-title { font-family: 'Montserrat', sans-serif; font-size: 38pt; font-weight: 900; color: #1B3A5C; text-transform: uppercase; letter-spacing: 2px; line-height: 1.1; }
+.intro-rule { width: 100px; height: 3px; background: #F5D260; margin: 12px 0 20px; }
+.intro p { margin-bottom: 12px; color: #2C2C2C; }
+.intro strong { color: #2D6EB5; }
+.status-key { margin-top: 24px; border-left: 4px solid #1B3A5C; padding-left: 20px; }
+.status-key h3 { font-family: 'Montserrat', sans-serif; font-size: 12pt; font-weight: 700; letter-spacing: 2px; color: #1B3A5C; text-transform: uppercase; margin-bottom: 12px; }
+.badge { display: inline-block; padding: 3px 14px; border-radius: 20px; font-family: 'Montserrat', sans-serif; font-size: 8pt; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-right: 6px; }
+.badge-approved { background: #5BBD72; color: white; }
+.badge-research { background: #F5D260; color: #1B3A5C; }
+.badge-supplement { background: #45B8A0; color: white; }
+.badge-offlabel { background: #D4A0C0; color: white; }
+.status-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.status-desc { font-size: 9.5pt; color: #666; }
+
+/* COMPOUND PAGES */
+.compound-page { display: flex; min-height: 11in; }
+.compound-content { width: 70%; padding: 0; background: white; position: relative; }
+.compound-image { width: 30%; background: linear-gradient(180deg, #1B3A5C 0%, #2D6EB5 50%, #4A90D9 100%); position: relative; min-height: 11in; }
+.compound-image::before { content: attr(data-emoji); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 80pt; opacity: 0.15; }
+
+.compound-header { display: flex; align-items: flex-start; gap: 0; }
+.compound-num { width: 90px; min-height: 120px; background: #1B3A5C; display: flex; align-items: center; justify-content: center; }
+.compound-num span { font-family: 'Playfair Display', serif; font-size: 72pt; font-weight: 700; color: white; }
+.compound-title-block { padding: 20px 24px; }
+.compound-name { font-family: 'Montserrat', sans-serif; font-size: 28pt; font-weight: 800; color: #1B3A5C; line-height: 1.1; }
+.compound-name-line { width: 80px; height: 3px; background: #F5D260; margin: 6px 0; }
+.compound-nickname { font-family: 'Great Vibes', cursive; font-size: 18pt; color: #1B3A5C; }
+.compound-fda { margin-top: 6px; font-size: 10pt; }
+.compound-fda strong { color: #1B3A5C; }
+
+.compound-body { padding: 16px 32px 16px 32px; }
+.section-header { font-family: 'Montserrat', sans-serif; font-size: 11pt; font-weight: 700; letter-spacing: 2px; color: #1B3A5C; text-transform: uppercase; margin: 18px 0 8px; }
+.compound-body p { margin-bottom: 10px; font-size: 10pt; color: #2C2C2C; line-height: 1.6; }
+.compound-body ul { margin: 0 0 10px 20px; }
+.compound-body li { font-size: 10pt; color: #2C2C2C; margin-bottom: 4px; line-height: 1.5; }
+.compound-body li strong { color: #1B3A5C; }
+
+.profile-box { background: #F5F0E4; border-radius: 6px; padding: 16px; margin: 14px 0; }
+.profile-box h4 { font-family: 'Montserrat', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: 2px; color: #1B3A5C; text-transform: uppercase; margin-bottom: 8px; }
+.profile-row { display: flex; font-size: 9.5pt; margin-bottom: 4px; }
+.profile-label { width: 110px; font-weight: 700; color: #1B3A5C; }
+.profile-value { color: #2C2C2C; }
+
+.bottom-line { background: #F5F0E4; border-left: 5px solid #1B3A5C; border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 14px 0; }
+.bottom-line h4 { font-family: 'Montserrat', sans-serif; font-size: 9pt; font-weight: 700; letter-spacing: 2px; color: #1B3A5C; text-transform: uppercase; margin-bottom: 6px; }
+.bottom-line p { font-size: 9.5pt; color: #2C2C2C; line-height: 1.5; }
+
+.disclaimer { font-size: 8.5pt; color: #888; font-style: italic; margin-top: 10px; padding: 0 32px; }
+
+.footer-bar { position: absolute; bottom: 25px; left: 0; background: #1B3A5C; color: white; padding: 6px 24px; border-radius: 0 14px 14px 0; font-family: 'Montserrat', sans-serif; font-size: 8pt; letter-spacing: 2px; }
+.footer-bar-right { left: auto; right: 0; border-radius: 14px 0 0 14px; }
+
+.warning-box { background: #FFF3E0; border-left: 5px solid #FF9800; border-radius: 0 6px 6px 0; padding: 12px 16px; margin: 12px 0; }
+.warning-box strong { color: #E65100; }
+.warning-box p { font-size: 9.5pt; margin: 0; }
+
+.stars { color: #F5D260; font-size: 14pt; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+<div class="cover-label">PEPTEXA CATEGORY GUIDE &bull; PETS EDITION</div>
+<div class="cover-hero">
+<div class="cover-title">Peptides<br/>for <span class="accent">Pets</span></div>
+<div class="cover-subtitle">What the science actually shows</div>
+<div class="cover-tagline">10 compounds &bull; Dogs &amp; cats &bull; Mechanism, evidence &amp; veterinary status</div>
+</div>
+<div class="cover-bottom">
+<div class="cover-url">PEPTEXA.COM</div>
+<div class="cover-line"></div>
+</div>
+</div>
+
+<!-- INTRO PAGE -->
+<div class="page">
+<div class="intro">
+<div class="intro-welcome">Welcome to</div>
+<div class="intro-title">PEPTIDES<br/>FOR PETS</div>
+<div class="intro-rule"></div>
+<p>This guide covers <strong>10 peptides</strong> that are either already used in veterinary medicine or actively being explored for dogs and cats. Each compound gets the same treatment: what it is, how it works, what the evidence actually shows, and where it stands with regulators.</p>
+<p>We rate evidence on a five-star scale based on published research for veterinary use specifically -- not human data, not opinion, not marketing claims.</p>
+<p><strong>What this guide is not:</strong> This is not a dosing manual. We do not recommend protocols, vendors, or treatment plans. Peptide therapy in pets should always involve a licensed veterinarian who understands your animal's full medical picture.</p>
+
+<div class="status-key">
+<h3>How Status Is Marked</h3>
+<div class="status-row"><span class="badge badge-approved">VET-APPROVED</span><span class="status-desc">Approved as a veterinary medication in one or more countries</span></div>
+<div class="status-row"><span class="badge badge-research">RESEARCH PEPTIDE</span><span class="status-desc">Published animal data exists but not approved for veterinary therapeutic use</span></div>
+<div class="status-row"><span class="badge badge-supplement">SUPPLEMENT</span><span class="status-desc">Available as a dietary supplement for pets (OTC)</span></div>
+<div class="status-row"><span class="badge badge-offlabel">OFF-LABEL</span><span class="status-desc">Used by some integrative veterinarians outside approved indications</span></div>
+</div>
+
+<p style="margin-top:24px;"><strong>Evidence Ratings:</strong></p>
+<p><span class="stars">★★★★★</span> Robust -- Vet-approved or multiple controlled studies in target species</p>
+<p><span class="stars">★★★★☆</span> Strong -- Well-supported by clinical or preclinical data in animals</p>
+<p><span class="stars">★★★☆☆</span> Moderate -- Published animal data but veterinary trials limited</p>
+<p><span class="stars">★★☆☆☆</span> Limited -- Early research, mostly preclinical or case reports</p>
+<p><span class="stars">★☆☆☆☆</span> Preliminary -- Mechanism plausible but almost no species-specific data</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+
+<!-- COMPOUND 1: BPC-157 -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>1</span></div>
+<div class="compound-title-block">
+<div class="compound-name">BPC-157</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Body Protection Compound</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span> <span class="badge badge-offlabel">OFF-LABEL</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★☆☆</span> <span style="font-size:9pt;color:#666;">Moderate</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A 15-amino-acid synthetic peptide derived from a protein in gastric juice. Most of the published data comes from rodent models, but a pharmacokinetic study in beagle dogs gives us actual species-specific data -- something most research peptides lack for canines.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Angiogenesis</strong> -- promotes new blood vessel formation, accelerating healing</li>
+<li><strong>Growth factor upregulation</strong> -- increases VEGF and EGF for tissue repair</li>
+<li><strong>Nitric oxide modulation</strong> -- regulates inflammation and vascular function</li>
+<li><strong>Cytoprotection</strong> -- protects gut mucosal lining from NSAID damage (relevant for arthritic dogs on long-term NSAIDs)</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Over 100 published preclinical studies showing positive effects on tendon healing, ligament repair, and gut protection. The beagle PK study confirmed systemic absorption after injection. Integrative vets report clinical improvements in dogs with joint injuries, post-surgical recovery, and IBD. No randomized controlled veterinary trials published.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Gastric pentadecapeptide</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">15</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Rats, mice, beagle dogs (PK)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Not vet-approved. Off-label use.</span></div>
+</div>
+
+<div class="section-header">SAFETY</div>
+<p>No significant adverse effects in rodent studies or the beagle PK study. Injection site reactions are the most commonly noted concern. Long-term safety data in dogs/cats is absent. <strong>Cats:</strong> Very limited data. Feline-specific PK/safety not published.</p>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The most talked-about pet peptide. Real mechanism, real animal data, real beagle pharmacokinetics. But no controlled veterinary trials yet. If your vet uses it, they are making a clinical judgment based on preclinical evidence and clinical experience -- not approved labeling.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🧬"></div>
+</div>
+</div>
+
+<!-- COMPOUND 2: TB-500 -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>2</span></div>
+<div class="compound-title-block">
+<div class="compound-name">TB-500</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">Thymosin Beta-4</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span> <span class="badge badge-offlabel">OFF-LABEL</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★☆☆</span> <span style="font-size:9pt;color:#666;">Moderate</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A synthetic version of thymosin beta-4, a 43-amino-acid peptide naturally produced by virtually every cell. TB-500 gained its reputation in equine medicine first -- horse trainers and equine vets were early adopters for tendon injuries and muscle tears. It then crossed over to dogs.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Actin regulation</strong> -- promotes cell migration to injury sites by reorganizing cellular scaffolding</li>
+<li><strong>Anti-inflammatory</strong> -- downregulates inflammatory cytokines</li>
+<li><strong>Angiogenesis</strong> -- promotes new blood vessel growth at injury sites</li>
+<li><strong>Stem cell activation</strong> -- activates progenitor cells in injured tissue for faster healing with less scarring</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Extensive equine data -- TB-500 has been used in competitive horses for decades. Rodent studies show accelerated wound healing, reduced inflammation, and improved tendon/muscle recovery. Veterinary case reports describe improved recovery time after surgery and mobility improvements in dogs. No formal controlled veterinary trials published.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Thymosin peptide</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">43</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Rats, mice, horses, dogs (case reports)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Not vet-approved. WADA-prohibited in sport.</span></div>
+</div>
+
+<div class="section-header">SAFETY</div>
+<p>Generally well-tolerated in published animal studies and clinical equine use. Injection site swelling occasionally noted. Long-term dog-specific safety data is limited. <strong>Cats:</strong> Very limited data. The mechanism is species-general but feline studies have not been published.</p>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>Started in horse racing, moved to the dog park. The tissue-repair mechanism is well-characterized and the equine track record is extensive. For dogs, the evidence is growing but still based on clinical observation rather than controlled trials. Often paired with BPC-157.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar footer-bar-right">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🐴"></div>
+</div>
+</div>
+
+<!-- COMPOUND 3: KPV -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>3</span></div>
+<div class="compound-title-block">
+<div class="compound-name">KPV</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Anti-Inflammatory Tripeptide</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span></div>
+<div style="margin-top:4px;"><span class="stars">★★☆☆☆</span> <span style="font-size:9pt;color:#666;">Limited</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>Just three amino acids -- lysine, proline, valine -- from the tail end of alpha-MSH. Retains the anti-inflammatory activity of the parent hormone without the skin-darkening effect. Gaining attention in veterinary circles for gut health in dogs and cats with IBD.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>NF-kB inhibition</strong> -- suppresses the master inflammatory signaling switch inside cells</li>
+<li><strong>Cytokine reduction</strong> -- decreases IL-1beta, IL-6, TNF-alpha production</li>
+<li><strong>Melanocortin-independent</strong> -- no pigmentation side effects</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Mouse colitis models show KPV reduces inflammation comparably to steroids when delivered via nanoparticles to the colon. In vitro, it inhibits inflammatory cytokines in intestinal cells. For pets: no published veterinary trials. Important caveat -- free oral KPV is likely degraded before reaching the gut. The research used specialized nanoparticle delivery not commercially available for pets.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Alpha-MSH fragment (tripeptide)</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">3</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Mice, in vitro</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Research-stage. No vet approval.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The mechanism is compelling for gut inflammation in pets, but the delivery challenge is real. Free oral KPV probably does not survive digestion. Worth watching as delivery technology improves. Does not cause skin darkening.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🔬"></div>
+</div>
+</div>
+
+<!-- COMPOUND 4: GHK-Cu -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>4</span></div>
+<div class="compound-title-block">
+<div class="compound-name">GHK-Cu</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Copper Peptide</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span> <span class="badge badge-offlabel">OFF-LABEL</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★☆☆</span> <span style="font-size:9pt;color:#666;">Moderate</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A naturally occurring tripeptide-copper complex found in blood plasma, saliva, and urine. Over 60 published studies on wound healing, skin remodeling, and anti-inflammatory effects. Used topically in veterinary wound care for dogs.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Copper delivery</strong> -- supplies bioavailable copper for collagen synthesis enzymes</li>
+<li><strong>Collagen production</strong> -- activates genes for tissue remodeling</li>
+<li><strong>Wound healing</strong> -- 30-40% faster wound closure in animal models</li>
+<li><strong>Immune cell recruitment</strong> -- attracts macrophages to injury sites</li>
+</ul>
+
+<div class="warning-box">
+<p><strong>CRITICAL WARNING FOR CATS:</strong> Cats are highly sensitive to copper accumulation. Felines have limited ability to excrete excess copper through bile. Copper toxicosis in cats can cause liver damage and is potentially fatal. GHK-Cu delivers bioavailable copper directly. Do not use GHK-Cu in cats without explicit veterinary guidance from a vet who understands feline copper metabolism.</p>
+</div>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Rat and pig wound models show accelerated healing and improved tissue strength. Topical use in veterinary wound care is established for dogs. Some vets report systemic use for broader healing, though systemic veterinary data is sparse.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Copper-tripeptide complex</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">3 + copper ion</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Rats, pigs, dogs (topical)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Not vet-approved as drug. Used in wound care products.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>Real wound-healing data, real veterinary use in dogs. Topical application for skin conditions and wounds is the best-supported use. The cat warning is not hypothetical -- feline copper metabolism is a documented species difference that matters here.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar footer-bar-right">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="✨"></div>
+</div>
+</div>
+
+<!-- COMPOUND 5: Collagen Peptides -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>5</span></div>
+<div class="compound-title-block">
+<div class="compound-name">Collagen Peptides</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Joint &amp; Coat Supplement</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-supplement">SUPPLEMENT</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★★☆</span> <span style="font-size:9pt;color:#666;">Strong</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>Small protein fragments from enzymatically broken-down collagen -- the most abundant protein in every mammal. Already the most commercially successful peptide supplement category in the world, with multiple pet-specific products on the market.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Amino acid supply</strong> -- provides glycine, proline, hydroxyproline for building collagen</li>
+<li><strong>Cell signaling</strong> -- specific dipeptides (Pro-Hyp) tell cartilage and skin cells to ramp up collagen production</li>
+<li><strong>Oral absorption confirmed</strong> -- radiolabeled studies show collagen peptides reach joint and skin tissue within hours</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Controlled studies in dogs show improved mobility scores in osteoarthritis after 8-12 weeks. Coat quality and skin hydration improvements documented. Significant improvement in vet-assessed lameness scores versus placebo. One of the stronger evidence bases in this guide.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Hydrolyzed protein (bioactive fragments)</span></div>
+<div class="profile-row"><span class="profile-label">Size</span><span class="profile-value">2,000-5,000 Da (di/tripeptides)</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Dogs (clinical), cats (limited), humans (extensive)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">OTC supplement. GRAS.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The most accessible entry point. Available over the counter, well-tolerated by dogs and cats, and backed by actual controlled studies in dogs. Type II (chicken) for joints, Type I/III (bovine/marine) for coat. Not the most exciting compound in this guide, but the evidence-to-accessibility ratio is the best.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🦴"></div>
+</div>
+</div>
+
+<!-- COMPOUND 6: Thymosin Alpha-1 -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>6</span></div>
+<div class="compound-title-block">
+<div class="compound-name" style="font-size:22pt;">Thymosin Alpha-1</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Immune Modulator</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span> <span class="badge badge-offlabel">OFF-LABEL</span></div>
+<div style="margin-top:4px;"><span class="stars">★★☆☆☆</span> <span style="font-size:9pt;color:#666;">Limited</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A 28-amino-acid peptide from thymus tissue, approved in 35+ countries for human immune support. The thymus programs T-cells and shrinks with age in all mammals -- dogs, cats, and humans alike. Some integrative vets are exploring it for pets with cancer or age-related immune decline.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Dendritic cell activation</strong> -- enhances the immune scouts that identify threats</li>
+<li><strong>T-cell boost</strong> -- increases CD4+ helper T-cells and natural killer cells</li>
+<li><strong>Th1 shift</strong> -- promotes cellular/antiviral immunity over allergic response</li>
+<li><strong>Immunomodulatory</strong> -- balances immune response rather than just stimulating it</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Human clinical data is substantial (hepatitis, cancer immunotherapy). For pets: extremely limited published data. Individual case reports from integrative vets describe improved immune markers in dogs. The biological plausibility is strong -- thymus function is similar across mammals. But plausibility is not proof.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Thymic peptide</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">28</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Humans (extensive), dogs (case reports)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Not vet-approved. Human-approved in 35+ countries.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The human evidence is strong enough to make the mechanism credible for pets. But veterinary-specific data barely exists. Most relevant for aging dogs with declining immune function or as an adjunct in cancer care -- always under oncologist/vet supervision. Not the same as TB-500 despite similar names.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar footer-bar-right">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🛡️"></div>
+</div>
+</div>
+
+<!-- COMPOUND 7: Pentosan Polysulfate -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>7</span></div>
+<div class="compound-title-block">
+<div class="compound-name" style="font-size:18pt;">Pentosan Polysulfate</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">Cartrophen -- The Gold Standard</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-approved">VET-APPROVED</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★★★</span> <span style="font-size:9pt;color:#666;">Robust</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A semi-synthetic polysaccharide classified as a disease-modifying osteoarthritis drug (DMOAD). Marketed as Cartrophen Vet. One of the few compounds in this guide that is actually approved as a veterinary medication, with decades of clinical use and controlled trials in dogs.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Enzyme inhibition</strong> -- blocks metalloproteinases that break down cartilage</li>
+<li><strong>Hyaluronic acid</strong> -- stimulates synovial cells to produce joint lubricant</li>
+<li><strong>Proteoglycan synthesis</strong> -- rebuilds the shock-absorbing molecules in cartilage</li>
+<li><strong>Subchondral blood flow</strong> -- improves nutrient delivery to the bone beneath cartilage</li>
+<li><strong>Anti-inflammatory</strong> -- reduces joint swelling and pain</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Multiple controlled veterinary clinical trials. A 2026 study showed PPS-treated dogs improved in pain, joint function, and cartilage volume versus placebo, with biomarker changes at weeks 8 and 16. This is the strongest evidence base in this guide by a wide margin. Administered as a series of weekly injections by a veterinarian.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Polysaccharide (DMOAD)</span></div>
+<div class="profile-row"><span class="profile-label">Structure</span><span class="profile-value">Semi-synthetic polysaccharide</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Dogs (clinical trials), cats (some use)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Vet-approved (AU, NZ, CA, EU). Rx only.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The compound every other joint peptide is measured against. Actual disease modification, not just symptom masking. Approved, clinically proven, and available through your vet. If your dog has osteoarthritis, ask your veterinarian about Cartrophen before exploring research peptides.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🏆"></div>
+</div>
+</div>
+
+<!-- COMPOUND 8: LL-37 -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>8</span></div>
+<div class="compound-title-block">
+<div class="compound-name">LL-37</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Natural Antibiotic Peptide</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span></div>
+<div style="margin-top:4px;"><span class="stars">★★★☆☆</span> <span style="font-size:9pt;color:#666;">Moderate</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>LL-37 is the human cathelicidin antimicrobial peptide. Dogs and cats have their own versions (canine cCath and feline feCath). These are part of the innate immune system -- the first line of defense that has existed for hundreds of millions of years of evolution. Research interest has surged because these peptides kill bacteria through mechanisms that are much harder for bacteria to resist compared to conventional antibiotics.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Membrane disruption</strong> -- positively charged peptide inserts into negatively charged bacterial membranes, forming pores</li>
+<li><strong>Broad spectrum</strong> -- effective against gram-positive, gram-negative bacteria, some fungi, and enveloped viruses</li>
+<li><strong>Selective targeting</strong> -- mammalian cell membranes are structured differently, so the peptide preferentially attacks bacteria</li>
+<li><strong>Immune modulation</strong> -- attracts immune cells to infection sites and promotes wound healing</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Lab studies confirm canine cathelicidin is effective against common veterinary pathogens, including methicillin-resistant Staphylococcus (MRSP) -- a growing problem in veterinary medicine. The antimicrobial activity is confirmed in cell culture and wound models. Clinical veterinary trials using synthetic cathelicidin are not yet published, but the research pipeline is active.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Cathelicidin antimicrobial peptide</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">37 (human LL-37); varies by species</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">In vitro (canine, feline isolates)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Research-stage. Not commercially available for pets.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The antibiotic resistance crisis makes this category important for the future of veterinary medicine. Your pet already produces cathelicidins naturally. Synthetic therapeutic versions are in the research pipeline but not yet a practical treatment option. A healthy diet and good overall health support natural cathelicidin production.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar footer-bar-right">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="🦠"></div>
+</div>
+</div>
+
+<!-- COMPOUND 9: Oxytocin -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>9</span></div>
+<div class="compound-title-block">
+<div class="compound-name">Oxytocin</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Bonding Hormone</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-approved">VET-APPROVED</span> (obstetric)</div>
+<div style="margin-top:4px;"><span class="stars">★★★★☆</span> <span style="font-size:9pt;color:#666;">Strong</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A 9-amino-acid peptide produced by all mammals. Famous for labor and milk letdown, but the behavioral research is where it gets interesting for pet owners. Oxytocin is the chemical mediator of the bond between you and your dog -- released during eye contact, petting, and play, in both of you.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS</div>
+<ul>
+<li><strong>Amygdala dampening</strong> -- reduces fear-center activity in the brain</li>
+<li><strong>Cortisol reduction</strong> -- lowers stress hormone output</li>
+<li><strong>Dopamine increase</strong> -- activates reward circuits during social interaction</li>
+<li><strong>The mutual gaze loop</strong> -- dogs and owners who make eye contact both get oxytocin spikes (published in Science, 2015)</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Dogs given intranasal oxytocin showed increased positive social behaviors toward owners. Oxytocin levels rise in both species during positive interactions. Preliminary data suggests potential for managing separation anxiety and fear-based behaviors. Vet obstetric use is well-established and approved. Behavioral applications are promising but early -- no established protocols.</p>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Neuropeptide hormone</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">9 (cyclic)</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Dogs (behavioral + obstetric), cats (obstetric)</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Vet-approved (obstetric). Behavioral use is investigational.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The science behind why petting your dog feels good for both of you. Approved and proven for obstetric use. Behavioral applications (anxiety, bonding) are the frontier -- real published data exists but no established treatment protocols yet. In the meantime, eye contact and petting are free oxytocin delivery systems.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="❤️"></div>
+</div>
+</div>
+
+<!-- COMPOUND 10: Epitalon -->
+<div class="page" style="padding:0;">
+<div class="compound-page">
+<div class="compound-content">
+<div class="compound-header">
+<div class="compound-num"><span>10</span></div>
+<div class="compound-title-block">
+<div class="compound-name">Epitalon</div>
+<div class="compound-name-line"></div>
+<div class="compound-nickname">The Longevity Question Mark</div>
+<div class="compound-fda"><strong>Veterinary Status:</strong> <span class="badge badge-research">RESEARCH PEPTIDE</span></div>
+<div style="margin-top:4px;"><span class="stars">★☆☆☆☆</span> <span style="font-size:9pt;color:#666;">Preliminary</span></div>
+</div>
+</div>
+<div class="compound-body">
+<div class="section-header">WHAT IT IS</div>
+<p>A synthetic tetrapeptide (Ala-Glu-Asp-Gly) designed to mimic a pineal gland extract. Its claim to fame: telomerase activation. Telomeres are the protective chromosome caps that shorten with each cell division. Telomerase rebuilds them. The theory: activate telomerase, slow cellular aging. We include it because pet longevity is the fastest-growing conversation in veterinary biohacking.</p>
+
+<div class="section-header">HOW IT WORKS IN PETS (THEORETICAL)</div>
+<ul>
+<li><strong>Telomerase activation</strong> -- increases TERT gene expression in aging cells</li>
+<li><strong>Melatonin normalization</strong> -- may restore age-disrupted sleep-wake cycles</li>
+<li><strong>Relevance to dogs</strong> -- large dogs age faster than small dogs, correlating with faster telomere shortening. A telomerase activator could theoretically be even more impactful in a species with a 10-15 year lifespan</li>
+</ul>
+
+<div class="section-header">WHAT THE EVIDENCE SHOWS</div>
+<p>Rodent studies: 13-15% lifespan extension in mice, normalized melatonin in aged rats, increased telomerase in cell culture. A small human study reported improved melatonin levels. For pets: absolutely no published veterinary data exists. No pharmacokinetics in dogs or cats. No safety data. The entire case rests on extrapolating from rodent longevity data.</p>
+
+<div class="warning-box">
+<p><strong>CANCER CONCERN:</strong> Telomerase activation is a double-edged sword. Cancer cells use telomerase to become immortal. Whether epitalon at research doses could promote tumor growth is an open question in any species.</p>
+</div>
+
+<div class="profile-box">
+<h4>COMPOUND PROFILE</h4>
+<div class="profile-row"><span class="profile-label">Class</span><span class="profile-value">Synthetic tetrapeptide</span></div>
+<div class="profile-row"><span class="profile-label">Amino Acids</span><span class="profile-value">4</span></div>
+<div class="profile-row"><span class="profile-label">Species Data</span><span class="profile-value">Mice, rats. Zero pet data.</span></div>
+<div class="profile-row"><span class="profile-label">Status</span><span class="profile-value">Not approved anywhere. Research chemical only.</span></div>
+</div>
+
+<div class="bottom-line">
+<h4>BOTTOM LINE</h4>
+<p>The widest gap between interest and evidence in this guide. Pet longevity is a real field (see the Dog Aging Project, Loyal Biotech) but epitalon is not part of any funded veterinary aging study. We included it because people are asking. The honest answer is: we do not know yet.</p>
+</div>
+<p class="disclaimer">Educational information only. Not veterinary advice. Consult your veterinarian.</p>
+</div>
+<div class="footer-bar footer-bar-right">PEPTIDES FOR PETS</div>
+</div>
+<div class="compound-image" data-emoji="⏳"></div>
+</div>
+</div>
+
+<!-- QUICK REFERENCE TABLE -->
+<div class="page">
+<div class="intro">
+<div class="intro-title" style="font-size:28pt;">QUICK REFERENCE</div>
+<div class="intro-rule"></div>
+
+<table style="width:100%;border-collapse:collapse;font-size:9pt;margin-top:16px;">
+<thead>
+<tr style="background:#1B3A5C;color:white;">
+<th style="padding:8px;text-align:left;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">#</th>
+<th style="padding:8px;text-align:left;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">COMPOUND</th>
+<th style="padding:8px;text-align:left;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">PRIMARY USE</th>
+<th style="padding:8px;text-align:center;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">DOGS</th>
+<th style="padding:8px;text-align:center;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">CATS</th>
+<th style="padding:8px;text-align:center;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">EVIDENCE</th>
+<th style="padding:8px;text-align:center;font-family:'Montserrat',sans-serif;font-size:8pt;letter-spacing:1px;">STATUS</th>
+</tr>
+</thead>
+<tbody>
+<tr style="background:#F5F0E4;"><td style="padding:8px;">1</td><td style="padding:8px;font-weight:700;">BPC-157</td><td style="padding:8px;">Joint/gut repair</td><td style="padding:8px;text-align:center;">Off-label</td><td style="padding:8px;text-align:center;">Limited</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr><td style="padding:8px;">2</td><td style="padding:8px;font-weight:700;">TB-500</td><td style="padding:8px;">Tissue repair</td><td style="padding:8px;text-align:center;">Off-label</td><td style="padding:8px;text-align:center;">Limited</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr style="background:#F5F0E4;"><td style="padding:8px;">3</td><td style="padding:8px;font-weight:700;">KPV</td><td style="padding:8px;">Gut inflammation</td><td style="padding:8px;text-align:center;">Off-label</td><td style="padding:8px;text-align:center;">Off-label</td><td style="padding:8px;text-align:center;color:#F5D260;">★★☆☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr><td style="padding:8px;">4</td><td style="padding:8px;font-weight:700;">GHK-Cu</td><td style="padding:8px;">Skin/wound healing</td><td style="padding:8px;text-align:center;">Topical</td><td style="padding:8px;text-align:center;color:#E65100;font-weight:700;">CAUTION</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr style="background:#F5F0E4;"><td style="padding:8px;">5</td><td style="padding:8px;font-weight:700;">Collagen Peptides</td><td style="padding:8px;">Joints/coat</td><td style="padding:8px;text-align:center;">OTC</td><td style="padding:8px;text-align:center;">OTC</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★★☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-supplement" style="font-size:7pt;">SUPPLEMENT</span></td></tr>
+<tr><td style="padding:8px;">6</td><td style="padding:8px;font-weight:700;">Thymosin Alpha-1</td><td style="padding:8px;">Immune support</td><td style="padding:8px;text-align:center;">Off-label</td><td style="padding:8px;text-align:center;">Limited</td><td style="padding:8px;text-align:center;color:#F5D260;">★★☆☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr style="background:#F5F0E4;"><td style="padding:8px;">7</td><td style="padding:8px;font-weight:700;">Pentosan Polysulfate</td><td style="padding:8px;">Joint/arthritis</td><td style="padding:8px;text-align:center;color:#5BBD72;font-weight:700;">Rx</td><td style="padding:8px;text-align:center;">Some</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★★★</td><td style="padding:8px;text-align:center;"><span class="badge badge-approved" style="font-size:7pt;">APPROVED</span></td></tr>
+<tr><td style="padding:8px;">8</td><td style="padding:8px;font-weight:700;">LL-37</td><td style="padding:8px;">Antimicrobial</td><td style="padding:8px;text-align:center;">Research</td><td style="padding:8px;text-align:center;">Research</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+<tr style="background:#F5F0E4;"><td style="padding:8px;">9</td><td style="padding:8px;font-weight:700;">Oxytocin</td><td style="padding:8px;">Calming/obstetric</td><td style="padding:8px;text-align:center;color:#5BBD72;font-weight:700;">Rx</td><td style="padding:8px;text-align:center;color:#5BBD72;font-weight:700;">Rx</td><td style="padding:8px;text-align:center;color:#F5D260;">★★★★☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-approved" style="font-size:7pt;">APPROVED</span></td></tr>
+<tr><td style="padding:8px;">10</td><td style="padding:8px;font-weight:700;">Epitalon</td><td style="padding:8px;">Longevity</td><td style="padding:8px;text-align:center;">No data</td><td style="padding:8px;text-align:center;">No data</td><td style="padding:8px;text-align:center;color:#F5D260;">★☆☆☆☆</td><td style="padding:8px;text-align:center;"><span class="badge badge-research" style="font-size:7pt;">RESEARCH</span></td></tr>
+</tbody>
+</table>
+
+<div style="margin-top:32px;padding:20px;background:#F5F0E4;border-radius:8px;">
+<h3 style="font-family:'Montserrat',sans-serif;font-size:11pt;color:#1B3A5C;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">About Compounded Peptides</h3>
+<p style="font-size:9.5pt;color:#2C2C2C;">Many peptides in this guide are sourced from compounding pharmacies. Quality varies. Ask your vet: Is the pharmacy PCAB-accredited? Do they provide certificates of analysis? What is their sterility testing protocol?</p>
+</div>
+
+<div style="margin-top:24px;padding:20px;border:2px solid #1B3A5C;border-radius:8px;">
+<h3 style="font-family:'Montserrat',sans-serif;font-size:11pt;color:#1B3A5C;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Disclaimer</h3>
+<p style="font-size:9pt;color:#666;">This guide is for educational purposes only and is not intended as veterinary medical advice. Peptides discussed may not be approved for veterinary use. Do not administer any peptide to your pet without consulting a licensed veterinarian. Peptexa does not sell peptides. We sell education only.</p>
+</div>
+
+<div style="margin-top:24px;text-align:center;">
+<p style="font-family:'Montserrat',sans-serif;font-size:10pt;letter-spacing:4px;color:#1B3A5C;font-weight:700;">PEPTEXA.COM</p>
+<div style="width:60px;height:3px;background:#F5D260;margin:8px auto 0;"></div>
+<p style="font-size:9pt;color:#666;margin-top:8px;"><em>Peptides for Pets: What the Science Actually Shows</em><br/>Version 1.0 | August 2026 | Copyright 2026 Peptexa</p>
+</div>
+</div>
+<div class="footer-bar">PEPTIDES FOR PETS</div>
+</div>
+
+</body>
+</html>

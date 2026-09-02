@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peptexa Email & Automation Map</title>
+<style>
+@page { size: A3 landscape; margin: 0.5in; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #0A1628; color: #E2E8F0; padding: 40px; }
+.page { max-width: 1400px; margin: 0 auto; }
+.header { text-align: center; margin-bottom: 40px; }
+.header h1 { font-size: 32px; font-weight: 800; letter-spacing: 0.08em; margin-bottom: 4px; }
+.header h1 span { color: #2C9A9A; }
+.header .sub { color: #8A9AB5; font-size: 14px; }
+.header .date { color: #4A5568; font-size: 12px; margin-top: 4px; }
+.legend { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #8A9AB5; }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+.dot-live { background: #2C9A9A; }
+.dot-coming { background: #C8963A; }
+.dot-trigger { background: #6366F1; }
+.dot-webhook { background: #EC4899; }
+
+.section { margin-bottom: 36px; }
+.section-title { font-size: 18px; font-weight: 700; color: #ffffff; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #162544; display: flex; align-items: center; gap: 10px; }
+.section-title .badge { font-size: 11px; padding: 2px 10px; border-radius: 20px; font-weight: 600; }
+.badge-live { background: #2C9A9A; color: white; }
+.badge-coming { background: #C8963A; color: white; }
+
+.flow-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+.flow-card { background: #0F1E3A; border-radius: 12px; border: 1px solid #162544; padding: 20px; position: relative; }
+.flow-card.coming { border: 1px dashed #C8963A; opacity: 0.7; }
+.flow-card.coming::after { content: "COMING SOON"; position: absolute; top: 12px; right: 12px; font-size: 9px; font-weight: 700; color: #C8963A; letter-spacing: 0.1em; background: rgba(200,150,58,0.15); padding: 2px 8px; border-radius: 4px; }
+
+.flow-name { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+.flow-steps { list-style: none; }
+.flow-step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13px; line-height: 1.5; }
+.step-icon { width: 24px; height: 24px; min-width: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; margin-top: 1px; }
+.icon-trigger { background: #6366F1; }
+.icon-tag { background: #8B5CF6; }
+.icon-email { background: #2C9A9A; }
+.icon-wait { background: #4A5568; }
+.icon-webhook { background: #EC4899; }
+.icon-coming { background: #C8963A; }
+
+.step-text { color: #CBD5E1; }
+.step-text strong { color: #ffffff; font-weight: 600; }
+.step-text em { color: #8A9AB5; font-style: normal; font-size: 11px; }
+
+.connector { display: flex; align-items: center; gap: 6px; margin: 8px 0 8px 12px; }
+.connector-line { width: 20px; height: 1px; background: #4A5568; }
+.connector-arrow { color: #4A5568; font-size: 10px; }
+
+.categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+.cat-chip { background: #162544; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #CBD5E1; text-align: center; }
+.cat-chip strong { color: #2C9A9A; font-weight: 600; }
+
+.stats-bar { display: flex; justify-content: center; gap: 40px; margin: 32px 0; padding: 20px; background: #0F1E3A; border-radius: 12px; }
+.stat { text-align: center; }
+.stat-num { font-size: 28px; font-weight: 800; color: #2C9A9A; }
+.stat-label { font-size: 11px; color: #8A9AB5; text-transform: uppercase; letter-spacing: 0.1em; }
+.stat-num.coming-num { color: #C8963A; }
+
+.footer-note { text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid #162544; }
+.footer-note p { font-size: 11px; color: #4A5568; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="header">
+<h1>PEP<span>TEXA</span></h1>
+<div class="sub">Email & Automation Map</div>
+<div class="date">August 2026 &middot; v1.0</div>
+</div>
+
+<div class="legend">
+<div class="legend-item"><div class="legend-dot dot-live"></div> Live</div>
+<div class="legend-item"><div class="legend-dot dot-coming"></div> Coming Soon</div>
+<div class="legend-item"><div class="legend-dot dot-trigger"></div> Trigger</div>
+<div class="legend-item"><div class="legend-dot dot-webhook"></div> Webhook</div>
+</div>
+
+<div class="stats-bar">
+<div class="stat"><div class="stat-num">29</div><div class="stat-label">Emails Live</div></div>
+<div class="stat"><div class="stat-num">19</div><div class="stat-label">Sequences Live</div></div>
+<div class="stat"><div class="stat-num coming-num">6</div><div class="stat-label">Coming Soon</div></div>
+<div class="stat"><div class="stat-num">10</div><div class="stat-label">Category Tags</div></div>
+<div class="stat"><div class="stat-num">9</div><div class="stat-label">Purchase Tags</div></div>
+</div>
+
+<!-- SECTION 1: QUIZ FLOW -->
+<div class="section">
+<div class="section-title"><span class="badge badge-live">LIVE</span> Quiz Entry Flow</div>
+<div class="flow-grid">
+
+<div class="flow-card">
+<div class="flow-name">Free Guide Delivery</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-trigger">T</div><div class="step-text"><strong>Visitor takes quiz or enters email</strong><br/><em>Kit Pine form captures email</em></div></li>
+<li class="flow-step"><div class="step-icon icon-tag">+</div><div class="step-text"><strong>Tagged:</strong> quiz-lead</div></li>
+<li class="flow-step"><div class="step-icon icon-email">1</div><div class="step-text"><strong>Day 0:</strong> "Your free peptide guide is ready"<br/><em>Download button &rarr; Gumroad free guide</em></div></li>
+<li class="flow-step"><div class="step-icon icon-email">2</div><div class="step-text"><strong>Day 2:</strong> "One thing most people miss about peptide research"<br/><em>Evidence ratings explainer &rarr; Browse guides CTA</em></div></li>
+</ul>
+</div>
+
+<div class="flow-card">
+<div class="flow-name">Quiz Result Sequences (x9)</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-trigger">T</div><div class="step-text"><strong>Quiz assigns category match</strong><br/><em>Website tags subscriber via Kit API</em></div></li>
+<li class="flow-step"><div class="step-icon icon-tag">+</div><div class="step-text"><strong>Tagged:</strong> quiz-result-[category]</div></li>
+<li class="flow-step"><div class="step-icon icon-email">1</div><div class="step-text"><strong>Day 0:</strong> "Your Peptexa match: [Category]"<br/><em>Personalized hook + guide CTA ($19.99) + free guide link</em></div></li>
+</ul>
+<div class="categories-grid">
+<div class="cat-chip"><strong>Weight Loss</strong></div>
+<div class="cat-chip"><strong>Muscle</strong></div>
+<div class="cat-chip"><strong>Anti-Aging</strong></div>
+<div class="cat-chip"><strong>Cognitive</strong></div>
+<div class="cat-chip"><strong>Sleep</strong></div>
+<div class="cat-chip"><strong>Gut/Immune</strong></div>
+<div class="cat-chip"><strong>Sexual</strong></div>
+<div class="cat-chip"><strong>Skin/Hair</strong></div>
+<div class="cat-chip"><strong>Specialty</strong></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 2: PURCHASE FLOW -->
+<div class="section">
+<div class="section-title"><span class="badge badge-live">LIVE</span> Post-Purchase Flow</div>
+<div class="flow-grid">
+
+<div class="flow-card">
+<div class="flow-name">Gumroad &rarr; Kit Webhook</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-trigger">T</div><div class="step-text"><strong>Customer buys guide on Gumroad</strong><br/><em>Gumroad sends purchase receipt (their branding)</em></div></li>
+<li class="flow-step"><div class="step-icon icon-webhook">W</div><div class="step-text"><strong>Gumroad Ping &rarr; Webhook</strong><br/><em>ueogjxwv.gensparkclaw.com/gumroad-ping</em></div></li>
+<li class="flow-step"><div class="step-icon icon-tag">+</div><div class="step-text"><strong>Tagged:</strong> purchased-[category]<br/><em>Webhook auto-maps product to tag</em></div></li>
+<li class="flow-step"><div class="step-icon icon-trigger">&rarr;</div><div class="step-text"><strong>Auto-subscribed to matching sequence</strong><br/><em>Webhook adds to Kit sequence via API</em></div></li>
+</ul>
+</div>
+
+<div class="flow-card">
+<div class="flow-name">Post-Purchase Sequences (x9)</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-email">1</div><div class="step-text"><strong>Day 0:</strong> "Your [Category] guide -- how to get the most from it"<br/><em>Quick-start tips + explore categories link</em></div></li>
+<li class="flow-step"><div class="step-icon icon-wait">&middot;</div><div class="step-text"><em>3-day wait</em></div></li>
+<li class="flow-step"><div class="step-icon icon-email">2</div><div class="step-text"><strong>Day 3:</strong> "One thing about your [Category] guide"<br/><em>Cross-category insight + bundle teaser (reply "interested")</em></div></li>
+</ul>
+<div class="categories-grid">
+<div class="cat-chip"><strong>Weight Loss</strong></div>
+<div class="cat-chip"><strong>Muscle</strong></div>
+<div class="cat-chip"><strong>Anti-Aging</strong></div>
+<div class="cat-chip"><strong>Cognitive</strong></div>
+<div class="cat-chip"><strong>Sleep</strong></div>
+<div class="cat-chip"><strong>Gut/Immune</strong></div>
+<div class="cat-chip"><strong>Sexual</strong></div>
+<div class="cat-chip"><strong>Skin/Hair</strong></div>
+<div class="cat-chip"><strong>Specialty</strong></div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 3: COMING SOON -->
+<div class="section">
+<div class="section-title"><span class="badge badge-coming">COMING SOON</span> Planned Sequences</div>
+<div class="flow-grid">
+
+<div class="flow-card coming">
+<div class="flow-name">Bundle Purchase Sequences (x3)</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Customer buys bundle on Gumroad</strong></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">1</div><div class="step-text"><strong>Day 0:</strong> Welcome + how to navigate 3 guides</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">2</div><div class="step-text"><strong>Day 3:</strong> Deep-dive tip from each guide</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">3</div><div class="step-text"><strong>Day 7:</strong> Complete Collection upsell</div></li>
+</ul>
+<div class="categories-grid">
+<div class="cat-chip"><strong>Body Recomp</strong></div>
+<div class="cat-chip"><strong>Longevity</strong></div>
+<div class="cat-chip"><strong>Wellness</strong></div>
+</div>
+</div>
+
+<div class="flow-card coming">
+<div class="flow-name">Complete Collection Sequence</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Customer buys full $99 collection</strong></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">1</div><div class="step-text"><strong>Day 0:</strong> Welcome + reading roadmap</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">2</div><div class="step-text"><strong>Day 5:</strong> "Start here" guide based on quiz result</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">3</div><div class="step-text"><strong>Day 14:</strong> Invite to inner circle / VIP list</div></li>
+</ul>
+</div>
+
+<div class="flow-card coming">
+<div class="flow-name">Weekly Newsletter</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Ongoing broadcast (weekly)</strong></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">New research highlights</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">FDA status updates</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">Compound deep-dives</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">Community Q&A roundups</div></li>
+</ul>
+</div>
+
+<div class="flow-card coming">
+<div class="flow-name">Re-engagement Sequence</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Subscriber inactive 30+ days</strong></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">1</div><div class="step-text"><strong>Day 0:</strong> "Still curious about peptides?"</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">2</div><div class="step-text"><strong>Day 5:</strong> Top 3 new compounds since last visit</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">3</div><div class="step-text"><strong>Day 10:</strong> Final check-in or unsubscribe</div></li>
+</ul>
+</div>
+
+<div class="flow-card coming">
+<div class="flow-name">Browse Abandonment</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Visited guide page but didn't buy</strong><br/><em>Requires Kit + site tracking integration</em></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">1</div><div class="step-text"><strong>Day 1:</strong> "Still thinking about [Category]?"</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">2</div><div class="step-text"><strong>Day 3:</strong> Social proof + FAQ objection handling</div></li>
+</ul>
+</div>
+
+<div class="flow-card coming">
+<div class="flow-name">Social Media & Marketing</div>
+<ul class="flow-steps">
+<li class="flow-step"><div class="step-icon icon-coming">T</div><div class="step-text"><strong>Content calendar + distribution</strong></div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">Instagram / TikTok peptide education clips</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">Reddit / forum community engagement</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">SEO blog posts driving quiz traffic</div></li>
+<li class="flow-step"><div class="step-icon icon-coming">&rarr;</div><div class="step-text">Referral / affiliate program</div></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="footer-note">
+<p>Peptexa Email & Automation Map &middot; Generated August 21, 2026 &middot; Kit + Gumroad + Webhook Architecture</p>
+<p>Live sequences managed via Kit API &middot; Purchase routing via Gumroad Ping webhook &middot; peptexa.com</p>
+</div>
+
+</div>
+</body>
+</html>
