@@ -804,6 +804,36 @@
             margin-top: 3rem;
         }
         .trust-card { text-align: center; }
+        .dosing-callout {
+            margin-top: 3.5rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(200, 150, 58, 0.06);
+            border: 1px solid rgba(200, 150, 58, 0.45);
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 2rem 2.25rem;
+        }
+        .dosing-callout-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.01em;
+        }
+        .dosing-callout-text {
+            color: rgba(255,255,255,0.82);
+            font-size: 1.02rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .dosing-callout-text strong { color: #fff; font-weight: 600; }
+        @media (max-width: 640px) {
+            .dosing-callout { padding: 1.5rem 1.4rem; margin-top: 2.5rem; }
+            .dosing-callout-text { font-size: 0.96rem; }
+        }
         .trust-icon {
             width: 60px; height: 60px;
             background: rgba(255,255,255,0.06);
@@ -1358,6 +1388,17 @@
                 <div class="trust-card reveal"><div class="trust-icon">📋</div><h3>Clear Research Summaries</h3><p>What studies show, what they don't, and why it matters. In plain language.</p></div>
                 <div class="trust-card reveal"><div class="trust-icon">🛡️</div><h3>Safety First</h3><p>Full side effects, contraindications, and warnings for every peptide.</p></div>
                 <div class="trust-card reveal"><div class="trust-icon">⚡</div><h3>Instant Access</h3><p>Download immediately. Yours forever. no subscriptions, no recurring fees.</p></div>
+            </div>
+
+            <div class="dosing-callout reveal">
+                <div class="dosing-callout-label">Why you won't find dosing here</div>
+                <p class="dosing-callout-text">
+                    We don't publish dosing &mdash; on purpose. Dosing for unapproved compounds isn't reference
+                    information; it's medical advice, and that belongs with your doctor or vet. What we give you
+                    instead is the part nobody else does honestly: <strong>the mechanism, the evidence, how strong
+                    it actually is, and the FDA status</strong> &mdash; so you walk into that conversation informed,
+                    not sold to.
+                </p>
             </div>
         </div>
     </section>
