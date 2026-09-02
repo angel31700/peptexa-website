@@ -1,0 +1,9 @@
+{
+  "name": "peptexa-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Peptexa — research-first peptide education site",
+  "scripts": {
+    "build": "node generate-sitemap.js"
+  }
+}
