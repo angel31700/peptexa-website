@@ -26,7 +26,7 @@
       "@context": "https://schema.org",
       "@type": "Quiz",
       "name": "Which Peptide Guide Is Right for You?",
-      "description": "A free 5-question quiz that matches your personal health goals to the right Peptexa peptide reference guide. Covers weight loss, anti-aging, muscle recovery, cognitive enhancement, sleep, gut health, sexual function, skin and hair, hormonal health, and specialty peptides.",
+      "description": "A free 5-question quiz that matches your personal health goals to the right Peptexa peptide reference guide. Covers weight loss, anti-aging, muscle recovery, cognitive enhancement, sleep, gut health, sexual function, skin and hair, and specialty peptides.",
       "url": "https://peptexa.com/peptide-quiz",
       "provider": {
         "@type": "Organization",
@@ -666,7 +666,7 @@
 <section class="seo-section">
     <h2>Find your peptide starting point</h2>
     <p>Peptides are short chains of amino acids that act as biological messengers, signaling the body to repair, regulate, and restore. With over 200 compounds now studied for therapeutic applications, knowing where to start can feel overwhelming. This quiz cuts through the noise.</p>
-    <p>Whether you're researching peptides for fat loss and metabolic health, muscle recovery and healing, cognitive performance, anti-aging and longevity, hormonal balance, sleep, gut health, or skin and hair, Peptexa has a professionally researched reference guide built for that exact category. Each guide profiles every major compound with plain-language explanations, mechanism of action, research summaries, and FDA status.</p>
+    <p>Whether you're researching peptides for fat loss and metabolic health, muscle recovery and healing, cognitive performance, anti-aging and longevity, sleep, gut health, sexual function, or skin and hair, Peptexa has a professionally researched reference guide built for that exact category. Each guide profiles every major compound with plain-language explanations, mechanism of action, research summaries, and FDA status.</p>
     <p>Peptexa covers all major peptide categories:</p>
     <div class="guide-list">
         <span class="guide-pill">Weight Loss & Metabolism</span>
@@ -677,7 +677,7 @@
         <span class="guide-pill">Gut Health & Immune</span>
         <span class="guide-pill">Sexual Function & Libido</span>
         <span class="guide-pill">Skin, Hair & Aesthetics</span>
-        <span class="guide-pill">Hormonal Health & Optimization</span>
+
         <span class="guide-pill">Specialty & Emerging</span>
     </div>
     <p>Take the quiz below to find your match. Results include your recommended guide plus a free copy of <em>The Top 5 Peptides</em>, Peptexa's most popular free resource.</p>
@@ -754,10 +754,10 @@ const QUESTIONS = [
         sub: "Be honest -- there are no wrong answers.",
         multi: false,
         options: [
-            { text: "Just starting to research peptides for the first time", sub: "Curious but new to this space", tags: ["weight", "muscle", "antiaging", "cognitive", "sleep", "gut", "sexual", "skin", "hormonal", "specialty"] },
+            { text: "Just starting to research peptides for the first time", sub: "Curious but new to this space", tags: ["weight", "muscle", "antiaging", "cognitive", "sleep", "gut", "sexual", "skin", "specialty"] },
             { text: "I've done some reading and want to go deeper", sub: "Familiar with the basics, ready for detail", tags: ["muscle", "antiaging", "cognitive", "specialty"] },
-            { text: "I've used peptides before and want a better reference", sub: "Experienced, looking for a comprehensive resource", tags: ["specialty", "hormonal", "muscle", "antiaging"] },
-            { text: "I'm a practitioner or researcher", sub: "Healthcare professional, researcher, or educator", tags: ["specialty", "hormonal", "cognitive"] },
+            { text: "I've used peptides before and want a better reference", sub: "Experienced, looking for a comprehensive resource", tags: ["specialty", "muscle", "antiaging"] },
+            { text: "I'm a practitioner or researcher", sub: "Healthcare professional, researcher, or educator", tags: ["specialty", "cognitive", "antiaging"] },
         ]
     },
     {
@@ -767,7 +767,7 @@ const QUESTIONS = [
         options: [
             { text: "Gut -- digestion, bloating, immune function", sub: "GI health, microbiome, inflammation", tags: ["gut"] },
             { text: "Skin, hair, or physical appearance", sub: "Collagen, skin aging, hair loss, aesthetics", tags: ["skin"] },
-            { text: "Hormones -- energy, libido, or vitality", sub: "Testosterone, estrogen, growth hormone, thyroid", tags: ["hormonal", "sexual"] },
+            { text: "Hormones, energy, libido, or vitality", sub: "Testosterone, estrogen, growth hormone, thyroid", tags: ["sexual", "antiaging"] },
             { text: "Performance -- strength, endurance, recovery", sub: "Athletic performance, body composition", tags: ["muscle"] },
             { text: "Overall longevity and long-term health", sub: "Aging well, cellular health, organ function", tags: ["antiaging", "specialty"] },
         ]
@@ -778,7 +778,7 @@ const QUESTIONS = [
         multi: false,
         options: [
             { text: "Plain language -- just tell me what it does and if it works", sub: "Clear, accessible, no jargon", tags: ["weight", "sleep", "gut", "skin"] },
-            { text: "I want the science -- mechanisms, studies, data", sub: "Research-backed, detailed, comprehensive", tags: ["muscle", "antiaging", "cognitive", "hormonal", "specialty"] },
+            { text: "I want the science, mechanisms, studies, data", sub: "Research-backed, detailed, comprehensive", tags: ["muscle", "antiaging", "cognitive", "specialty"] },
             { text: "Both -- start simple, go deep when I'm ready", sub: "Layered approach, accessible then detailed", tags: ["weight", "muscle", "antiaging", "cognitive"] },
         ]
     },
@@ -790,7 +790,7 @@ const QUESTIONS = [
             { text: "I want to understand what semaglutide and GLP-1 peptides actually do", sub: "You've heard the buzz -- now you want the real science", tags: ["weight"] },
             { text: "I want to know which peptides serious athletes and biohackers use", sub: "Performance, recovery, edge", tags: ["muscle", "specialty"] },
             { text: "I want to understand the science behind aging and what can actually slow it", sub: "Longevity, cellular health, anti-aging", tags: ["antiaging"] },
-            { text: "I want to learn about peptides for hormones, libido, or sexual health", sub: "Often overlooked, heavily researched", tags: ["sexual", "hormonal"] },
+            { text: "I want to learn about peptides for hormones, libido, or sexual health", sub: "Often overlooked, heavily researched", tags: ["sexual", "antiaging"] },
             { text: "I want a broad overview before going deep on any one category", sub: "Get the big picture first", tags: ["weight", "cognitive", "sleep"] },
         ]
     }
@@ -811,7 +811,7 @@ const GUIDES = {
         img: "images/peptexa_g1_cover.png",
         price: "$19.99",
         url: "https://peptexa.gumroad.com/l/weight-loss-metabolism",
-        also: ["muscle", "hormonal", "sleep"]
+        also: ["muscle", "sleep", "sexual"]
     },
     muscle: {
         title: "Muscle Recovery & Healing",
@@ -875,7 +875,7 @@ const GUIDES = {
         img: "images/peptexa_g7_cover.png",
         price: "$19.99",
         url: "https://peptexa.gumroad.com/l/sleep-stress-management",
-        also: ["cognitive", "gut", "hormonal"]
+        also: ["cognitive", "gut", "antiaging"]
     },
     gut: {
         title: "Gut Health & Immune",
@@ -907,7 +907,7 @@ const GUIDES = {
         img: "images/peptexa_g3_cover.png",
         price: "$19.99",
         url: "https://peptexa.gumroad.com/l/sexual-function-libido",
-        also: ["hormonal", "sleep", "weight"]
+        also: ["antiaging", "sleep", "weight"]
     },
     skin: {
         title: "Skin, Hair & Aesthetics",
@@ -923,24 +923,9 @@ const GUIDES = {
         img: "images/peptexa_g5_cover.png",
         price: "$19.99",
         url: "https://peptexa.gumroad.com/l/yrhbnx",
-        also: ["antiaging", "gut", "hormonal"]
+        also: ["antiaging", "gut", "sleep"]
     },
-    hormonal: {
-        title: "Hormonal Health & Optimization",
-        subtitle: "Peptexa Category Guide",
-        desc: "Hormones and peptides are deeply intertwined. Growth hormone secretagogues, thyroid peptides, adrenal compounds -- this guide profiles every major peptide studied for hormonal regulation, endocrine health, and vitality in both men and women.",
-        covers: [
-            "CJC-1295, Ipamorelin -- growth hormone secretagogues",
-            "PT-141 and melanocortin axis",
-            "Thyroid and adrenal peptides",
-            "GHRP-2, GHRP-6 -- comparison and research",
-            "20+ compounds with full research profiles"
-        ],
-        img: "images/g10_hormonal.png",
-        price: "$19.99",
-        url: "https://peptexa.gumroad.com/l/gut-health-immunity",
-        also: ["sexual", "antiaging", "muscle"]
-    },
+
     specialty: {
         title: "Specialty & Emerging",
         subtitle: "Peptexa Category Guide",
@@ -955,7 +940,7 @@ const GUIDES = {
         img: "images/peptexa_g9_cover.png",
         price: "$19.99",
         url: "https://peptexa.gumroad.com/l/specialty-emerging",
-        also: ["antiaging", "cognitive", "hormonal"]
+        also: ["antiaging", "cognitive", "sexual"]
     }
 };
 
@@ -968,7 +953,6 @@ const GUIDE_NAMES = {
     gut: "Gut Health & Immune",
     sexual: "Sexual Function & Libido",
     skin: "Skin, Hair & Aesthetics",
-    hormonal: "Hormonal Health & Optimization",
     specialty: "Specialty & Emerging"
 };
 
