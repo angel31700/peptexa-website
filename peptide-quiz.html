@@ -8,6 +8,47 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-4VFP9FS729');
+      // ── Peptexa GA4 Ecommerce Tracking ──
+      var GUIDE_META = {
+        'rhmtmk': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'top-5-peptides-free-guide': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'weight-loss-metabolism': {name:'Weight Loss & Metabolism',price:19.99,slug:'weight-loss'},
+        'anti-aging-longevity': {name:'Anti-Aging & Longevity',price:19.99,slug:'anti-aging'},
+        'muscle-recovery-healing': {name:'Muscle Recovery & Healing',price:19.99,slug:'muscle-recovery'},
+        'cognitive-enhancement': {name:'Cognitive Enhancement',price:19.99,slug:'cognitive'},
+        'gut-health-immunity': {name:'Gut Health & Immunity',price:19.99,slug:'gut-health'},
+        'sexual-function-libido': {name:'Sexual Function & Libido',price:19.99,slug:'sexual-function'},
+        'skin-hair-aesthetics': {name:'Skin, Hair & Aesthetics',price:19.99,slug:'skin-hair'},
+        'sleep-stress-management': {name:'Sleep & Stress Management',price:19.99,slug:'sleep-stress'},
+        'specialty-emerging': {name:'Specialty & Emerging',price:19.99,slug:'specialty'},
+        'complete-peptide-handbook': {name:'Complete Peptide Handbook',price:99.99,slug:'handbook'}
+      };
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href*="gumroad.com/l/"]');
+        if (!a) return;
+        var m = a.href.match(/gumroad\.com\/l\/([a-z0-9-]+)/);
+        if (!m) return;
+        var slug = m[1];
+        var meta = GUIDE_META[slug] || {name:slug, price:0, slug:slug};
+        var page = location.pathname.replace(/\.html$/,'').replace(/^\//,'') || 'home';
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_item', {
+            item_list_name: page,
+            items: [{ item_name: meta.name, price: meta.price, item_category: 'guide' }]
+          });
+          if (meta.price === 0) gtag('event', 'free_guide_click', { link_url: a.href });
+        }
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', 'peptexa');
+            url.searchParams.set('utm_medium', 'site');
+            url.searchParams.set('utm_campaign', page);
+            url.searchParams.set('utm_content', meta.slug);
+            a.href = url.toString();
+          }
+        } catch(err) {}
+      });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1186,7 +1227,7 @@ function renderResult(card) {
             </div>
             <div class="result-price">${g.price} <span>one-time &middot; instant download &middot; no subscription</span></div>
             <br>
-            <a href="${g.url}" class="btn-buy" target="_blank" rel="noopener">Get the ${g.title} Guide &#8594;</a>
+            <a href="${g.url}" class="btn-buy" target="_blank" rel="noopener" onclick="if(typeof gtag==='function')gtag('event','quiz_result_click',{quiz_result:'${quizResultKey}',guide_name:'${g.title}',price:'${g.price}'})">Get the ${g.title} Guide &#8594;</a>
             <button class="btn-retake" onclick="retake()">Retake the quiz</button>
 
             <div class="also-consider">

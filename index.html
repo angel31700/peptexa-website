@@ -8,12 +8,51 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-4VFP9FS729');
-      // GA4 conversion event: any click on a free-guide link (Gumroad)
+      // ── Peptexa GA4 Ecommerce Tracking ──
+      // Fires select_item on every Gumroad link click with guide name + price.
+      // Appends UTM params so Gumroad analytics shows referral source.
+      var GUIDE_META = {
+        'rhmtmk': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'top-5-peptides-free-guide': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'weight-loss-metabolism': {name:'Weight Loss & Metabolism',price:19.99,slug:'weight-loss'},
+        'anti-aging-longevity': {name:'Anti-Aging & Longevity',price:19.99,slug:'anti-aging'},
+        'muscle-recovery-healing': {name:'Muscle Recovery & Healing',price:19.99,slug:'muscle-recovery'},
+        'cognitive-enhancement': {name:'Cognitive Enhancement',price:19.99,slug:'cognitive'},
+        'gut-health-immunity': {name:'Gut Health & Immunity',price:19.99,slug:'gut-health'},
+        'sexual-function-libido': {name:'Sexual Function & Libido',price:19.99,slug:'sexual-function'},
+        'skin-hair-aesthetics': {name:'Skin, Hair & Aesthetics',price:19.99,slug:'skin-hair'},
+        'sleep-stress-management': {name:'Sleep & Stress Management',price:19.99,slug:'sleep-stress'},
+        'specialty-emerging': {name:'Specialty & Emerging',price:19.99,slug:'specialty'},
+        'complete-peptide-handbook': {name:'Complete Peptide Handbook',price:99.99,slug:'handbook'}
+      };
       document.addEventListener('click', function(e){
         var a = e.target.closest('a[href*="gumroad.com/l/"]');
-        if (a && typeof gtag === 'function') {
-          gtag('event', 'free_guide_click', { link_url: a.href });
+        if (!a) return;
+        var m = a.href.match(/gumroad\.com\/l\/([a-z0-9-]+)/);
+        if (!m) return;
+        var slug = m[1];
+        var meta = GUIDE_META[slug] || {name:slug, price:0, slug:slug};
+        var page = location.pathname.replace(/\.html$/,'').replace(/^\//,'') || 'home';
+        // GA4 select_item event
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_item', {
+            item_list_name: page,
+            items: [{ item_name: meta.name, price: meta.price, item_category: 'guide' }]
+          });
+          // Also fire legacy free_guide_click for backward compat
+          if (meta.price === 0) gtag('event', 'free_guide_click', { link_url: a.href });
         }
+        // Append UTM params to the Gumroad URL
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', 'peptexa');
+            url.searchParams.set('utm_medium', 'site');
+            url.searchParams.set('utm_campaign', page);
+            url.searchParams.set('utm_content', meta.slug);
+            a.href = url.toString();
+          }
+        } catch(err) {}
       });
     </script>
     <meta charset="UTF-8">
@@ -1221,12 +1260,12 @@
             </div>
 
             <div class="bundle-banner reveal">
-                <div class="bundle-label" style="background:linear-gradient(135deg,#4A5568,#6B7280);">Coming Soon</div>
+                <div class="bundle-label" style="background:linear-gradient(135deg,var(--gold),var(--gold-light));">Available Now</div>
                 <h3 class="bundle-title">The Complete Collection. All 9 Guides</h3>
                 <p class="bundle-sub">200+ peptide profiles. Every category. One price. &nbsp;<s>$179.91 if purchased separately</s></p>
                 <div class="bundle-cta-row">
-                    <div class="bundle-price">$99.00</div>
-                    <span class="btn-gold" style="opacity:0.6;cursor:default;pointer-events:none;">Coming Soon</span>
+                    <div class="bundle-price">$99.99</div>
+                    <a href="https://peptexa.gumroad.com/l/complete-peptide-handbook" target="_blank" rel="noopener" class="btn-gold">Get the Complete Handbook &mdash; $99.99</a>
                 </div>
             </div>
 
