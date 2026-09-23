@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VFP9FS729"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VFP9FS729');
+      // ── Peptexa GA4 Ecommerce Tracking ──
+      var GUIDE_META = {
+        'rhmtmk': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'top-5-peptides-free-guide': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'weight-loss-metabolism': {name:'Weight Loss & Metabolism',price:19.99,slug:'weight-loss'},
+        'anti-aging-longevity': {name:'Anti-Aging & Longevity',price:19.99,slug:'anti-aging'},
+        'muscle-recovery-healing': {name:'Muscle Recovery & Healing',price:19.99,slug:'muscle-recovery'},
+        'cognitive-enhancement': {name:'Cognitive Enhancement',price:19.99,slug:'cognitive'},
+        'gut-health-immunity': {name:'Gut Health & Immunity',price:19.99,slug:'gut-health'},
+        'sexual-function-libido': {name:'Sexual Function & Libido',price:19.99,slug:'sexual-function'},
+        'skin-hair-aesthetics': {name:'Skin, Hair & Aesthetics',price:19.99,slug:'skin-hair'},
+        'sleep-stress-management': {name:'Sleep & Stress Management',price:19.99,slug:'sleep-stress'},
+        'specialty-emerging': {name:'Specialty & Emerging',price:19.99,slug:'specialty'},
+        'complete-peptide-handbook': {name:'Complete Peptide Handbook',price:99.99,slug:'handbook'},
+        'peptides-for-pets': {name:'Peptides for Pets',price:24.99,slug:'pets'},
+        'lsvmai': {name:'Peptides for Pets',price:24.99,slug:'pets'}
+      };
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href*="gumroad.com/l/"]');
+        if (!a) return;
+        var m = a.href.match(/gumroad\.com\/l\/([a-z0-9-]+)/);
+        if (!m) return;
+        var slug = m[1];
+        var meta = GUIDE_META[slug] || {name:slug, price:0, slug:slug};
+        var page = location.pathname.replace(/\.html$/,'').replace(/^\//,'') || 'home';
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_item', {
+            item_list_name: page,
+            items: [{ item_name: meta.name, price: meta.price, item_category: 'guide' }]
+          });
+          if (meta.price === 0) gtag('event', 'free_guide_click', { link_url: a.href });
+        }
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', 'peptexa');
+            url.searchParams.set('utm_medium', 'site');
+            url.searchParams.set('utm_campaign', page);
+            url.searchParams.set('utm_content', meta.slug);
+            a.href = url.toString();
+          }
+        } catch(err) {}
+      });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evidence-ranked guide to peptides for dogs and cats. 10 compounds profiled with veterinary status, mechanism of action, and species-specific safety. Peptexa.">
+    <link rel="canonical" href="https://peptexa.com/categories/peptides-for-pets.html">
+    <meta property="og:title" content="Peptides for Pets: Evidence-Ranked Veterinary Guide | Peptexa">
+    <meta property="og:description" content="10 peptides for dogs and cats, evidence-ranked with veterinary status, mechanisms, and species-specific safety. Education only, not veterinary advice.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/categories/peptides-for-pets.html">
+    <title>Peptides for Pets: Evidence-Ranked Veterinary Guide | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+            <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #0A1628; --navy-mid: #0F1E3A; --navy-light: #162544;
+            --teal: #1A7A7A; --teal-light: #2C9A9A; --teal-glow: rgba(26,122,122,0.4);
+            --gold: #C8963A; --gold-light: #E8B84B; --gold-pale: #FBF4E8;
+            --white: #FFFFFF; --cream: #FAFAF8; --off-white: #F4F2EE;
+            --text-dark: #1A1A2E; --text-mid: #4A5568; --text-light: #8A9AB5;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.7; }
+        
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 2.5rem; background: rgba(10,22,40,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(26,122,122,0.2); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 38px; height: 38px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy-light) 100%); border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 18px var(--teal-glow); }
+        .logo-mark svg { width: 20px; height: 20px; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.08em; color: var(--white); }
+        .logo-text span { color: var(--teal-light); }
+        nav { display: flex; gap: 1.5rem; align-items: center; }
+        nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+        nav a:hover { color: var(--white); }
+        .nav-cta { background: var(--teal); color: var(--white) !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; }
+        
+        .hero { background: linear-gradient(135deg, var(--navy) 0%, #0d1f2d 50%, #1a3a4a 100%); padding: 8rem 2rem 4rem; text-align: center; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 50%, rgba(26,122,122,0.1), transparent 60%); }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--white); margin-bottom: 1.5rem; position: relative; z-index: 2; line-height: 1.2; }
+        .hero-intro { max-width: 800px; margin: 0 auto; color: rgba(255,255,255,0.6); font-size: 1.05rem; line-height: 1.8; position: relative; z-index: 2; }
+        
+        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        .evidence-legend { background: var(--navy); padding: 3rem 2rem; }
+        .evidence-legend .container { max-width: 800px; }
+        .evidence-legend h2 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; }
+        .legend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; }
+        .legend-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem; }
+        .legend-item .stars { font-size: 1.1rem; margin-bottom: 0.3rem; color: #E8B84B; }
+        .legend-item .label { font-weight: 700; color: var(--white); font-size: 0.85rem; margin-bottom: 0.2rem; }
+        .legend-item .desc { color: rgba(255,255,255,0.4); font-size: 0.78rem; line-height: 1.5; }
+        
+        .comparison-table-wrapper { overflow-x: auto; margin: 2rem 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .comparison-table th { text-align: left; padding: 0.8rem 1rem; background: var(--navy); color: var(--white); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .comparison-table td { padding: 0.7rem 1rem; border-bottom: 1px solid #eee; }
+        .comparison-table tr:hover { background: #f8f8f6; }
+        .peptide-name a { color: var(--teal); text-decoration: none; font-weight: 600; }
+        .peptide-name a:hover { text-decoration: underline; }
+        .fda-badge { font-size: 0.78rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: #f0f0f0; white-space: nowrap; }
+        .evidence-stars { letter-spacing: 1px; white-space: nowrap; color: #C8963A; }
+        
+        .deep-dives { margin: 3rem 0; }
+        .deep-dives h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .dive-card { background: var(--cream); border-left: 3px solid var(--teal); border-radius: 0 10px 10px 0; padding: 1.5rem; margin-bottom: 1rem; }
+        .dive-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+        .dive-card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.7; }
+        
+        .faq-section { margin: 3rem 0; }
+        .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1.5rem; }
+        .faq-item { border-bottom: 1px solid #eee; padding: 1.2rem 0; }
+        .faq-q { font-weight: 700; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .faq-a { color: var(--text-mid); font-size: 0.9rem; line-height: 1.7; }
+        
+        .guide-cta-section { background: linear-gradient(135deg, var(--navy) 0%, #0d1f2d 100%); border-radius: 16px; padding: 3rem 2rem; margin: 3rem 0; text-align: center; }
+        .guide-cta-section h2 { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .guide-cta-section > p { color: rgba(255,255,255,0.5); margin-bottom: 2rem; font-size: 0.9rem; }
+        .cta-tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 700px; margin: 0 auto; }
+        .cta-tier { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; }
+        .cta-tier-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 0.3rem; }
+        .cta-tier-price { font-size: 1.8rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+        .cta-tier-save { font-size: 0.8rem; color: var(--gold-light); margin-bottom: 0.8rem; }
+        .btn-cta { display: block; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; }
+        .btn-cta-primary { background: var(--teal); color: var(--white); }
+        .btn-cta-primary:hover { background: var(--teal-light); }
+        .btn-cta-secondary { background: transparent; color: var(--teal-light); border: 1px solid var(--teal); }
+        .btn-cta-secondary:hover { background: rgba(26,122,122,0.1); }
+        .btn-cta-gold { background: linear-gradient(135deg, var(--gold), #a67520); color: var(--white); }
+        .btn-cta-gold:hover { opacity: 0.9; }
+        
+        .related-categories { margin: 3rem 0; }
+        .related-categories h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .related-card { display: inline-block; padding: 0.6rem 1.2rem; background: var(--cream); border: 1px solid #e0ddd5; border-radius: 8px; text-decoration: none; color: var(--text-dark); font-size: 0.85rem; font-weight: 500; transition: all 0.2s; }
+        .related-card:hover { border-color: var(--teal); color: var(--teal); }
+        
+        .footer { background: var(--navy); padding: 3rem 2rem; text-align: center; }
+        .footer p { color: rgba(255,255,255,0.3); font-size: 0.8rem; line-height: 1.8; }
+        .footer a { color: var(--teal-light); text-decoration: none; }
+        
+        @media(max-width:768px) {
+            .header { padding: 0.8rem 1.2rem; }
+            nav { gap: 0.8rem; }
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .container { padding: 2rem 1.2rem; }
+            .cta-tiers { grid-template-columns: 1fr; }
+        }
+    
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 9999; position: relative; }
+        .mobile-menu-btn span { display: block; width: 24px; height: 2px; background: white; margin: 5px 0; }
+        .mobile-nav { display: none !important; }
+        @media (max-width: 768px) {
+            .mobile-menu-btn { display: block; }
+            nav { display: none !important; }
+            .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A1628; backdrop-filter: blur(20px); z-index: 9998; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+            .mobile-nav.open { display: flex !important; }
+            .mobile-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 1.2rem; font-weight: 500; padding: 0.5rem 1rem; }
+            .mobile-nav a:hover { color: white; }
+            .mobile-nav .nav-cta { background: #1A7A7A; color: white !important; padding: 0.7rem 2rem; border-radius: 8px; font-weight: 600; }
+        }
+    </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I give my dog BPC-157?", "acceptedAnswer": {"@type": "Answer", "text": "BPC-157 is a research peptide, not an approved veterinary medication. Some integrative veterinarians use it off-label for tissue repair in dogs, but there are no FDA or EMA-approved veterinary formulations. Always consult a licensed veterinarian before using any peptide on your pet."}}, {"@type": "Question", "name": "Are any peptides FDA-approved for pets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pentosan polysulfate (Cartrophen Vet) is approved in multiple countries for osteoarthritis in dogs. Oxytocin is approved for veterinary use in labor/delivery. Frunevetmab (Solensia) and bedinvetmab (Librela) are monoclonal antibody treatments approved for pain in cats and dogs respectively."}}, {"@type": "Question", "name": "Are peptides safe for cats?", "acceptedAnswer": {"@type": "Answer", "text": "Cats metabolize compounds differently than dogs. They have limited glucuronidation capacity, making them more sensitive to many substances. Some peptides like GHK-Cu pose copper toxicity risks in cats. Every compound in this guide addresses feline safety individually. Never give a cat a peptide without veterinary guidance."}}, {"@type": "Question", "name": "What is the difference between veterinary peptides and human peptides?", "acceptedAnswer": {"@type": "Answer", "text": "The molecules are often the same, but veterinary use has different regulatory status, dosing considerations, and species-specific safety data. A peptide approved for humans may have no veterinary safety data at all. This guide rates evidence based on veterinary research specifically, not human studies."}}, {"@type": "Question", "name": "Does this guide include dosing information?", "acceptedAnswer": {"@type": "Answer", "text": "No. Peptexa does not publish dosing for any compound, human or veterinary. Peptide therapy in pets should always involve a licensed veterinarian who understands your animal's full medical picture."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Peptides for Pets: Evidence-Ranked Veterinary Guide", "description": "10 peptides for dogs and cats, evidence-ranked with veterinary status, mechanisms, and species-specific safety.", "url": "https://peptexa.com/categories/peptides-for-pets.html", "datePublished": "2026-09-23", "dateModified": "2026-09-23", "author": {"@type": "Organization", "name": "Peptexa"}, "publisher": {"@type": "Organization", "name": "Peptexa", "url": "https://peptexa.com"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Peptexa Peptides for Pets Guide",
+  "description": "Evidence-ranked veterinary peptide reference. 10 compounds profiled for dogs and cats with mechanism, veterinary status, and species-specific safety.",
+  "offers": {
+    "@type": "Offer",
+    "price": "24.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://store.peptexa.com/l/peptides-for-pets"
+  },
+  "brand": {
+    "@type": "Organization",
+    "name": "Peptexa"
+  }
+}
+</script>
+</head>
+<body>
+    <div class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+            </div>
+            <div class="logo-text">PEPTEXA<span>.</span></div>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/peptide-quiz.html">Quiz</a>
+            <a href="/categories/peptides-101.html">Learn</a>
+            <a href="https://store.peptexa.com/l/rhmtmk" target="_blank" rel="noopener" class="nav-cta">Free Guide</a>
+        </nav>
+        <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        
+    </div>
+    <div class="mobile-nav" onclick="this.classList.remove("open");">
+            <a href="/#guides">Guides</a>
+            <a href="/categories/">Categories</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://store.peptexa.com/l/rhmtmk" target="_blank" class="nav-cta">Free Guide</a>
+        </div>
+
+    <section class="hero">
+        <h1>Peptides for Pets: Evidence-Ranked Veterinary Guide</h1>
+        <div class="hero-intro">
+            <p>Peptide therapy is growing in veterinary medicine, from approved osteoarthritis treatments to research compounds used off-label by integrative veterinarians. This guide covers 10 peptides that are either already used in veterinary practice or actively being explored for dogs and cats. Each compound receives the same structured treatment: what it is, how it works, what the evidence actually shows, and where it stands with regulators. Evidence is rated on a five-star scale based on published veterinary research specifically, not human data. No dosing. No sourcing. Education only.</p>
+        </div>
+    </section>
+    
+    <section class="evidence-legend">
+        <div class="container">
+            <h2>How to Read Veterinary Evidence Ratings</h2>
+            <div class="legend-grid">
+                <div class="legend-item"><div class="stars">★★★★★</div><div class="label">Robust</div><div class="desc">Vet-approved or multiple controlled studies in the target species.</div></div>
+                <div class="legend-item"><div class="stars">★★★★☆</div><div class="label">Strong</div><div class="desc">Well-supported by clinical or preclinical data in animals, consistent results.</div></div>
+                <div class="legend-item"><div class="stars">★★★☆☆</div><div class="label">Moderate</div><div class="desc">Published animal data but veterinary trials limited or ongoing.</div></div>
+                <div class="legend-item"><div class="stars">★★☆☆☆</div><div class="label">Limited</div><div class="desc">Early research, mostly preclinical or case reports.</div></div>
+                <div class="legend-item"><div class="stars">★☆☆☆☆</div><div class="label">Preliminary</div><div class="desc">Mechanism plausible but almost no species-specific data.</div></div>
+            </div>
+            <p style="text-align:center; color:rgba(255,255,255,0.3); font-size:0.78rem; margin-top:1rem;"><strong style="color:var(--gold-light);">Important:</strong> Stars reflect published veterinary research specifically, not human data.</p>
+        </div>
+    </section>
+    
+    <div class="container">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.5rem;">Compound Comparison Table</h2>
+        <p style="color: var(--text-mid); font-size: 0.9rem; margin-bottom: 1rem;">All 10 compounds in this guide, ranked by veterinary evidence strength.</p>
+        
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Compound</th>
+                        <th>Veterinary Status</th>
+                        <th>Evidence</th>
+                        <th>Key Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="peptide-name">Pentosan Polysulfate (Cartrophen Vet)</td>
+                        <td><span class="fda-badge" style="background:#d4edda;color:#155724;">Vet-Approved</span></td>
+                        <td><span class="evidence-stars">★★★★☆</span></td>
+                        <td>Approved for canine osteoarthritis in multiple countries</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/oxytocin.html">Oxytocin</a></td>
+                        <td><span class="fda-badge" style="background:#d4edda;color:#155724;">Vet-Approved</span></td>
+                        <td><span class="evidence-stars">★★★★☆</span></td>
+                        <td>Approved for labor/delivery; research on human-dog bonding</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/bpc-157.html">BPC-157</a></td>
+                        <td><span class="fda-badge">Research Peptide</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Gut and tissue repair; used off-label by integrative vets</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/tb-500.html">TB-500</a></td>
+                        <td><span class="fda-badge">Research Peptide</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Tissue repair and wound healing; equine/canine interest</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/ghk-cu.html">GHK-Cu</a></td>
+                        <td><span class="fda-badge">Research Peptide</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Wound healing; copper toxicity risk in cats</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/collagen-peptides.html">Collagen Peptides</a></td>
+                        <td><span class="fda-badge" style="background:#fff3cd;color:#856404;">Supplement</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Most commercially proven pet peptide supplement</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name">Cathelicidins (LL-37 Family)</td>
+                        <td><span class="fda-badge">Research Peptide</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Natural antimicrobial; future weapon against resistant infections</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/thymosin-alpha-1.html">Thymosin Alpha-1</a></td>
+                        <td><span class="fda-badge" style="background:#cce5ff;color:#004085;">Off-Label</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Immune modulation; approved in some countries for humans</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name"><a href="/peptides/epithalon.html">Epitalon</a></td>
+                        <td><span class="fda-badge">Research Peptide</span></td>
+                        <td><span class="evidence-stars">★★☆☆☆</span></td>
+                        <td>Longevity; rodent data only, zero veterinary evidence</td>
+                    </tr>
+                    <tr>
+                        <td class="peptide-name">Colostrum Peptides / PRPs</td>
+                        <td><span class="fda-badge" style="background:#fff3cd;color:#856404;">Supplement</span></td>
+                        <td><span class="evidence-stars">★★★☆☆</span></td>
+                        <td>Immune and gut support; available OTC for pets</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="deep-dives">
+<h2>Highlighted Compounds</h2>
+<div class="dive-card">
+<h3>Pentosan Polysulfate (★★★★☆), Vet-Approved</h3>
+<p>The only compound in this guide with full veterinary regulatory approval for a therapeutic indication. Marketed as Cartrophen Vet (and equivalents), it is approved in Australia, New Zealand, UK, Canada, and parts of Europe for canine osteoarthritis. It works by inhibiting cartilage-degrading enzymes while stimulating synovial fluid production.</p>
+</div>
+<div class="dive-card">
+<h3>BPC-157 (★★★☆☆), Research Peptide</h3>
+<p>The gut-repair peptide that crossed over from human biohacking to veterinary medicine. Extensive rodent data on GI healing, tendon repair, and tissue protection. No controlled veterinary trials, but growing off-label use by integrative veterinarians for post-surgical recovery and GI issues in dogs.</p>
+</div>
+<div class="dive-card">
+<h3>GHK-Cu (★★★☆☆), Research Peptide</h3>
+<p>A copper peptide with real wound-healing data, primarily studied topically. Important feline warning: cats have limited copper metabolism capacity and are susceptible to copper storage hepatopathy. Topical use in dogs appears safer, but systemic administration in cats carries genuine risk.</p>
+</div>
+<div class="dive-card">
+<h3>Oxytocin (★★★★☆), Vet-Approved</h3>
+<p>Approved for labor induction and milk letdown in veterinary practice. Research on the human-dog bonding connection is well-established: mutual gaze between dogs and owners increases oxytocin levels in both species. Important safety warnings around use during active labor complications.</p>
+</div>
+<div class="dive-card" style="border-left-color: var(--gold);">
+<h3>A note on cats</h3>
+<p>Cats are not small dogs. Their metabolic machinery differs in clinically significant ways: limited glucuronidation, different hepatic processing, and species-specific sensitivities. Every compound in this guide addresses feline applicability individually. Never give a cat a peptide without veterinary guidance.</p>
+</div>
+</div>
+        
+        <div class="faq-section">
+<h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-q">Can I give my dog BPC-157?</div>
+                <div class="faq-a">BPC-157 is a research peptide, not an approved veterinary medication. Some integrative veterinarians use it off-label for tissue repair in dogs, but there are no FDA or EMA-approved veterinary formulations. Always consult a licensed veterinarian before using any peptide on your pet.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are any peptides FDA-approved for pets?</div>
+                <div class="faq-a">Yes. Pentosan polysulfate (Cartrophen Vet) is approved in multiple countries for osteoarthritis in dogs. Oxytocin is approved for veterinary use in labor and delivery. Frunevetmab (Solensia) and bedinvetmab (Librela) are monoclonal antibody treatments approved for pain in cats and dogs respectively.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Are peptides safe for cats?</div>
+                <div class="faq-a">Cats metabolize compounds differently than dogs. They have limited glucuronidation capacity, making them more sensitive to many substances. Some peptides like GHK-Cu pose copper toxicity risks in cats. Every compound in this guide addresses feline safety individually. Never give a cat a peptide without veterinary guidance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">What is the difference between veterinary peptides and human peptides?</div>
+                <div class="faq-a">The molecules are often the same, but veterinary use has different regulatory status, dosing considerations, and species-specific safety data. A peptide approved for humans may have no veterinary safety data at all. This guide rates evidence based on veterinary research specifically, not human studies.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Does this guide include dosing information?</div>
+                <div class="faq-a">No. Peptexa does not publish dosing for any compound, human or veterinary. Peptide therapy in pets should always involve a licensed veterinarian who understands your animal's full medical picture.</div>
+            </div>
+</div>
+        
+        
+    <div class="guide-cta-section">
+        <h2>Get the Peptides for Pets Guide</h2>
+        <p>All 10 compounds fully profiled with mechanisms, veterinary evidence ratings, regulatory status, species-specific safety, and feline considerations.</p>
+        <a href="https://store.peptexa.com/l/peptides-for-pets" target="_blank" rel="noopener" class="btn-cta btn-cta-primary" style="display:inline-block; padding:1rem 2.5rem; font-size:1.05rem; margin-top:0.5rem;">Get the Pets Guide, $24.99 &rarr;</a>
+        <p style="color:rgba(255,255,255,0.3); font-size:0.8rem; margin-top:1rem;">One-time purchase. Instant download. No subscription.</p>
+        
+        <div class="related-categories">
+<h2>Related Categories</h2>
+<div class="related-grid">
+<a href="/categories/gut-health-immune.html" class="related-card">Gut Health &amp; Immunity</a>
+<a href="/categories/muscle-recovery-healing.html" class="related-card">Muscle Recovery &amp; Healing</a>
+<a href="/categories/skin-hair-aesthetics.html" class="related-card">Skin, Hair &amp; Aesthetics</a>
+</div>
+</div>
+    </div>
+    
+    <footer class="footer">
+        <p><strong>Peptexa</strong> is an educational resource only. No dosing. No sourcing. No medical advice.</p>
+        <p style="margin-top:0.5rem;"><a href="/">peptexa.com</a> · <a href="/disclaimer.html">Disclaimer</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+        <p style="margin-top:1rem;">&copy; 2026 Peptexa. All rights reserved.</p>
+    </footer>
+</body>
+</html>
