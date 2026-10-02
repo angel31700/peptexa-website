@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VFP9FS729"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VFP9FS729');
+      // ── Peptexa GA4 Ecommerce Tracking ──
+      var GUIDE_META = {
+        'rhmtmk': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'top-5-peptides-free-guide': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'weight-loss-metabolism': {name:'Weight Loss & Metabolism',price:19.99,slug:'weight-loss'},
+        'anti-aging-longevity': {name:'Anti-Aging & Longevity',price:19.99,slug:'anti-aging'},
+        'muscle-recovery-healing': {name:'Muscle Recovery & Healing',price:19.99,slug:'muscle-recovery'},
+        'cognitive-enhancement': {name:'Cognitive Enhancement',price:19.99,slug:'cognitive'},
+        'gut-health-immunity': {name:'Gut Health & Immunity',price:19.99,slug:'gut-health'},
+        'sexual-function-libido': {name:'Sexual Function & Libido',price:19.99,slug:'sexual-function'},
+        'skin-hair-aesthetics': {name:'Skin, Hair & Aesthetics',price:19.99,slug:'skin-hair'},
+        'sleep-stress-management': {name:'Sleep & Stress Management',price:19.99,slug:'sleep-stress'},
+        'specialty-emerging': {name:'Specialty & Emerging',price:19.99,slug:'specialty'},
+        'complete-peptide-handbook': {name:'Complete Peptide Handbook',price:99.99,slug:'handbook'},
+        'peptides-for-pets': {name:'Peptides for Pets',price:24.99,slug:'pets'},
+        'lsvmai': {name:'Peptides for Pets',price:24.99,slug:'pets'}
+      };
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href*="gumroad.com/l/"]');
+        if (!a) return;
+        var m = a.href.match(/gumroad\.com\/l\/([a-z0-9-]+)/);
+        if (!m) return;
+        var slug = m[1];
+        var meta = GUIDE_META[slug] || {name:slug, price:0, slug:slug};
+        var page = location.pathname.replace(/\.html$/,'').replace(/^\//,'') || 'home';
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_item', {
+            item_list_name: page,
+            items: [{ item_name: meta.name, price: meta.price, item_category: 'guide' }]
+          });
+          if (meta.price === 0) gtag('event', 'free_guide_click', { link_url: a.href });
+        }
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', 'peptexa');
+            url.searchParams.set('utm_medium', 'site');
+            url.searchParams.set('utm_campaign', page);
+            url.searchParams.set('utm_content', meta.slug);
+            a.href = url.toString();
+          }
+        } catch(err) {}
+      });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MK-677, NAD+ and Klotho show up on peptide lists everywhere. None of them are peptides. Here's why the label matters more than you'd think.">
+    <link rel="canonical" href="https://peptexa.com/blog/not-everything-in-your-peptide-stack-is-a-peptide.html">
+    <meta property="og:title" content="Not Everything in Your 'Peptide Stack' Is a Peptide | Peptexa">
+    <meta property="og:description" content="MK-677, NAD+ and Klotho show up on peptide lists everywhere. None of them are peptides. Here's why the label matters more than you'd think.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/not-everything-in-your-peptide-stack-is-a-peptide.html">
+    <title>Not Everything in Your "Peptide Stack" Is a Peptide | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero h1 em { color: var(--teal-light); font-style: italic; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); position: relative; }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-style: normal; font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Not Everything in Your Peptide Stack Is a Peptide","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":***"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/not-everything-in-your-peptide-stack-is-a-peptide.html","description":"MK-677, NAD+ and Klotho show up on peptide lists everywhere. None of them are peptides. Here's why the label matters more than you'd think.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is MK-677 a peptide?","acceptedAnswer":{"@type":"Answer","text":"No. MK-677 (ibutamoren) is a small-molecule ghrelin-receptor agonist. It mimics the action of the peptide ghrelin but has none of a peptide's amino-acid structure. That is why it can be taken orally, unlike most peptides."}},{"@type":"Question","name":"Is NAD+ a peptide?","acceptedAnswer":{"@type":"Answer","text":"No. NAD+ (nicotinamide adenine dinucleotide) is a coenzyme found in every living cell. It is not made of amino acids. Research on NAD+ focuses on cellular metabolism and its precursors (NMN, NR), not peptide signaling."}},{"@type":"Question","name":"Is Klotho a peptide?","acceptedAnswer":{"@type":"Answer","text":"No. Klotho is a large protein of roughly 1,000 amino acids. Proteins and peptides are both made of amino acids, but their size, folding and behavior are fundamentally different. Human administration of Klotho has not been tested in clinical trials."}},{"@type":"Question","name":"Why does it matter if something is mislabeled as a peptide?","acceptedAnswer":{"@type":"Answer","text":"The molecular class determines how a compound is absorbed, how it is regulated and what kind of evidence applies to it. Calling a small molecule or a large protein a peptide can lead to wrong assumptions about oral bioavailability, legal status and the relevance of existing research."}}]}</script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://store.peptexa.com/l/rhmtmk" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="blog-eyebrow">Education &nbsp;&middot;&nbsp; Anti-Aging &amp; Longevity</div>
+            <h1>Not Everything in Your <em>"Peptide Stack"</em> Is a Peptide</h1>
+            <p class="blog-hero-sub">MK-677, NAD+ and Klotho show up on peptide lists everywhere. None of them are peptides. Here's why the label matters more than you'd think.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; October 1, 2026</span>
+                <span>~4 min read &nbsp;&middot;&nbsp; Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+        <p class="reveal">Scroll any "best longevity peptides" list and you'll find compounds that aren't peptides at all. That's not just nitpicking. What a molecule is shapes how it's absorbed, how it's regulated and how much the research on it can tell you.</p>
+
+        <h2 class="reveal">What makes something a peptide?</h2>
+        <p class="reveal">A peptide is a short chain of amino acids, usually 2 to about 50. Longer chains fold into proteins. Molecules built from other chemistry are small molecules, coenzymes or biologics. Those categories behave differently in the body.</p>
+
+        <h2 class="reveal">Four compounds that often get mislabeled</h2>
+        <table class="data-table reveal">
+            <thead>
+                <tr>
+                    <th>Compound</th>
+                    <th>Often Called</th>
+                    <th>What It Actually Is</th>
+                    <th>Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>MK-677 (ibutamoren)</strong></td>
+                    <td>"GH peptide"</td>
+                    <td>Small-molecule ghrelin-receptor agonist</td>
+                    <td>Taken orally; acts like a secretagogue but has none of a peptide's structure</td>
+                </tr>
+                <tr>
+                    <td><strong>NAD+</strong></td>
+                    <td>"Longevity peptide"</td>
+                    <td>Coenzyme found in every cell</td>
+                    <td>Research is about NAD+ levels and precursors, not peptide signaling</td>
+                </tr>
+                <tr>
+                    <td><strong>Klotho</strong></td>
+                    <td>"Anti-aging peptide"</td>
+                    <td>Large protein (roughly 1,000 amino acids)</td>
+                    <td>Human administration hasn't been tested; key data is in mice and one monkey study</td>
+                </tr>
+                <tr>
+                    <td><strong>Epitalon</strong></td>
+                    <td>"Pineal peptide"</td>
+                    <td>A true peptide: 4 amino acids</td>
+                    <td>Correctly labeled, but most of its research comes from one lab group</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="reveal">Why the label matters</h2>
+
+        <p class="reveal"><strong>Absorption.</strong> Most peptides break down in the gut, which is why approved peptide drugs are usually injected. A small molecule like MK-677 can work orally. Calling it a peptide hides a real difference.</p>
+
+        <p class="reveal"><strong>Regulation.</strong> US compounding rules, FDA review lists and import rules treat peptides, small molecules and biologics differently. A wrong label can mean wrong assumptions about legal status.</p>
+
+        <p class="reveal"><strong>Evidence.</strong> A large protein like Klotho raises different questions, including manufacturing, immune response and delivery, than a 4-amino-acid peptide does. A 2023 <em>Nature Aging</em> study found a single low dose improved cognition in aged rhesus monkeys (<a href="https://doi.org/10.1038/s43587-023-00441-x" target="_blank" rel="noopener">Castner et al., 2023</a>). That's promising, and it's also not a human trial.</p>
+
+        <div class="callout reveal">
+            <p>When someone calls MK-677 a peptide, they're not just being imprecise. They're implying it shares characteristics it doesn't have: injectable-only delivery, peptide-class regulation, peptide-specific research frameworks. That matters when you're trying to evaluate what the science actually supports.</p>
+            <div class="callout-source">Peptexa editorial note</div>
+        </div>
+
+        <h2 class="reveal">How Peptexa handles this</h2>
+        <p class="reveal">Every profile in the Peptexa guides lists the compound's true molecular class. When we found mislabeled compounds during research, including a monoclonal antibody that often appears on "peptide" lists, we corrected them and said so. Accurate labels are the first step to honest evidence.</p>
+
+        <div class="mid-cta reveal">
+            <h3>Every compound's true class and FDA status</h3>
+            <p>Molecular class, mechanism, evidence level and regulatory status for every compound in the anti-aging and longevity category. One reference, no mislabeling.</p>
+            <a class="btn-gold" href="https://store.peptexa.com/l/anti-aging-longevity" target="_blank" rel="noopener">Get the Anti-Aging &amp; Longevity Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">Is MK-677 a peptide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. MK-677 (ibutamoren) is a small-molecule ghrelin-receptor agonist. It mimics the action of the peptide ghrelin but has none of a peptide's amino-acid structure. That is why it can be taken orally, unlike most peptides.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Is NAD+ a peptide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. NAD+ (nicotinamide adenine dinucleotide) is a coenzyme found in every living cell. It is not made of amino acids. Research on NAD+ focuses on cellular metabolism and its precursors (NMN, NR), not peptide signaling.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Is Klotho a peptide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. Klotho is a large protein of roughly 1,000 amino acids. Proteins and peptides are both made of amino acids, but their size, folding and behavior are fundamentally different. Human administration of Klotho has not been tested in clinical trials.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Why does it matter if something is mislabeled as a peptide? <span class="faq-icon">+</span></button>
+                <div class="faq-a">The molecular class determines how a compound is absorbed, how it is regulated and what kind of evidence applies to it. Calling a small molecule or a large protein a "peptide" can lead to wrong assumptions about oral bioavailability, legal status and the relevance of existing research.</div>
+            </div>
+        </div>
+
+        <p class="reveal" style="font-size:0.85rem;color:var(--text-light);margin-top:2rem;line-height:1.7;"><strong>Sources:</strong> Castner et al., "A single dose of agent reduces age-related cognitive decline in nonhuman primates," <em>Nature Aging</em> 2023 &middot; PubChem: <a href="https://pubchem.ncbi.nlm.nih.gov/compound/Ibutamoren" target="_blank" rel="noopener">MK-677</a>, <a href="https://pubchem.ncbi.nlm.nih.gov/compound/5892" target="_blank" rel="noopener">NAD+</a> &middot; DrugBank: <a href="https://go.drugbank.com/drugs/DB12882" target="_blank" rel="noopener">Ibutamoren</a></p>
+
+        <aside class="compliance-strip reveal" style="margin-top:2rem;">
+            <strong>Peptexa is an educational resource.</strong> Nothing here is medical advice, dosing guidance or a recommendation to use any compound.
+        </aside>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/peptides/epithalon.html">Epitalon, compound reference</a>
+                <a class="related-link" href="/blog/what-is-a-peptide.html">What is a peptide?</a>
+                <a class="related-link" href="/blog/what-happens-when-you-stop-glp1.html">What happens when you stop a GLP-1?</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        // Reveal
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+    </script>
+</body>
+</html>
