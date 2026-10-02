@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VFP9FS729"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4VFP9FS729');
+      // ── Peptexa GA4 Ecommerce Tracking ──
+      var GUIDE_META = {
+        'rhmtmk': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'top-5-peptides-free-guide': {name:'Top 5 Free Guide',price:0,slug:'free-guide'},
+        'weight-loss-metabolism': {name:'Weight Loss & Metabolism',price:19.99,slug:'weight-loss'},
+        'anti-aging-longevity': {name:'Anti-Aging & Longevity',price:19.99,slug:'anti-aging'},
+        'muscle-recovery-healing': {name:'Muscle Recovery & Healing',price:19.99,slug:'muscle-recovery'},
+        'cognitive-enhancement': {name:'Cognitive Enhancement',price:19.99,slug:'cognitive'},
+        'gut-health-immunity': {name:'Gut Health & Immunity',price:19.99,slug:'gut-health'},
+        'sexual-function-libido': {name:'Sexual Function & Libido',price:19.99,slug:'sexual-function'},
+        'skin-hair-aesthetics': {name:'Skin, Hair & Aesthetics',price:19.99,slug:'skin-hair'},
+        'sleep-stress-management': {name:'Sleep & Stress Management',price:19.99,slug:'sleep-stress'},
+        'specialty-emerging': {name:'Specialty & Emerging',price:19.99,slug:'specialty'},
+        'complete-peptide-handbook': {name:'Complete Peptide Handbook',price:99.99,slug:'handbook'},
+        'peptides-for-pets': {name:'Peptides for Pets',price:24.99,slug:'pets'},
+        'lsvmai': {name:'Peptides for Pets',price:24.99,slug:'pets'}
+      };
+      document.addEventListener('click', function(e){
+        var a = e.target.closest('a[href*="gumroad.com/l/"]');
+        if (!a) return;
+        var m = a.href.match(/gumroad\.com\/l\/([a-z0-9-]+)/);
+        if (!m) return;
+        var slug = m[1];
+        var meta = GUIDE_META[slug] || {name:slug, price:0, slug:slug};
+        var page = location.pathname.replace(/\.html$/,'').replace(/^\//,'') || 'home';
+        if (typeof gtag === 'function') {
+          gtag('event', 'select_item', {
+            item_list_name: page,
+            items: [{ item_name: meta.name, price: meta.price, item_category: 'guide' }]
+          });
+          if (meta.price === 0) gtag('event', 'free_guide_click', { link_url: a.href });
+        }
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source')) {
+            url.searchParams.set('utm_source', 'peptexa');
+            url.searchParams.set('utm_medium', 'site');
+            url.searchParams.set('utm_campaign', page);
+            url.searchParams.set('utm_content', meta.slug);
+            a.href = url.toString();
+          }
+        } catch(err) {}
+      });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Two major trials followed people after they stopped semaglutide or tirzepatide. Here's what happened to their weight and heart-health markers — no hype, just the data.">
+    <link rel="canonical" href="https://peptexa.com/blog/what-happens-when-you-stop-glp1.html">
+    <meta property="og:title" content="What Happens When You Stop a GLP-1? What the Trials Actually Show | Peptexa">
+    <meta property="og:description" content="Two major trials followed people after they stopped semaglutide or tirzepatide. Here's what happened to their weight and heart-health markers — no hype, just the data.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://peptexa.com/blog/what-happens-when-you-stop-glp1.html">
+    <title>What Happens When You Stop a GLP-1? What the Trials Actually Show | Peptexa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --navy:#0A1628; --navy-mid:#0F1E3A; --teal:#1A7A7A; --teal-light:#2C9A9A; --teal-pale:#E6F4F4; --gold:#C8963A; --gold-light:#E8B84B; --gold-pale:#FBF4E8; --white:#FFFFFF; --cream:#FAFAF8; --off-white:#F4F2EE; --text-dark:#1A1A2E; --text-mid:#4A5568; --text-light:#8A9AB5; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text-dark); line-height: 1.75; overflow-x: hidden; }
+        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--gold)); z-index: 9999; width: 0%; transition: width 0.1s; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.1rem 2.5rem; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.07); display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-mark { width: 40px; height: 40px; background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(26,122,122,0.25); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.06em; color: var(--navy); }
+        .logo-text span { color: var(--teal); }
+        nav { display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text-mid); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--teal); }
+        .nav-cta { background: var(--navy); color: white !important; padding: 0.6rem 1.4rem; border-radius: 6px; font-weight: 700 !important; }
+        .nav-cta:hover { background: var(--teal) !important; }
+        .blog-hero { background: var(--navy); padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden; }
+        .blog-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(26,122,122,0.2) 0%, transparent 65%); pointer-events: none; }
+        .blog-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+        .blog-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(26,122,122,0.15); color: var(--teal-light); border: 1px solid rgba(26,122,122,0.35); padding: 5px 14px; border-radius: 999px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem; }
+        .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--white); line-height: 1.2; margin-bottom: 1rem; }
+        .blog-hero h1 em { color: var(--teal-light); font-style: italic; }
+        .blog-hero-sub { color: rgba(255,255,255,0.6); font-size: 1rem; max-width: 620px; line-height: 1.7; }
+        .blog-hero-meta { margin-top: 1.5rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+        .blog-hero-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+        .blog-hero-meta span strong { color: var(--teal-light); font-weight: 600; }
+        main { max-width: 760px; margin: 0 auto; padding: 4rem 2.5rem 5rem; }
+        .compliance-strip { background: var(--gold-pale); border: 1px solid rgba(200,150,58,0.3); border-left: 4px solid var(--gold); padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-bottom: 2.5rem; color: var(--text-mid); }
+        .compliance-strip strong { color: var(--gold); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--navy); margin: 2.5rem 0 0.8rem; line-height: 1.3; }
+        p { margin: 0 0 1.1rem; font-size: 1.0rem; color: var(--text-dark); }
+        p a, li a { color: var(--teal); text-decoration: underline; }
+        ul, ol { margin: 0 0 1.1rem 1.5rem; }
+        li { margin-bottom: 0.5rem; font-size: 1.0rem; }
+        .callout { background: var(--navy); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; color: var(--off-white); border-left: 4px solid var(--teal); position: relative; }
+        .callout p { color: var(--off-white); font-size: 1.0rem; font-style: italic; margin: 0 0 0.5rem; }
+        .callout-source { font-size: 0.72rem; color: var(--teal-light); letter-spacing: 0.1em; text-transform: uppercase; font-style: normal; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.88rem; border-radius: 10px; overflow: hidden; }
+        .data-table th { background: var(--navy); color: var(--off-white); padding: 10px 14px; text-align: left; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .data-table td { padding: 9px 14px; border-bottom: 1px solid rgba(0,0,0,0.06); color: var(--text-mid); }
+        .data-table tr:nth-child(even) td { background: var(--cream); }
+        .reveal { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+        .faq-block { margin: 2rem 0; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.07); }
+        .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 1rem 0; font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        .faq-icon { font-size: 1.2rem; color: var(--teal); font-style: normal; font-family: 'Inter', sans-serif; transition: transform 0.25s; }
+        .faq-a { display: none; padding: 0 0 1rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .mid-cta { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 2.5rem; margin: 3rem 0; text-align: center; border: 1px solid rgba(26,122,122,0.25); }
+        .mid-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.6rem; }
+        .mid-cta p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.4rem; }
+        .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy) !important; padding: 0.85rem 2rem; border-radius: 8px; text-decoration: none !important; font-weight: 800; font-size: 0.95rem; letter-spacing: 0.03em; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(200,150,58,0.35); }
+        .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,150,58,0.5); }
+        .related { background: var(--cream); border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; }
+        .related h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.6rem; }
+        .related-link { color: var(--teal); text-decoration: none; font-size: 0.88rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: block; }
+        .related-link:hover { color: var(--gold); }
+        footer { background: var(--navy); color: var(--off-white); padding: 50px 2.5rem 36px; margin-top: 60px; }
+        .footer-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--teal-light); margin-bottom: 18px; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 18px; }
+        .footer-links a { color: var(--off-white); text-decoration: none; font-size: 0.88rem; }
+        .footer-disclaimer { font-size: 0.78rem; color: rgba(255,255,255,0.55); max-width: 720px; margin: 0 auto 14px; line-height: 1.6; }
+        .footer-disclaimer strong { color: var(--gold-light); }
+        .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+        @media (max-width: 700px) { main { padding: 3rem 1.2rem 3rem; } nav a:not(.nav-cta) { display: none; } .header { padding: 1rem 1.2rem; } .blog-hero { padding: 6rem 1.2rem 3rem; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"What Happens When You Stop a GLP-1? What the Trials Actually Show","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Angela","url":"https://peptexa.com"},"publisher":{"@type":"Organization","name":"Peptexa"},"mainEntityOfPage":"https://peptexa.com/blog/what-happens-when-you-stop-glp1.html","description":"Two major trials followed people after they stopped semaglutide or tirzepatide. Here's what happened to their weight and heart-health markers — no hype, just the data.","inLanguage":"en","isAccessibleForFree":true}
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does everyone regain the weight after stopping a GLP-1?","acceptedAnswer":{"@type":"Answer","text":"In both STEP 1 extension and SURMOUNT-4, the majority of participants regained a significant portion of the weight they lost after stopping treatment. In SURMOUNT-4, fewer than 2 in 10 who stopped maintained at least 80% of their loss. Some residual benefit persisted (net loss of 5.6% in STEP 1), but the trend was clearly toward regain."}},{"@type":"Question","name":"Can you taper off a GLP-1 instead of stopping cold?","acceptedAnswer":{"@type":"Answer","text":"Neither STEP 1 extension nor SURMOUNT-4 tested structured tapering protocols. The participants stopped treatment abruptly. Whether a gradual taper, lifestyle intervention, or switch to another compound changes the rebound trajectory has not been tested in a comparable trial design."}},{"@type":"Question","name":"Does Peptexa sell GLP-1 medications?","acceptedAnswer":{"@type":"Answer","text":"No. Peptexa is educational only. Semaglutide and tirzepatide are prescription medications. We do not sell, ship, or advise on any medication."}}]}</script>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <header class="header">
+        <a href="/" class="logo">
+            <div class="logo-mark">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.5" fill="white"/><circle cx="12" cy="4" r="1.5" fill="white" opacity="0.9"/><circle cx="12" cy="20" r="1.5" fill="white" opacity="0.9"/><circle cx="4" cy="12" r="1.5" fill="white" opacity="0.9"/><circle cx="20" cy="12" r="1.5" fill="white" opacity="0.9"/><line x1="12" y1="9.5" x2="12" y2="5.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="12" y1="14.5" x2="12" y2="18.5" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="14.5" y1="12" x2="18.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/><line x1="9.5" y1="12" x2="5.5" y2="12" stroke="white" stroke-width="1.2" opacity="0.6"/></svg>
+            </div>
+            <span class="logo-text">PEP<span>TEXA</span></span>
+        </a>
+        <nav>
+            <a href="/#guides">Guides</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#about">About</a>
+            <a href="/peptide-quiz.html">Take the Quiz</a>
+            <a href="mailto:hello@peptexa.com">Contact</a>
+            <a href="https://store.peptexa.com/l/rhmtmk" target="_blank" class="nav-cta">Free Guide</a>
+        </nav>
+    </header>
+
+    <section class="blog-hero">
+        <div class="blog-hero-inner">
+            <div class="blog-eyebrow">Weight Loss &amp; Metabolism &nbsp;&middot;&nbsp; GLP-1</div>
+            <h1>What Happens When You Stop a GLP-1? <em>What the Trials Actually Show</em></h1>
+            <p class="blog-hero-sub">Two major trials followed people after they stopped semaglutide or tirzepatide. Here's what happened to their weight and heart-health markers &mdash; no hype, just the data.</p>
+            <div class="blog-hero-meta">
+                <span>By <strong>Angela</strong> &nbsp;&middot;&nbsp; October 1, 2026</span>
+                <span>~5 min read &nbsp;&middot;&nbsp; Educational only &nbsp;&middot;&nbsp; Not medical advice</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <aside class="compliance-strip">
+            <strong>Educational only. Not medical advice. No dosing on this site.</strong> Consult a qualified provider for any health decision. Peptexa is the library, not a vendor or clinic.
+        </aside>
+
+        <p class="reveal">The internet is full of "GLP-1 exit plans." Before anyone sells you a plan, it helps to know what the research shows happens when the medication stops. Two well-designed trials answered that question directly, and their results are remarkably consistent.</p>
+
+        <h2 class="reveal">The semaglutide data: STEP 1 extension</h2>
+        <p class="reveal">In the STEP 1 trial, adults with obesity took weekly semaglutide or placebo for 68 weeks. The semaglutide group lost an average of 17.3% of body weight, versus 2.0% on placebo. Then treatment stopped, and 327 participants were followed for another year.</p>
+        <p class="reveal">By week 120, the semaglutide group had regained 11.6 percentage points &mdash; about two-thirds of what they'd lost. Their net loss from the very start was 5.6%. Most of the improvements in blood pressure, blood sugar and lipids also drifted back toward baseline.</p>
+
+        <h2 class="reveal">The tirzepatide data: SURMOUNT-4</h2>
+        <p class="reveal">SURMOUNT-4 used a sharper design. All 670 participants took tirzepatide for 36 weeks and lost an average of 20.9%. They were then randomized: half kept going, half were switched to placebo without knowing it.</p>
+        <p class="reveal">Over the next 52 weeks, the group that continued lost a further 5.5%. The placebo group regained 14.0%. Nearly 9 in 10 who continued kept at least 80% of their loss; fewer than 2 in 10 who stopped did.</p>
+
+        <h2 class="reveal">Side by side</h2>
+        <table class="data-table reveal">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>STEP 1 Extension</th>
+                    <th>SURMOUNT-4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Medication</strong></td>
+                    <td>Semaglutide</td>
+                    <td>Tirzepatide</td>
+                </tr>
+                <tr>
+                    <td><strong>Loss on treatment</strong></td>
+                    <td>17.3% (68 weeks)</td>
+                    <td>20.9% (36-week lead-in)</td>
+                </tr>
+                <tr>
+                    <td><strong>After stopping</strong></td>
+                    <td>+11.6 points regained in ~1 year</td>
+                    <td>+14.0% regained in 52 weeks</td>
+                </tr>
+                <tr>
+                    <td><strong>Kept going instead</strong></td>
+                    <td>Not tested</td>
+                    <td>Further 5.5% loss</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="reveal">Why does the weight come back?</h2>
+        <p class="reveal">Researchers describe obesity as a chronic, relapsing condition. GLP-1 medicines act on appetite and satiety signaling while they're on board. When they're withdrawn, those signals return, and the body's own weight-defense mechanisms are still in place. The trials weren't designed to prove why &mdash; but the pattern mirrors what happens when other chronic-condition medicines stop.</p>
+
+        <h2 class="reveal">What these trials don't tell you</h2>
+        <ul class="reveal">
+            <li>They didn't test structured tapering, lifestyle programs or switching to another compound after stopping.</li>
+            <li>They studied adults with obesity, not people using GLP-1s for modest cosmetic weight loss.</li>
+            <li>Some residual benefit persisted in STEP 1 (lipids, CRP, HbA1c stayed somewhat better than baseline).</li>
+        </ul>
+        <p class="reveal">That gap is exactly where "exit protocol" marketing lives. When someone claims a supplement or peptide stack prevents rebound, ask for the trial. In most cases there isn't one.</p>
+
+        <div class="callout reveal">
+            <p>The best evidence says GLP-1 benefits largely depend on staying on treatment. Any decision about stopping, tapering or switching belongs in a conversation with your prescriber &mdash; with these numbers in hand.</p>
+            <div class="callout-source">Peptexa takeaway</div>
+        </div>
+
+        <div class="mid-cta reveal">
+            <h3>Every weight-loss compound, profiled</h3>
+            <p>FDA status, evidence level, and mechanism for every compound in the weight-loss category. One reference, no hype.</p>
+            <a class="btn-gold" href="https://store.peptexa.com/l/weight-loss-metabolism" target="_blank" rel="noopener">Get the Weight Loss &amp; Metabolism Guide &rarr;</a>
+        </div>
+
+        <h2 class="reveal">Questions I get asked</h2>
+        <div class="faq-block reveal">
+            <div class="faq-item">
+                <button class="faq-q">Does everyone regain the weight after stopping a GLP-1? <span class="faq-icon">+</span></button>
+                <div class="faq-a">In both STEP 1 extension and SURMOUNT-4, the majority of participants regained a significant portion of the weight they lost after stopping treatment. In SURMOUNT-4, fewer than 2 in 10 who stopped maintained at least 80% of their loss. Some residual benefit persisted (net loss of 5.6% in STEP 1), but the trend was clearly toward regain.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Can you taper off a GLP-1 instead of stopping cold? <span class="faq-icon">+</span></button>
+                <div class="faq-a">Neither STEP 1 extension nor SURMOUNT-4 tested structured tapering protocols. The participants stopped treatment abruptly. Whether a gradual taper, lifestyle intervention, or switch to another compound changes the rebound trajectory has not been tested in a comparable trial design.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Does Peptexa sell GLP-1 medications? <span class="faq-icon">+</span></button>
+                <div class="faq-a">No. Peptexa is educational only. Semaglutide and tirzepatide are prescription medications. We do not sell, ship, or advise on any medication.</div>
+            </div>
+        </div>
+
+        <p class="reveal" style="font-size:0.85rem;color:var(--text-light);margin-top:2rem;line-height:1.7;"><strong>Sources:</strong> STEP 1 extension, Wilding et al., <em>Diabetes Obes Metab</em> 2022 &middot; SURMOUNT-4, Aronne et al., <em>JAMA</em> 2024</p>
+
+        <aside class="compliance-strip reveal" style="margin-top:2rem;">
+            <strong>Peptexa is an educational resource.</strong> Nothing here is medical advice, dosing guidance or a recommendation to start or stop any medication.
+        </aside>
+
+        <div class="related reveal">
+            <h3>Keep reading</h3>
+            <div class="related-grid">
+                <a class="related-link" href="/blog/glp1-peptides-ranked.html">GLP-1 peptides ranked: semaglutide vs tirzepatide vs retatrutide</a>
+                <a class="related-link" href="/peptides/semaglutide.html">Semaglutide, compound reference</a>
+                <a class="related-link" href="/peptides/tirzepatide.html">Tirzepatide, compound reference</a>
+                <a class="related-link" href="/blog/">Back to the Peptexa Blog</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">PEP<span style="color:var(--teal-light)">TEXA</span></div>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="mailto:hello@peptexa.com">Contact</a>
+                <a href="/disclaimer.html">Disclaimer</a>
+            </div>
+            <p class="footer-disclaimer"><strong>Disclaimer:</strong> The information provided by Peptexa is for educational purposes only and is not intended as medical advice. Peptides discussed may not be FDA-approved for human use. Always consult with a qualified healthcare provider. Peptexa does not sell peptides.</p>
+            <p class="footer-copy">&copy; 2026 Peptexa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', function() {
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('progress').style.width = (s/h*100) + '%';
+        });
+        // Reveal
+        var revealEls = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, {threshold: 0.08});
+        revealEls.forEach(function(el) { io.observe(el); });
+        // FAQ
+        document.querySelectorAll('.faq-q').forEach(function(btn) {
+            btn.addEventListener('click', function() { this.closest('.faq-item').classList.toggle('open'); });
+        });
+    </script>
+</body>
+</html>
